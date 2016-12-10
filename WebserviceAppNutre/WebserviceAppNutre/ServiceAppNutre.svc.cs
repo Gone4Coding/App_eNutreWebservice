@@ -17,7 +17,7 @@ namespace WebserviceAppNutre
             throw new NotImplementedException();
         }
 
-        public void addRestaurant(Restaurant restaurant, string token)
+        public void addRestaurant(Restaurant restaurant, string token) 
         {
             throw new NotImplementedException();
         }
