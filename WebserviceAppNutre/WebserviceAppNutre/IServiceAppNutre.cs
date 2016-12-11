@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Web.Hosting;
+using System.Xml;
 
 namespace WebserviceAppNutre
 {
@@ -13,15 +16,46 @@ namespace WebserviceAppNutre
     public interface IServiceAppNutre
     {
         [OperationContract]
-        void addActivity(Activity activity, string token);
+        void SignUp(User user, string token); // admin only
 
         [OperationContract]
-        void addRestaurant(Restaurant restaurant, string token);
+        void LogIn(string username, string password);
 
         [OperationContract]
-        void addVegetable(Vegetable vegetable, string token);
+        void LogOut(string token);
+
+        [OperationContract]
+        void addActivity(Activity activity, string token); // admin only
+
+        [OperationContract]
+        void addActivity(XmlDocument activitiesXml, string token); // admin only
+
+        [OperationContract]
+        void addRestaurant(Restaurant restaurant, string token); // admin only
+
+        [OperationContract]
+        void addRestaurant(XmlDocument restaurantsXml, string token); // admin only
+
+        [OperationContract]
+        void addVegetable(Vegetable vegetable, string token); // admin only
+
+        [OperationContract]
+        void addVegetable(XmlDocument vegetablesXml, string token); // admin only
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/listing/activities")]
+        List<Activity> getActivitiesList();
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/listing/restaurants")]
+        List<Restaurant> GetRestaurantsList();
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/listing/vegetables")]
+        List<Vegetable> getVegetablesList();
+
+
     }
-
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
     [DataContract]
@@ -37,19 +71,22 @@ namespace WebserviceAppNutre
             this.met = met;
             this.calorias = calorias;
         }
-
+        
+        [DataMember]
         public string Nome
         {
             get { return nome; }
             set { nome = value; }
         }
 
+        [DataMember]
         public int Calorias
         {
             get { return calorias; }
             set { calorias = value; }
         }
 
+        [DataMember]
         public decimal Met
         {
             get { return met; }
@@ -57,6 +94,7 @@ namespace WebserviceAppNutre
         }
     }
 
+    [DataContract]
     public class Restaurant
     {
         private string name;
@@ -72,24 +110,28 @@ namespace WebserviceAppNutre
             this.calories = calories;
         }
 
+        [DataMember]
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
 
+        [DataMember]
         public string Item
         {
             get { return item; }
             set { item = value; }
         }
 
+        [DataMember]
         public string Quantity
         {
             get { return quantity; }
             set { quantity = value; }
         }
 
+        [DataMember]
         public int Calories
         {
             get { return calories; }
@@ -97,6 +139,7 @@ namespace WebserviceAppNutre
         }
     }
 
+    [DataContract]
     public class Vegetable
     {
         private string name;
@@ -119,19 +162,88 @@ namespace WebserviceAppNutre
             this.extraInfo = extraInfo;
         }
 
-        public string getName()
+        [DataMember]
+        public string Name
         {
-            return name;
+            get{ return name; }
+            set{ name = value; }
         }
 
-        public string getExtraInfo()
+        [DataMember]
+        public string ExtraInfo
         {
-            return extraInfo;
+            get{ return extraInfo; }
+            set{ extraInfo = value; }
         }
 
-        public string getQuantity()
+        [DataMember]
+        public string Quantity
         {
-            return quantity;
+            get{ return quantity; }
+            set{ quantity = value; }
+        }
+
+        [DataMember]
+        public string Calories
+        {
+            get{ return calories; }
+            set{ calories = value; }
         }
     }
+
+    [DataContract]
+    public class User
+    {
+        protected int id;
+        protected string username;
+        protected string password;
+        protected bool admin;
+        protected static string FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "users.xml");
+
+        public User(string username, string password, bool admin)
+        {
+            this.admin = admin;
+            this.username = username;
+            this.password = password;
+            this.id = getValidId();
+        }
+
+        [DataMember]
+        public bool Admin
+        {
+            get { return admin; }
+            set { admin = value; }
+        }
+
+        [DataMember]
+        public string Username
+        {
+            get { return username; }
+            set { username = value; }
+        }
+
+        [DataMember]
+        public string Password
+        {
+            get { return password; }
+            set { password = value; }
+        }
+
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+        }
+
+        private int getValidId()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(FILEPATH);
+
+            XmlNodeList idList = doc.SelectNodes("//@id");
+            return idList.Count + 1;
+        }
+         
+    }
+    
 }
