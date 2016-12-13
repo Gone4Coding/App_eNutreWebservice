@@ -16,10 +16,6 @@
     <xs:simpleType name="passwordType">
       <xs:restriction base="xs:string"/>
     </xs:simpleType>
-  
-    <xs:simpleType name="tokenType">
-      <xs:restriction base="xs:string"/>
-    </xs:simpleType>
 
     <xs:simpleType name="isAdminType">
       <xs:restriction base="xs:boolean"/>
@@ -55,7 +51,6 @@
       <xs:sequence>
         <xs:element name="username" type="usernameType" minOccurs="1" maxOccurs="1"/>
         <xs:element name="password" type="passwordType" minOccurs="1" maxOccurs="1"/>
-        <xs:element name="token" type="tokenType" minOccurs="1" maxOccurs="1"/>
         <xs:element name="choices" type="choichesType" minOccurs="0" maxOccurs="1"/>
       </xs:sequence>
       <xs:attribute name="isAdmin" type="isAdminType" use="required"/>

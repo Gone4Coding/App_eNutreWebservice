@@ -195,18 +195,15 @@ namespace WebserviceAppNutre
     [DataContract]
     public class User
     {
-        protected int id;
         protected string username;
         protected string password;
         protected bool admin;
-        protected static string FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "users.xml");
 
         public User(string username, string password, bool admin)
         {
             this.admin = admin;
             this.username = username;
-            this.password = setPasswordCrypt(password);
-            this.id = getValidId();
+            this.password = password;
         }
 
         [DataMember]
@@ -229,58 +226,5 @@ namespace WebserviceAppNutre
             get { return password; }
             set { password = value; }
         }
-
-        [DataMember]
-        public int Id
-        {
-            get { return id; }
-        }
-
-        private int getValidId()
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(FILEPATH);
-
-            XmlNodeList idList = doc.SelectNodes("//@id");
-            return idList.Count + 1;
-        }
-
-        private string setPasswordCrypt(string password)
-        {
-            StringBuilder Sb = new StringBuilder();
-
-            using (SHA256 hash = SHA256Managed.Create())
-            {
-                Encoding enc = Encoding.UTF8;
-                Byte[] result = hash.ComputeHash(enc.GetBytes(password));
-
-                foreach (Byte b in result)
-                    Sb.Append(b.ToString("x2"));
-            }
-
-            return Sb.ToString();
-        }
-
-        public bool isPasswordValid(string password)
-        {
-            StringBuilder Sb = new StringBuilder();
-
-            using (SHA256 hash = SHA256Managed.Create())
-            {
-                Encoding enc = Encoding.UTF8;
-                Byte[] result = hash.ComputeHash(enc.GetBytes(password));
-
-                foreach (Byte b in result)
-                    Sb.Append(b.ToString("x2"));
-            }
-
-            XmlDocument doc = new XmlDocument();
-
-            String node = doc.SelectSingleNode("//user[username = '" + username + "'//password").InnerText;
-
-            return password.Equals(node);
-        }
-         
     }
-    
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Security.Cryptography;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
@@ -68,15 +69,7 @@ namespace WebserviceAppNutre
             }
         }
 
-        private bool isUserValid(string username, string password)
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(FILEPATH);
-
-            XmlNode passNode = doc.SelectSingleNode("//user[username = '" + username + "']//password");
-
-            return passNode != null && passNode.InnerText.Equals(password);
-        }
+        
 
         public void SignUp(User user)
         {
@@ -85,27 +78,30 @@ namespace WebserviceAppNutre
             bool admin = user.Admin;
 
             XmlDocument doc = new XmlDocument();
+            doc.Load(FILEPATH);
 
             XmlNode userExistsNode = doc.SelectSingleNode("//user[username = '" + username + "'");
 
             if(userExistsNode != null)
                 throw new ArgumentException("Username already exists");
-
-            User userIntern = new User(username, password, admin);
-
+            
             XmlNode root = doc.SelectSingleNode("//users");
 
             XmlElement userNode = doc.CreateElement("user");
-            userNode.SetAttribute("isAdmin", userIntern.Admin.ToString());
-            userNode.SetAttribute("id", userIntern.Id.ToString());
+            userNode.SetAttribute("isAdmin", admin.ToString());
+            userNode.SetAttribute("id", getValidUserId().ToString());
 
             XmlElement usernameNode = doc.CreateElement("username");
-            usernameNode.InnerText = userIntern.Username;
+            usernameNode.InnerText = username;
 
             XmlElement passwordNode = doc.CreateElement("password");
-            passwordNode.InnerText = userIntern.Password;
+            passwordNode.InnerText = getPasswordCrypt(password);
 
-            //FALTA CENAS
+            userNode.AppendChild(usernameNode);
+            userNode.AppendChild(passwordNode);
+            root.AppendChild(userNode);
+
+            doc.Save(FILEPATH);
         }
 
         public void LogIn(string username, string password)
@@ -175,5 +171,53 @@ namespace WebserviceAppNutre
         {
             throw new NotImplementedException();
         }
+
+        private int getValidUserId()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(FILEPATH);
+
+            XmlNodeList idList = doc.SelectNodes("//@id");
+            return idList.Count + 1;
+        }
+
+        private string getPasswordCrypt(string password)
+        {
+            StringBuilder builder = new StringBuilder();
+
+            using (SHA256 hash = SHA256.Create())
+            {
+                Encoding enc = Encoding.UTF8;
+                Byte[] result = hash.ComputeHash(enc.GetBytes(password));
+
+                foreach (byte b in result)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+            }
+
+            return builder.ToString();
+        }
+
+        private bool isUserValid(string username, string password)
+        {
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(FILEPATH);
+
+                String passNode = doc.SelectSingleNode("//user[username = '" + username + "']//password").InnerText;
+                
+                if(!getPasswordCrypt(passNode).Equals(password))
+                    throw new Exception();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }
+
