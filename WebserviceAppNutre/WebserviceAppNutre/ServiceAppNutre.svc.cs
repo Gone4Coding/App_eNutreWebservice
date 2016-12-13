@@ -110,7 +110,7 @@ namespace WebserviceAppNutre
 
         public void LogIn(string username, string password)
         {
-            cleanUpTokens();
+            cleanUpTimeOuts();
 
             if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password) && isUserValid(username, password))
             {
