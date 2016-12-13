@@ -9,62 +9,67 @@
   
   <!-- SIMPLE TYPES -->
 
-  <xs:simpleType name="usernameType">
-    <xs:restriction base="xs:string"/>
-  </xs:simpleType>
+    <xs:simpleType name="usernameType">
+      <xs:restriction base="xs:string"/>
+    </xs:simpleType>
 
-  <xs:simpleType name="passwordType">
-    <xs:restriction base="xs:string"/>
-  </xs:simpleType>
-
-  <xs:simpleType name="isAdminType">
-    <xs:restriction base="xs:boolean"/>
-  </xs:simpleType>
-
-  <xs:simpleType name="idType">
-    <xs:restriction base="xs:integer"/>
-  </xs:simpleType>
-
-  <xs:simpleType name="activityIdType">
-    <xs:restriction base="xs:integer"/>
-  </xs:simpleType>
-
-  <xs:simpleType name="restaurantIdType">
-    <xs:restriction base="xs:integer"/>
-  </xs:simpleType>
-
-  <xs:simpleType name="vegetableIdType">
-    <xs:restriction base="xs:integer"/>
-  </xs:simpleType>
+    <xs:simpleType name="passwordType">
+      <xs:restriction base="xs:string"/>
+    </xs:simpleType>
   
-  <!-- COMPLEX TYPES -->
+    <xs:simpleType name="tokenType">
+      <xs:restriction base="xs:string"/>
+    </xs:simpleType>
 
-  <xs:complexType name="choichesType">
-    <xs:sequence>
-      <xs:element name="activityId" type="activityIdType" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="restaurantId" type="restaurantIdType" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="vegetableId" type="vegetableIdType" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:sequence>
-  </xs:complexType>
-  
-  <xs:complexType name="userType">
-    <xs:sequence>
-      <xs:element name="username" type="usernameType" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="password" type="passwordType" minOccurs="1" maxOccurs="1"/>
-      <xs:element name="choices" type="choichesType" minOccurs="0" maxOccurs="1"/>
-    </xs:sequence>
-    <xs:attribute name="isAdmin" type="isAdminType" use="required"/>
-    <xs:attribute name="id" type="idType" use="required"/>
-  </xs:complexType>
+    <xs:simpleType name="isAdminType">
+      <xs:restriction base="xs:boolean"/>
+    </xs:simpleType>
 
-  <xs:complexType name="usersType">
-    <xs:sequence>
-      <xs:element name="user" type="userType" minOccurs="1" maxOccurs="unbounded"/>
-    </xs:sequence>
-  </xs:complexType>
+    <xs:simpleType name="idType">
+      <xs:restriction base="xs:integer"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="activityIdType">
+      <xs:restriction base="xs:integer"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="restaurantIdType">
+      <xs:restriction base="xs:integer"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="vegetableIdType">
+      <xs:restriction base="xs:integer"/>
+    </xs:simpleType>
   
-  <!-- ROOT -->
+    <!-- COMPLEX TYPES -->
+
+    <xs:complexType name="choichesType">
+      <xs:sequence>
+        <xs:element name="activityId" type="activityIdType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="restaurantId" type="restaurantIdType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="vegetableId" type="vegetableIdType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
   
-  <xs:element name="users" type="usersType"/>
+    <xs:complexType name="userType">
+      <xs:sequence>
+        <xs:element name="username" type="usernameType" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="password" type="passwordType" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="token" type="tokenType" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="choices" type="choichesType" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute name="isAdmin" type="isAdminType" use="required"/>
+      <xs:attribute name="id" type="idType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="usersType">
+      <xs:sequence>
+        <xs:element name="user" type="userType" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  
+    <!-- ROOT -->
+  
+    <xs:element name="users" type="usersType"/>
   
 </xs:schema>

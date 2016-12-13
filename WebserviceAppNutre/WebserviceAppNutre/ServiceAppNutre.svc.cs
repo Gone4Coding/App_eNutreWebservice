@@ -15,56 +15,30 @@ namespace WebserviceAppNutre
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class ServiceAppNutre : IServiceAppNutre
     {
-        private Dictionary<string, User> users;
-        private Dictionary<string, Token> tokens;
+        private Dictionary<string, TimeOut> timeOuts = new Dictionary<string, TimeOut>();
 
-        private static string FILEPATH;
-
-        public ServiceAppNutre()
+        private static string FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "users.xml");
+        
+        private class TimeOut
         {
-            users = new Dictionary<string, User>();
-            tokens = new Dictionary<string, Token>();
-            fillUsers();
-
-            FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "users.xml");
-        }
-
-        private class Token
-        {
-            private string value;
+            private string token;
             private long timeout;
-            private User user;
+            
 
-            public Token(User user)
-                : this(user, 240000) // token válido por 4 minutos
+            public TimeOut(string token)
             {
-            }
-
-            public Token(User user, long timeout)
-            {
-                this.value = Guid.NewGuid().ToString();
+                this.token = token;
                 this.timeout = Environment.TickCount + timeout;
-                this.user = user;
             }
 
-            public string Value
+            public string Token
             {
-                get { return value; }
+                get { return token; }
             }
 
             public long Timeout
             {
                 get { return timeout; }
-            }
-
-            public User User
-            {
-                get { return user; }
-            }
-
-            public string Username
-            {
-                get { return user.Username; }
             }
 
             public void UpdateTimeout()
@@ -83,57 +57,69 @@ namespace WebserviceAppNutre
             }
         }
 
-        private void cleanUpTokens()
+        private void cleanUpTimeOuts()
         {
-            foreach (Token tokenObject in tokens.Values)
+            foreach (TimeOut timeOutObject in timeOuts.Values)
             {
-                if (tokenObject.isTimeoutExpired())
+                if (timeOutObject.isTimeoutExpired())
                 {
-                    tokens.Remove(tokenObject.Username);
+                    timeOuts.Remove(timeOutObject.Token);
                 }
             }
         }
 
-        /*private bool isUserValid(string username, string password)
+        private bool isUserValid(string username, string password)
         {
-            
             XmlDocument doc = new XmlDocument();
             doc.Load(FILEPATH);
 
             XmlNode passNode = doc.SelectSingleNode("//user[username = '" + username + "']//password");
 
             return passNode != null && passNode.InnerText.Equals(password);
-        }*/
-
-        private void fillUsers()
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(FILEPATH);
-            XmlNodeList usersList = doc.SelectNodes("//user");
-
-            foreach (XmlNode user in usersList)
-            {
-                string username = user.SelectSingleNode("//username").InnerText;
-                string password = user.SelectSingleNode("//pasword").InnerText;
-                bool isAdmin = Convert.ToBoolean(user.SelectSingleNode("//@isAdmin").InnerText);
-
-                users.Add(username, new User(username, password, isAdmin));
-            }
         }
 
-        public void SignUp(User user, string token)
+        public void SignUp(User user)
         {
-            throw new NotImplementedException();
+            string username = user.Username;
+            string password = user.Password;
+            bool admin = user.Admin;
+
+            XmlDocument doc = new XmlDocument();
+
+            XmlNode userExistsNode = doc.SelectSingleNode("//user[username = '" + username + "'");
+
+            if(userExistsNode != null)
+                throw new ArgumentException("Username already exists");
+
+            User userIntern = new User(username, password, admin);
+
+            XmlNode root = doc.SelectSingleNode("//users");
+
+            XmlElement userNode = doc.CreateElement("user");
+            userNode.SetAttribute("isAdmin", userIntern.Admin.ToString());
+            userNode.SetAttribute("id", userIntern.Id.ToString());
+
+            XmlElement usernameNode = doc.CreateElement("username");
+            usernameNode.InnerText = userIntern.Username;
+
+            XmlElement passwordNode = doc.CreateElement("password");
+            passwordNode.InnerText = userIntern.Password;
+
+            //FALTA CENAS
         }
 
         public void LogIn(string username, string password)
         {
             cleanUpTokens();
 
-            if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password) && password.Equals(users[username].Password))
+            if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password) && isUserValid(username, password))
             {
-                Token tokenObject = new Token(users[username]);
-                tokens.Add(tokenObject.Value, tokenObject);
+                XmlDocument doc = new XmlDocument();
+
+                String tokenNode = doc.SelectSingleNode("//user[username = '" + username + "'//token").InnerText;
+
+                TimeOut timeOut = new TimeOut(tokenNode);
+                timeOuts.Add(timeOut.Token, timeOut);
             }
             throw new ArgumentException("ERROR: invalid username/password combination.");
 
@@ -141,8 +127,8 @@ namespace WebserviceAppNutre
 
         public void LogOut(string token)
         {
-            tokens.Remove(token);
-            cleanUpTokens();
+            timeOuts.Remove(token);
+            cleanUpTimeOuts();
         }
 
         public void addActivity(Activity activity, string token)

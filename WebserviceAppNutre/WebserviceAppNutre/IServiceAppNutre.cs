@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Security.Cryptography;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
@@ -204,7 +205,7 @@ namespace WebserviceAppNutre
         {
             this.admin = admin;
             this.username = username;
-            this.password = password;
+            this.password = setPasswordCrypt(password);
             this.id = getValidId();
         }
 
@@ -242,6 +243,42 @@ namespace WebserviceAppNutre
 
             XmlNodeList idList = doc.SelectNodes("//@id");
             return idList.Count + 1;
+        }
+
+        private string setPasswordCrypt(string password)
+        {
+            StringBuilder Sb = new StringBuilder();
+
+            using (SHA256 hash = SHA256Managed.Create())
+            {
+                Encoding enc = Encoding.UTF8;
+                Byte[] result = hash.ComputeHash(enc.GetBytes(password));
+
+                foreach (Byte b in result)
+                    Sb.Append(b.ToString("x2"));
+            }
+
+            return Sb.ToString();
+        }
+
+        public bool isPasswordValid(string password)
+        {
+            StringBuilder Sb = new StringBuilder();
+
+            using (SHA256 hash = SHA256Managed.Create())
+            {
+                Encoding enc = Encoding.UTF8;
+                Byte[] result = hash.ComputeHash(enc.GetBytes(password));
+
+                foreach (Byte b in result)
+                    Sb.Append(b.ToString("x2"));
+            }
+
+            XmlDocument doc = new XmlDocument();
+
+            String node = doc.SelectSingleNode("//user[username = '" + username + "'//password").InnerText;
+
+            return password.Equals(node);
         }
          
     }
