@@ -17,7 +17,7 @@ namespace WebserviceAppNutre
     public interface IServiceAppNutre
     {
         [OperationContract]
-        void SignUp(User user); // admin only
+        void SignUp(User user, string token); // admin only
 
         [OperationContract]
         void LogIn(string username, string password);

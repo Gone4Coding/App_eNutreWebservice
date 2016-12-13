@@ -16,69 +16,79 @@ namespace WebserviceAppNutre
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class ServiceAppNutre : IServiceAppNutre
     {
-        private Dictionary<string, TimeOut> timeOuts = new Dictionary<string, TimeOut>();
+        private static string USERS_FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "users.xml");
+        private static string ACTIVITY_FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "exercises.xml");
+        private static string PLATE_FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "restaurants.xml");
+        private static string VEGETABLE_FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "vegetables.xml");
+        private static string TOKEN_FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "tokens.xml");
 
-        private static string FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "users.xml");
-        
-        private class TimeOut
+        private class Token
         {
-            private string token;
-            private long timeout;
+            private string value;
+            private string username;
+            private bool isAdmin;
             
-
-            public TimeOut(string token)
+            public Token(string username, bool isAdmin)
             {
-                this.token = token;
-                this.timeout = Environment.TickCount + timeout;
+                this.value = Guid.NewGuid().ToString();
+                this.username = username;
+                this.isAdmin = isAdmin;
+                saveToken();
             }
 
-            public string Token
+            public string Value
             {
-                get { return token; }
+                get { return value; }
             }
 
-            public long Timeout
+            public string Username
             {
-                get { return timeout; }
+                get { return username; }
             }
 
-            public void UpdateTimeout()
+            private void saveToken()
             {
-                UpdateTimeout(240000); // token renovado por 4 minutos
-            }
+                XmlDocument doc = new XmlDocument();
+                doc.Load(TOKEN_FILEPATH);
 
-            public void UpdateTimeout(long timeout)
-            {
-                this.timeout = Environment.TickCount + timeout;
-            }
+                XmlNode tokensNode = doc.SelectSingleNode("//tokens");
 
-            public Boolean isTimeoutExpired()
-            {
-                return Environment.TickCount > timeout;
-            }
-        }
+                XmlElement tokenNode = doc.CreateElement("token");
+                tokenNode.SetAttribute("isAdmin", isAdmin.ToString());
 
-        private void cleanUpTimeOuts()
+                XmlElement usernameNode = doc.CreateElement("username");
+                usernameNode.InnerText = username;
+
+                XmlElement valueNode = doc.CreateElement("value");
+                valueNode.InnerText = value;
+
+                doc.Save(TOKEN_FILEPATH);
+            }
+        } 
+
+        private void cleanUpTokens()
         {
-            foreach (TimeOut timeOutObject in timeOuts.Values)
+            XmlDocument doc = new XmlDocument();
+            doc.Load(TOKEN_FILEPATH);
+
+            XmlNode root = doc.SelectSingleNode("/tokens");
+            XmlNodeList tokens = doc.SelectNodes("//token[@isAdmin = true]");
+
+            foreach (XmlNode token in tokens)
             {
-                if (timeOutObject.isTimeoutExpired())
-                {
-                    timeOuts.Remove(timeOutObject.Token);
-                }
+                root.RemoveChild(token);
+                doc.Save(TOKEN_FILEPATH);
             }
         }
 
-        
-
-        public void SignUp(User user)
+        public void SignUp(User user, string token)
         {
             string username = user.Username;
             string password = user.Password;
             bool admin = user.Admin;
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(FILEPATH);
+            doc.Load(USERS_FILEPATH);
 
             XmlNode userExistsNode = doc.SelectSingleNode("//user[username = '" + username + "'");
 
@@ -101,35 +111,59 @@ namespace WebserviceAppNutre
             userNode.AppendChild(passwordNode);
             root.AppendChild(userNode);
 
-            doc.Save(FILEPATH);
+            doc.Save(USERS_FILEPATH);
         }
 
         public void LogIn(string username, string password)
         {
-            cleanUpTimeOuts();
+            cleanUpTokens();
 
             if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password) && isUserValid(username, password))
             {
-                XmlDocument doc = new XmlDocument();
-
-                String tokenNode = doc.SelectSingleNode("//user[username = '" + username + "'//token").InnerText;
-
-                TimeOut timeOut = new TimeOut(tokenNode);
-                timeOuts.Add(timeOut.Token, timeOut);
+                if (isAdmin(username))
+                {
+                    Token token = new Token(username, true);
+                }
+                else if(!tokenExistsForToken(username))
+                {
+                    Token token = new Token(username, false);
+                }
             }
             throw new ArgumentException("ERROR: invalid username/password combination.");
-
         }
 
-        public void LogOut(string token)
+        public void LogOut(string username)
         {
-            timeOuts.Remove(token);
-            cleanUpTimeOuts();
+            cleanUpTokens();
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load(TOKEN_FILEPATH);
+
+            XmlNode root = doc.SelectSingleNode("/tokens");
+            XmlNode tokenNode = doc.SelectSingleNode("//token[username = '" + username + "'");
+
+            if (tokenNode != null)
+            {
+                root.RemoveChild(tokenNode);
+                doc.Save(TOKEN_FILEPATH);
+            }
         }
 
-        public void addActivity(Activity activity, string token)
+        public void addActivity(Activity activity, string username)
         {
-            throw new NotImplementedException();
+            cleanUpTokens();
+
+            if (isAdmin(username))
+            {
+                XmlDocument doc = new XmlDocument();
+                doc.Load(ACTIVITY_FILEPATH);
+
+               // XmlNode root = doc.CreateElement("")
+            }
+            else
+            {
+                throw new ArgumentException("ERROR: User not valid");
+            }
         }
 
         public void addActivity(XmlDocument activitiesXml, string token)
@@ -175,10 +209,37 @@ namespace WebserviceAppNutre
         private int getValidUserId()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(FILEPATH);
+            doc.Load(USERS_FILEPATH);
 
             XmlNodeList idList = doc.SelectNodes("//@id");
             return idList.Count + 1;
+        }
+
+        private int getValidActivityId()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(ACTIVITY_FILEPATH);
+
+            XmlNodeList actsIds = doc.SelectNodes("//@id");
+            return actsIds.Count + 1;
+        }
+
+        private int getValidPlateId()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(PLATE_FILEPATH);
+
+            XmlNodeList platesIds = doc.SelectNodes("//@id");
+            return platesIds.Count + 1;
+        }
+
+        private int getValidVegetableId()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(VEGETABLE_FILEPATH);
+
+            XmlNodeList VegetableIds = doc.SelectNodes("//@id");
+            return VegetableIds.Count + 1;
         }
 
         private string getPasswordCrypt(string password)
@@ -204,7 +265,7 @@ namespace WebserviceAppNutre
             try
             {
                 XmlDocument doc = new XmlDocument();
-                doc.Load(FILEPATH);
+                doc.Load(USERS_FILEPATH);
 
                 String passNode = doc.SelectSingleNode("//user[username = '" + username + "']//password").InnerText;
                 
@@ -217,6 +278,25 @@ namespace WebserviceAppNutre
             }
 
             return true;
+        }
+
+        private bool isAdmin(string username)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(USERS_FILEPATH);
+
+            XmlNode node = doc.SelectSingleNode("//user[username = '" + username + "'//@isAdmin");
+            return node.InnerText.Equals("true");
+        }
+
+        private bool tokenExistsForToken(string username)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(TOKEN_FILEPATH);
+
+            XmlNode node = doc.SelectSingleNode("//token[username = '" + username + "'");
+
+            return node != null;
         }
     }
 }

@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<foods>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>Hambúrguer bem Passado</item>
+    <quantity>1 dose (200g)</quantity>
+    <calories>304</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>Limonada sem Açúcar</item>
+    <quantity>1 dose</quantity>
+    <calories>10</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>H3 Arroz</item>
+    <quantity>1/2 dose</quantity>
+    <calories>195</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>Batatas Fritas (1/2 dose)</item>
+    <quantity>1/2 dose</quantity>
+    <calories>274</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>H3 Esparregado</item>
+    <quantity>1 dose</quantity>
+    <calories>116</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>Hambúrguer Médio</item>
+    <quantity>1 dose (200g)</quantity>
+    <calories>354</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>Batatas Fritas</item>
+    <quantity>1 dose (75g)</quantity>
+    <calories>411</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>H3 Arroz (1/2 dose)</item>
+    <quantity>1 dose</quantity>
+    <calories>390</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>Limonada de Morango sem Açúcar</item>
+    <quantity>1 dose</quantity>
+    <calories>14</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>H3 Grelado</item>
+    <quantity>1 hambúrguer (200g)</quantity>
+    <calories>304</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>H3 Mediterrãneo</item>
+    <quantity>1 hambúrguer (180g)</quantity>
+    <calories>441</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>H3 Cheese</item>
+    <quantity>1 hambúrguer (180g)</quantity>
+    <calories>464</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>H3 Champignon</item>
+    <quantity>1 hambúrguer (200g)</quantity>
+    <calories>421</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>Tuga</item>
+    <quantity>1 hambúrguer (180g)</quantity>
+    <calories>424</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>H3 Benedict</item>
+    <quantity>1 hambúrguer (100g)</quantity>
+    <calories>553</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>H3 Tuga</item>
+    <quantity>1 dose (180g)</quantity>
+    <calories>424</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>H3 Legumes</item>
+    <quantity>1 hambúrguer</quantity>
+    <calories>460</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>Super Bread</item>
+    <quantity>1 hambúrguer (380g)</quantity>
+    <calories>836</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>H3 Carbonara</item>
+    <quantity>1 dose</quantity>
+    <calories>546</calories>
+  </food>
+  <food>
+    <restaurant>h3</restaurant>
+    <item>Vinagreta Dijon</item>
+    <quantity>1 dose</quantity>
+    <calories>83</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Batatas Fritas (Média)</item>
+    <quantity>1 dose (100g)</quantity>
+    <calories>340</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Big Mac</item>
+    <quantity>1 dose</quantity>
+    <calories>510</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Batatas Fritas (Pequena)</item>
+    <quantity>1 dose</quantity>
+    <calories>240</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Double Cheeseburguer</item>
+    <quantity>1 dose</quantity>
+    <calories>448</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Cheeseburger</item>
+    <quantity>1 dose (120g)</quantity>
+    <calories>305</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Chicken McNuggets (4)</item>
+    <quantity>1 dose</quantity>
+    <calories>179</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Batatas Fritas (Grande)</item>
+    <quantity>1 dose</quantity>
+    <calories>448</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>McFlurry Snickers</item>
+    <quantity>1 dose (187g)</quantity>
+    <calories>375</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Big Tasty</item>
+    <quantity>1 dose (345g)</quantity>
+    <calories>842</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>CBO</item>
+    <quantity>1 dose (247g)</quantity>
+    <calories>665</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Coca-Cola (Média)</item>
+    <quantity>1 dose (400ml)</quantity>
+    <calories>176</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Sopa de Grão com Espinafres</item>
+    <quantity>1 dose (150ml)</quantity>
+    <calories>75</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Sundae de Caramelo</item>
+    <quantity>1 dose (184g)</quantity>
+    <calories>325</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Ketchup para Batatas</item>
+    <quantity>1 dose (12g)</quantity>
+    <calories>12</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Wrap Ranch</item>
+    <quantity>1 dose (119g)</quantity>
+    <calories>315</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>McChicken</item>
+    <quantity>1 dose (184g)</quantity>
+    <calories>410</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>McFlurry Oreo</item>
+    <quantity>1 dose (218g)</quantity>
+    <calories>345</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Molho para Batatas</item>
+    <quantity>1 dose (25ml)</quantity>
+    <calories>46</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Coca-Cola Zero (Pequena)</item>
+    <quantity>1 dose (250ml)</quantity>
+    <calories>1</calories>
+  </food>
+  <food>
+    <restaurant>mcdonalds</restaurant>
+    <item>Croissant Fiambre</item>
+    <quantity>1 dose</quantity>
+    <calories>178</calories>
+  </food>
+  <food>
+    <restaurant>burger-king</restaurant>
+    <item>Whopper</item>
+    <quantity>1 dose (273g)</quantity>
+    <calories>633</calories>
+  </food>
+  <food>
+    <restaurant>burger-king</restaurant>
+    <item>Double Cheese Bacon XXL</item>
+    <quantity>1 dose (182g)</quantity>
+    <calories>509</calories>
+  </food>
+  <food>
+    <restaurant>burger-king</restaurant>
+    <item>Big King</item>
+    <quantity>1 dose (163g)</quantity>
+    <calories>411</calories>
+  </food>
+  <food>
+    <restaurant>burger-king</restaurant>
+    <item>Crispy Chicken</item>
+    <quantity>1 dose (177g)</quantity>
+    <calories>503</calories>
+  </food>
+  <food>
+    <restaurant>burger-king</restaurant>
+    <item>BK Fusions Oreo Ice Cream</item>
+    <quantity>1 dose (170g)</quantity>
+    <calories>326</calories>
+  </food>
+  <food>
+    <restaurant>burger-king</restaurant>
+    <item>Steakhouse</item>
+    <quantity>1 dose</quantity>
+    <calories>950</calories>
+  </food>
+  <food>
+    <restaurant>burger-king</restaurant>
+    <item>Ketchup Sachet</item>
+    <quantity>1 dose (10g)</quantity>
+    <calories>10</calories>
+  </food>
+  <food>
+    <restaurant>burger-king</restaurant>
+    <item>Long Chicken</item>
+    <quantity>1 dose (222g)</quantity>
+    <calories>624</calories>
+  </food>
+  <food>
+    <restaurant>burger-king</restaurant>
+    <item>Veggie Bean Burger</item>
+    <quantity>1 dose (255g)</quantity>
+    <calories>604</calories>
+  </food>
+  <food>
+    <restaurant>burger-king</restaurant>
+    <item>Hot Brownie with Ice Cream</item>
+    <quantity>1 dose (120g)</quantity>
+    <calories>422</calories>
+  </food>
+  <food>
+    <restaurant>burger-king</restaurant>
+    <item>Triple Whopper</item>
+    <quantity>1 dose (435g)</quantity>
+    <calories>1156</calories>
+  </food>
+  <food>
+    <restaurant>burger-ranch</restaurant>
+    <item>Batatas Fritas (Pequena)</item>
+    <quantity>1 dose (90g)</quantity>
+    <calories>150</calories>
+  </food>
+  <food>
+    <restaurant>burger-ranch</restaurant>
+    <item>Tosta Mista</item>
+    <quantity>1 dose</quantity>
+    <calories>285</calories>
+  </food>
+  <food>
+    <restaurant>burger-ranch</restaurant>
+    <item>Hamburguer Ranch</item>
+    <quantity>1 dose</quantity>
+    <calories>557</calories>
+  </food>
+  <food>
+    <restaurant>burger-ranch</restaurant>
+    <item>Tosta Queijo</item>
+    <quantity>1 dose</quantity>
+    <calories>215</calories>
+  </food>
+  <food>
+    <restaurant>burger-ranch</restaurant>
+    <item>Hamburguer Clássico</item>
+    <quantity>1 dose</quantity>
+    <calories>320</calories>
+  </food>
+  <food>
+    <restaurant>burger-ranch</restaurant>
+    <item>Cachorro</item>
+    <quantity>1 dose</quantity>
+    <calories>525</calories>
+  </food>
+  <food>
+    <restaurant>burger-ranch</restaurant>
+    <item>Hamburguer Peixe</item>
+    <quantity>1 dose</quantity>
+    <calories>389</calories>
+  </food>
+  <food>
+    <restaurant>burger-ranch</restaurant>
+    <item>Hamburguer Vegetariano</item>
+    <quantity>1 dose</quantity>
+    <calories>413</calories>
+  </food>
+  <food>
+    <restaurant>burger-ranch</restaurant>
+    <item>Tosta Fiambre</item>
+    <quantity>1 dose</quantity>
+    <calories>223</calories>
+  </food>
+  <food>
+    <restaurant>kfc</restaurant>
+    <item>Pedaço de Frango</item>
+    <quantity>1 pedaço (93g)</quantity>
+    <calories>197</calories>
+  </food>
+  <food>
+    <restaurant>kfc</restaurant>
+    <item>Hot Wings</item>
+    <quantity>2 hot wings (70g)</quantity>
+    <calories>188</calories>
+  </food>
+  <food>
+    <restaurant>kfc</restaurant>
+    <item>Brazer</item>
+    <quantity>1 sanduíche (273g)</quantity>
+    <calories>526</calories>
+  </food>
+  <food>
+    <restaurant>kfc</restaurant>
+    <item>Tower</item>
+    <quantity>1 dose (258g)</quantity>
+    <calories>639</calories>
+  </food>
+  <food>
+    <restaurant>kfc</restaurant>
+    <item>Twister</item>
+    <quantity>1 dose (209g)</quantity>
+    <calories>510</calories>
+  </food>
+  <food>
+    <restaurant>kfc</restaurant>
+    <item>Daddy Burger</item>
+    <quantity>1 unidade (273g)</quantity>
+    <calories>615</calories>
+  </food>
+  <food>
+    <restaurant>noori</restaurant>
+    <item>Box Salmão</item>
+    <quantity>1 box (2 unidades)</quantity>
+    <calories>167</calories>
+  </food>
+  <food>
+    <restaurant>noori</restaurant>
+    <item>Spicy Tuna</item>
+    <quantity>1 dose (150g)</quantity>
+    <calories>176</calories>
+  </food>
+  <food>
+    <restaurant>pans-amp-company</restaurant>
+    <item>Pasta de Atum</item>
+    <quantity>1 sandes (260g)</quantity>
+    <calories>779</calories>
+  </food>
+  <food>
+    <restaurant>pans-amp-company</restaurant>
+    <item>Sandes Supremo de Frango</item>
+    <quantity>1 sandes (247g)</quantity>
+    <calories>640</calories>
+  </food>
+  <food>
+    <restaurant>pans-amp-company</restaurant>
+    <item>Sandes Multicereais Queijo Fresco</item>
+    <quantity>1 sandes (275g)</quantity>
+    <calories>375</calories>
+  </food>
+  <food>
+    <restaurant>pans-amp-company</restaurant>
+    <item>Frango</item>
+    <quantity>1 baguette (223g)</quantity>
+    <calories>469</calories>
+  </food>
+  <food>
+    <restaurant>pans-amp-company</restaurant>
+    <item>Provençal</item>
+    <quantity>1 sandes (233g)</quantity>
+    <calories>531</calories>
+  </food>
+  <food>
+    <restaurant>pizza-hut</restaurant>
+    <item>Cheeseham</item>
+    <quantity>1 fatia (130g)</quantity>
+    <calories>342</calories>
+  </food>
+  <food>
+    <restaurant>pizza-hut</restaurant>
+    <item>Pão de Alho Supremo</item>
+    <quantity>2 fatias (103g)</quantity>
+    <calories>310</calories>
+  </food>
+  <food>
+    <restaurant>pizza-hut</restaurant>
+    <item>Calzone Gamberi</item>
+    <quantity>1 dose (444g)</quantity>
+    <calories>497</calories>
+  </food>
+  <food>
+    <restaurant>pizza-hut</restaurant>
+    <item>Mousse de Chocolate</item>
+    <quantity>1 mousse (70g)</quantity>
+    <calories>286</calories>
+  </food>
+  <food>
+    <restaurant>starbucks</restaurant>
+    <item>Salada de Frutas</item>
+    <quantity>100g</quantity>
+    <calories>53</calories>
+  </food>
+  <food>
+    <restaurant>starbucks</restaurant>
+    <item>Frappuccino de Caramelo (Tall)</item>
+    <quantity>1 dose (354ml)</quantity>
+    <calories>250</calories>
+  </food>
+  <food>
+    <restaurant>starbucks</restaurant>
+    <item>Café Latte (Tall)</item>
+    <quantity>1 dose (250ml)</quantity>
+    <calories>100</calories>
+  </food>
+  <food>
+    <restaurant>starbucks</restaurant>
+    <item>Caramel Macchiato (Grande)</item>
+    <quantity>1 dose (473ml)</quantity>
+    <calories>239</calories>
+  </food>
+  <food>
+    <restaurant>starbucks</restaurant>
+    <item>Chocolate Mocha Flavour</item>
+    <quantity>100ml</quantity>
+    <calories>63</calories>
+  </food>
+  <food>
+    <restaurant>starbucks</restaurant>
+    <item>Muffin de Mirtilos</item>
+    <quantity>1 muffin (135g)</quantity>
+    <calories>470</calories>
+  </food>
+  <food>
+    <restaurant>starbucks</restaurant>
+    <item>Cinnamon Roll</item>
+    <quantity>1 rolo (118g)</quantity>
+    <calories>420</calories>
+  </food>
+  <food>
+    <restaurant>starbucks</restaurant>
+    <item>Chocolate Chunk Cookie</item>
+    <quantity>1 dose (84g)</quantity>
+    <calories>380</calories>
+  </food>
+  <food>
+    <restaurant>starbucks</restaurant>
+    <item>Seattle Latte</item>
+    <quantity>100ml</quantity>
+    <calories>70</calories>
+  </food>
+  <food>
+    <restaurant>starbucks</restaurant>
+    <item>Vanilla Macchiato (Tall)</item>
+    <quantity>1 dose (350ml)</quantity>
+    <calories>185</calories>
+  </food>
+  <food>
+    <restaurant>subway</restaurant>
+    <item>15 cm Frango Teriyaki</item>
+    <quantity>1 dose (279g)</quantity>
+    <calories>384</calories>
+  </food>
+  <food>
+    <restaurant>subway</restaurant>
+    <item>15 cm Atum</item>
+    <quantity>1 dose</quantity>
+    <calories>414</calories>
+  </food>
+  <food>
+    <restaurant>subway</restaurant>
+    <item>Cookie com Gotas de Chocolate</item>
+    <quantity>1 dose (33g)</quantity>
+    <calories>210</calories>
+  </food>
+  <food>
+    <restaurant>subway</restaurant>
+    <item>15 cm Subway Melt</item>
+    <quantity>1 dose (254g)</quantity>
+    <calories>380</calories>
+  </food>
+  <food>
+    <restaurant>subway</restaurant>
+    <item>15 cm Frango</item>
+    <quantity>1 dose (241g)</quantity>
+    <calories>315</calories>
+  </food>
+  <food>
+    <restaurant>subway</restaurant>
+    <item>15 cm Peito de Peru</item>
+    <quantity>1 dose</quantity>
+    <calories>307</calories>
+  </food>
+  <food>
+    <restaurant>subway</restaurant>
+    <item>15 cm BMT Italiano</item>
+    <quantity>1 dose (242g)</quantity>
+    <calories>450</calories>
+  </food>
+  <food>
+    <restaurant>subway</restaurant>
+    <item>15cm Subway Club</item>
+    <quantity>1 dose (275g)</quantity>
+    <calories>350</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pizza Carbonara</item>
+    <quantity>1 fatia (76g)</quantity>
+    <calories>235</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pastel de Nata</item>
+    <quantity>100g</quantity>
+    <calories>302</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pizza Funny Bacon</item>
+    <quantity>1 fatia (75g)</quantity>
+    <calories>207</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pizza Especial da Casa</item>
+    <quantity>1 fatia (76g)</quantity>
+    <calories>235</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pasta Carbonara</item>
+    <quantity>100g</quantity>
+    <calories>205</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pizza Barbecue</item>
+    <quantity>1 fatia (84g)</quantity>
+    <calories>240</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pizza Atlãntica</item>
+    <quantity>1 fatia (71g)</quantity>
+    <calories>196</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pão de Alho Queijo</item>
+    <quantity>2 unidades</quantity>
+    <calories>367</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pizza Cool Cheese</item>
+    <quantity>1 fatia (76g)</quantity>
+    <calories>204</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pão de Alho com Queijo e Pepperoni</item>
+    <quantity>2 unidades</quantity>
+    <calories>402</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pizza Burguer</item>
+    <quantity>1 fatia (80g)</quantity>
+    <calories>192</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pão de Alho com Queijo e Azeitonas</item>
+    <quantity>2 unidades</quantity>
+    <calories>353</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Profiteroles</item>
+    <quantity>100g</quantity>
+    <calories>381</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pizza Lasanha de Carne</item>
+    <quantity>1 fatia (80g)</quantity>
+    <calories>226</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Enrolado Barbecue</item>
+    <quantity>1 dose (247g)</quantity>
+    <calories>538</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pizza Bacana</item>
+    <quantity>100g</quantity>
+    <calories>270</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Top Burguer Vaca</item>
+    <quantity>100g</quantity>
+    <calories>236</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Pizza Formaggio</item>
+    <quantity>1 fatia (76g)</quantity>
+    <calories>237</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Enrolado Carbonara</item>
+    <quantity>1 dose (182g)</quantity>
+    <calories>490</calories>
+  </food>
+  <food>
+    <restaurant>telepizza</restaurant>
+    <item>Telekebab</item>
+    <quantity>100g</quantity>
+    <calories>225</calories>
+  </food>
+  <food>
+    <restaurant>vitaminas</restaurant>
+    <item>Molho de Iogurte</item>
+    <quantity>1/2 concha de sopa (150ml)</quantity>
+    <calories>217</calories>
+  </food>
+  <food>
+    <restaurant>vitaminas</restaurant>
+    <item>Salada Havaiana</item>
+    <quantity>1 salada (500g)</quantity>
+    <calories>614</calories>
+  </food>
+  <food>
+    <restaurant>wok-to-walk</restaurant>
+    <item>Legumes Mistos</item>
+    <quantity>1 dose (200g)</quantity>
+    <calories>190</calories>
+  </food>
+  <food>
+    <restaurant>wok-to-walk</restaurant>
+    <item>Peito de Frango</item>
+    <quantity>1 dose (90g)</quantity>
+    <calories>136</calories>
+  </food>
+  <food>
+    <restaurant>wok-to-walk</restaurant>
+    <item>Noodles Integrais</item>
+    <quantity>1 dose (180g)</quantity>
+    <calories>486</calories>
+  </food>
+  <food>
+    <restaurant>wok-to-walk</restaurant>
+    <item>Ananás</item>
+    <quantity>1 dose (55g)</quantity>
+    <calories>26</calories>
+  </food>
+  <food>
+    <restaurant>wok-to-walk</restaurant>
+    <item>Molho de Soja Light</item>
+    <quantity>1 dose (75g)</quantity>
+    <calories>40</calories>
+  </food>
+  <food>
+    <restaurant>wok-to-walk</restaurant>
+    <item>Molho Saigon</item>
+    <quantity>1 dose (75g)</quantity>
+    <calories>91</calories>
+  </food>
+  <food>
+    <restaurant>wok-to-walk</restaurant>
+    <item>Molho Tokyo</item>
+    <quantity>1 dose (75g)</quantity>
+    <calories>141</calories>
+  </food>
+</foods>
