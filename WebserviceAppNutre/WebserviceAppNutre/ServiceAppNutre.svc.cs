@@ -166,7 +166,7 @@ namespace WebserviceAppNutre
             }
         }
 
-        public void addActivity(XmlDocument activitiesXml, string token)
+        public void addActivityXML(XmlDocument activitiesXml, string token)
         {
             throw new NotImplementedException();
         }
@@ -176,7 +176,7 @@ namespace WebserviceAppNutre
             throw new NotImplementedException();
         }
 
-        public void addRestaurant(XmlDocument restaurantsXml, string token)
+        public void addRestaurantXML(XmlDocument restaurantsXml, string token)
         {
             throw new NotImplementedException();
         }
@@ -186,7 +186,7 @@ namespace WebserviceAppNutre
             throw new NotImplementedException();
         }
 
-        public void addVegetable(XmlDocument vegetablesXml, string token)
+        public void addVegetableXML(XmlDocument vegetablesXml, string token)
         {
             
         }

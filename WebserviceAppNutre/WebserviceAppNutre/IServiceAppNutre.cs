@@ -29,19 +29,19 @@ namespace WebserviceAppNutre
         void addActivity(Activity activity, string token); // admin only
 
         [OperationContract]
-        void addActivity(XmlDocument activitiesXml, string token); // admin only
+        void addActivityXML(XmlDocument activitiesXml, string token); // admin only
 
         [OperationContract]
         void addRestaurant(Restaurant restaurant, string token); // admin only
 
         [OperationContract]
-        void addRestaurant(XmlDocument restaurantsXml, string token); // admin only
+        void addRestaurantXML(XmlDocument restaurantsXml, string token); // admin only
 
         [OperationContract]
         void addVegetable(Vegetable vegetable, string token); // admin only
 
         [OperationContract]
-        void addVegetable(XmlDocument vegetablesXml, string token); // admin only
+        void addVegetableXML(XmlDocument vegetablesXml, string token); // admin only
 
         [OperationContract]
        
