@@ -188,7 +188,7 @@ namespace WebserviceAppNutre
 
         public void addVegetable(XmlDocument vegetablesXml, string token)
         {
-            throw new NotImplementedException();
+            
         }
 
         public List<Activity> getActivitiesList()

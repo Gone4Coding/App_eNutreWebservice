@@ -44,15 +44,15 @@ namespace WebserviceAppNutre
         void addVegetable(XmlDocument vegetablesXml, string token); // admin only
 
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "/listing/activities")]
+       
         List<Activity> getActivitiesList();
 
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "/listing/restaurants")]
+       
         List<Restaurant> GetRestaurantsList();
 
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "/listing/vegetables")]
+      
         List<Vegetable> getVegetablesList();
 
 
