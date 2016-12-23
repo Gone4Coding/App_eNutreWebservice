@@ -4,7 +4,7 @@
 
   <!-- SIMPLE TYPES -->
   
-  <xs:simpleType name="restaurantNameType">
+  <xs:simpleType name="restaurantNameType"> 
 		<xs:restriction base="xs:string"/>
   </xs:simpleType>
   
