@@ -110,7 +110,16 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="App_Data\activitiesSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Data\restaurantsSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="App_Data\UsersSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Data\vegetablesSchema.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">

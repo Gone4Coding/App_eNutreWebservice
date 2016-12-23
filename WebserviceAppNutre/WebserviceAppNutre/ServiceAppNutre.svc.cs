@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -17,11 +18,19 @@ namespace WebserviceAppNutre
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class ServiceAppNutre : IServiceAppNutre
     {
-        private static string USERS_FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "users.xml");
-        private static string ACTIVITY_FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "exercises.xml");
-        private static string PLATE_FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "restaurants.xml");
-        private static string VEGETABLE_FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "vegetables.xml");
-        private static string TOKEN_FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "tokens.xml");
+        private static readonly string USERS_FILEPATH_XML = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "users.xml");
+        private static readonly string USERS_FILEPATH_SCHEMA = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "usersSchema.xsd");
+
+        private static readonly string ACTIVITY_FILEPATH_XML = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "exercises.xml");
+        private static readonly string ACTIVITY_FILEPATH_SCHEMA = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "activitiesSchema.xml");
+
+        private static readonly string PLATE_FILEPATH_XML = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "restaurants.xml");
+        private static readonly string PLATE_FILEPATH_SCHEMA = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "restaurantsSchema.xml");
+
+        private static readonly string VEGETABLE_FILEPATH_XML = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "vegetables.xml");
+        private static readonly string VEGETABLE_FILEPATH_SCHEMA = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "vegetablesSchema.xml");
+
+        private static readonly string TOKEN_FILEPATH_XML = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "tokens.xml");
 
         private class Token
         {
@@ -50,7 +59,7 @@ namespace WebserviceAppNutre
             private void saveToken()
             {
                 XmlDocument doc = new XmlDocument();
-                doc.Load(TOKEN_FILEPATH);
+                doc.Load(TOKEN_FILEPATH_XML);
 
                 XmlNode tokensNode = doc.SelectSingleNode("//tokens");
 
@@ -63,14 +72,14 @@ namespace WebserviceAppNutre
                 XmlElement valueNode = doc.CreateElement("value");
                 valueNode.InnerText = value;
 
-                doc.Save(TOKEN_FILEPATH);
+                doc.Save(TOKEN_FILEPATH_XML);
             }
         }
 
         private void cleanUpTokens(string username)
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(TOKEN_FILEPATH);
+            doc.Load(TOKEN_FILEPATH_XML);
 
             XmlNode root = doc.SelectSingleNode("/tokens");
             XmlNodeList tokens = doc.SelectNodes("//token[username = '"+ username +"']");
@@ -78,7 +87,7 @@ namespace WebserviceAppNutre
             foreach (XmlNode token in tokens)
             {
                 root.RemoveChild(token);
-                doc.Save(TOKEN_FILEPATH);
+                doc.Save(TOKEN_FILEPATH_XML);
             }
        
         }
@@ -90,7 +99,7 @@ namespace WebserviceAppNutre
             bool admin = user.Admin;
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(USERS_FILEPATH);
+            doc.Load(USERS_FILEPATH_XML);
 
             XmlNode userExistsNode = doc.SelectSingleNode("//user[username = '" + username + "'");
 
@@ -113,7 +122,7 @@ namespace WebserviceAppNutre
             userNode.AppendChild(passwordNode);
             root.AppendChild(userNode);
 
-            doc.Save(USERS_FILEPATH);
+            doc.Save(USERS_FILEPATH_XML);
         }
 
         public string LogIn(string username, string password)
@@ -132,7 +141,7 @@ namespace WebserviceAppNutre
                     string t = Guid.NewGuid().ToString();
 
                     XmlDocument doc = new XmlDocument();
-                    doc.Load(TOKEN_FILEPATH);
+                    doc.Load(TOKEN_FILEPATH_XML);
 
                     XmlNode root = doc.SelectSingleNode("/tokens");
                     //username e token
@@ -150,14 +159,14 @@ namespace WebserviceAppNutre
                    
                     root.AppendChild(tokenElem);
 
-                    doc.Save(TOKEN_FILEPATH);
+                    doc.Save(TOKEN_FILEPATH_XML);
 
                     return t;
                 }
                 else
                 {
                     XmlDocument doc = new XmlDocument();
-                    doc.Load(TOKEN_FILEPATH);
+                    doc.Load(TOKEN_FILEPATH_XML);
 
                     XmlNode node = doc.SelectSingleNode("//token[username = '" + username + "']/value");
                 }
@@ -176,7 +185,7 @@ namespace WebserviceAppNutre
             cleanUpTokens(username);
 
             XmlDocument doc = new XmlDocument();
-            doc.Load(TOKEN_FILEPATH);
+            doc.Load(TOKEN_FILEPATH_XML);
 
             XmlNode root = doc.SelectSingleNode("/tokens");
             XmlNode tokenNode = doc.SelectSingleNode("//token[username = '" + username + "']");
@@ -184,7 +193,7 @@ namespace WebserviceAppNutre
             if (tokenNode != null)
             {
                 root.RemoveChild(tokenNode);
-                doc.Save(TOKEN_FILEPATH);
+                doc.Save(TOKEN_FILEPATH_XML);
             }
         }
 
@@ -195,7 +204,7 @@ namespace WebserviceAppNutre
             if (isAdmin(username))
             {
                 XmlDocument doc = new XmlDocument();
-                doc.Load(ACTIVITY_FILEPATH);
+                doc.Load(ACTIVITY_FILEPATH_XML);
 
                 XmlNode root = doc.CreateElement("/exercises");
 
@@ -231,7 +240,7 @@ namespace WebserviceAppNutre
 
                 root.AppendChild(exerciseNode);
 
-                doc.Save(ACTIVITY_FILEPATH);
+                doc.Save(ACTIVITY_FILEPATH_XML);
             }
             else
             {
@@ -241,7 +250,7 @@ namespace WebserviceAppNutre
 
         public void addActivityXML(XmlDocument activitiesXml, string token)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void addRestaurant(Restaurant restaurant, string token)
@@ -277,7 +286,7 @@ namespace WebserviceAppNutre
         public List<Vegetable> getVegetablesList()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(VEGETABLE_FILEPATH);
+            doc.Load(VEGETABLE_FILEPATH_XML);
             XmlNodeList nodes;
             List<Vegetable> lista = new List<Vegetable>();
             nodes = doc.SelectNodes("//food");
@@ -317,7 +326,7 @@ namespace WebserviceAppNutre
         private int getValidUserId()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(USERS_FILEPATH);
+            doc.Load(USERS_FILEPATH_XML);
 
             XmlNodeList idList = doc.SelectNodes("//@id");
             return idList.Count + 1;
@@ -326,7 +335,7 @@ namespace WebserviceAppNutre
         private int getValidActivityId()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(ACTIVITY_FILEPATH);
+            doc.Load(ACTIVITY_FILEPATH_XML);
 
             XmlNodeList actsIds = doc.SelectNodes("//@id");
             return actsIds.Count + 1;
@@ -335,7 +344,7 @@ namespace WebserviceAppNutre
         private int getValidPlateId()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(PLATE_FILEPATH);
+            doc.Load(PLATE_FILEPATH_XML);
 
             XmlNodeList platesIds = doc.SelectNodes("//@id");
             return platesIds.Count + 1;
@@ -344,7 +353,7 @@ namespace WebserviceAppNutre
         private int getValidVegetableId()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(VEGETABLE_FILEPATH);
+            doc.Load(VEGETABLE_FILEPATH_XML);
 
             XmlNodeList VegetableIds = doc.SelectNodes("//@id");
             return VegetableIds.Count + 1;
@@ -373,7 +382,7 @@ namespace WebserviceAppNutre
             try
             {
                 XmlDocument doc = new XmlDocument();
-                doc.Load(USERS_FILEPATH);
+                doc.Load(USERS_FILEPATH_XML);
 
                 String passNode = doc.SelectSingleNode("//user[username = '" + username + "']//password").InnerText;
 
@@ -391,7 +400,7 @@ namespace WebserviceAppNutre
         private bool isAdmin(string username)
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(USERS_FILEPATH);
+            doc.Load(USERS_FILEPATH_XML);
 
             XmlNode node = doc.SelectSingleNode("//user[username = '" + username + "']//@isAdmin");
             return node.InnerText.Equals("true");
@@ -400,7 +409,7 @@ namespace WebserviceAppNutre
         private bool tokenExistsForToken(string username)
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(TOKEN_FILEPATH);
+            doc.Load(TOKEN_FILEPATH_XML);
 
             XmlNode node = doc.SelectSingleNode("//token[username = '" + username + "']");
             if (node != null)

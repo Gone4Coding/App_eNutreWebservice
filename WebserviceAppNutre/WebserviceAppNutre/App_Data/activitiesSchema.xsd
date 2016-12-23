@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="exerciciosSchema"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- SIMPLE TYPES -->
+  
+  <xs:simpleType name="activityType">
+		<xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+  <xs:simpleType name="metValueType">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits  value="3"/>
+			<xs:fractionDigits value="1"/>
+		</xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="metNameType">
+		<xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+  <xs:simpleType name="valueType">
+		<xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  
+  <xs:simpleType name="caloriesUnitiesType">
+		<xs:restriction base="xs:string">
+		  <xs:pattern value="cal|kcal"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="idType">
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  
+  <!-- COMPLEX TYPES -->
+  
+  <xs:complexType name="metType">
+	<xs:sequence>
+		<xs:element name="name" type="metNameType"/>
+		<xs:element name="value" type="metValueType"/>
+	</xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="caloriesType">
+	<xs:sequence>
+		<xs:element name="value" type="valueType"/>
+		<xs:element name="unity" type="caloriesUnitiesType"/>
+	</xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="exerciseType">
+    <xs:sequence>
+      <xs:element name="activity" type="activityType" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="met" type="metType" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="calories" type="caloriesType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="idType"/>
+  </xs:complexType>
+
+  <xs:complexType name="exercisesType">
+    <xs:sequence>
+      <xs:element name="exercise" type="exerciseType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- ROOT -->
+
+  <xs:element name="exercises" type="exercisesType"/>
+
+</xs:schema>
