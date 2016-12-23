@@ -16,43 +16,62 @@ namespace WebserviceAppNutre
     [ServiceContract]
     public interface IServiceAppNutre
     {
+       
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/signup?token={token}")]
         void SignUp(User user, string token); // admin only
 
-        [OperationContract]
-        void LogIn(string username, string password);
+
 
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/login?username={username}&password={password}")]
+        string LogIn(string username, string password);
+
+      
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/logout")]
         void LogOut(string token);
 
+       
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/addactivity?token={token}")]
         void addActivity(Activity activity, string token); // admin only
 
+       
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/addactivityxml?token={token}")]
         void addActivityXML(XmlDocument activitiesXml, string token); // admin only
 
+       
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/addrestaurant?token={token}")]
         void addRestaurant(Restaurant restaurant, string token); // admin only
 
+       
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/addrestaurantxml?token={token}")]
         void addRestaurantXML(XmlDocument restaurantsXml, string token); // admin only
 
+        
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/addvegetable?token={token}")]
         void addVegetable(Vegetable vegetable, string token); // admin only
 
+       
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/addvegetablexml?token={token}")]
         void addVegetableXML(XmlDocument vegetablesXml, string token); // admin only
 
         [OperationContract]
-       
+        [WebInvoke(Method = "GET", UriTemplate = "/getactivitieslist")]
         List<Activity> getActivitiesList();
 
         [OperationContract]
-       
+        [WebInvoke(Method = "GET", UriTemplate = "/getrestaurantlist")]
         List<Restaurant> GetRestaurantsList();
 
         [OperationContract]
-      
+        [WebInvoke(Method = "GET", UriTemplate = "/getvegetableslist")]
         List<Vegetable> getVegetablesList();
 
 
@@ -144,23 +163,30 @@ namespace WebserviceAppNutre
     public class Vegetable
     {
         private string name;
-        private string extraInfo;
-        private string quantity;
-        private string calories;
+        private List<string> extraInfo;
+        private double quantityValue;
+        private string unityQuantity;
+        private int caloriesValue;
+        private string unityCal;
+        private int id;
 
-        public Vegetable(string name, string quantity, string calories)
+
+        public Vegetable(int id,string name, List<string> extraInfo, double quantityValue, string unityQuantity, int caloriesValue,string unityCal)
         {
+            this.id = id;
             this.name = name;
-            this.quantity = quantity;
-            this.calories = calories;
+            this.extraInfo = extraInfo;
+            this.quantityValue = quantityValue;
+            this.unityQuantity = unityQuantity;
+            this.caloriesValue = caloriesValue;
+            this.unityCal = unityCal;
         }
 
-        public Vegetable(string name, string extraInfo, string quantity, string calories)
+        [DataMember]
+        public int Id
         {
-            this.name = name;
-            this.quantity = quantity;
-            this.calories = calories;
-            this.extraInfo = extraInfo;
+            get { return id; }
+            set { id = value; }
         }
 
         [DataMember]
@@ -171,24 +197,38 @@ namespace WebserviceAppNutre
         }
 
         [DataMember]
-        public string ExtraInfo
+        public List<string> ExtraInfo
         {
             get{ return extraInfo; }
             set{ extraInfo = value; }
         }
 
         [DataMember]
-        public string Quantity
+        public double QuantityValue
         {
-            get{ return quantity; }
-            set{ quantity = value; }
+            get{ return quantityValue; }
+            set{ quantityValue = value; }
         }
 
         [DataMember]
-        public string Calories
+        public string UnityQuantity
         {
-            get{ return calories; }
-            set{ calories = value; }
+            get{ return unityQuantity; }
+            set{ unityQuantity = value; }
+        }
+
+        [DataMember]
+        public int CaloriesValue
+        {
+            get { return caloriesValue; }
+            set { caloriesValue = value; }
+        }
+
+        [DataMember]
+        public string UnityCal
+        {
+            get { return unityCal; }
+            set { unityCal = value; }
         }
     }
 

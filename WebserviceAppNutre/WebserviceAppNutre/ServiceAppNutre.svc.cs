@@ -14,6 +14,7 @@ namespace WebserviceAppNutre
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class ServiceAppNutre : IServiceAppNutre
     {
         private static string USERS_FILEPATH = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "users.xml");
@@ -27,7 +28,7 @@ namespace WebserviceAppNutre
             private string value;
             private string username;
             private bool isAdmin;
-            
+
             public Token(string username, bool isAdmin)
             {
                 this.value = Guid.NewGuid().ToString();
@@ -64,7 +65,7 @@ namespace WebserviceAppNutre
 
                 doc.Save(TOKEN_FILEPATH);
             }
-        } 
+        }
 
         private void cleanUpTokens()
         {
@@ -92,9 +93,9 @@ namespace WebserviceAppNutre
 
             XmlNode userExistsNode = doc.SelectSingleNode("//user[username = '" + username + "'");
 
-            if(userExistsNode != null)
+            if (userExistsNode != null)
                 throw new ArgumentException("Username already exists");
-            
+
             XmlNode root = doc.SelectSingleNode("//users");
 
             XmlElement userNode = doc.CreateElement("user");
@@ -114,7 +115,7 @@ namespace WebserviceAppNutre
             doc.Save(USERS_FILEPATH);
         }
 
-        public void LogIn(string username, string password)
+        public string LogIn(string username, string password)
         {
             cleanUpTokens();
 
@@ -123,13 +124,20 @@ namespace WebserviceAppNutre
                 if (isAdmin(username))
                 {
                     Token token = new Token(username, true);
+                    return token.Value;
                 }
-                else if(!tokenExistsForToken(username))
+                else if (!tokenExistsForToken(username))
                 {
                     Token token = new Token(username, false);
+                    return token.Value;
                 }
             }
-            throw new ArgumentException("ERROR: invalid username/password combination.");
+            else
+            {
+                throw new ArgumentException("ERROR: invalid username/password combination.");
+            }
+
+            return "NULL";
         }
 
         public void LogOut(string username)
@@ -158,7 +166,7 @@ namespace WebserviceAppNutre
                 XmlDocument doc = new XmlDocument();
                 doc.Load(ACTIVITY_FILEPATH);
 
-               // XmlNode root = doc.CreateElement("")
+                // XmlNode root = doc.CreateElement("")
             }
             else
             {
@@ -171,7 +179,7 @@ namespace WebserviceAppNutre
             throw new NotImplementedException();
         }
 
-        public void addRestaurant(Restaurant restaurant, string token) 
+        public void addRestaurant(Restaurant restaurant, string token)
         {
             throw new NotImplementedException();
         }
@@ -188,7 +196,7 @@ namespace WebserviceAppNutre
 
         public void addVegetableXML(XmlDocument vegetablesXml, string token)
         {
-            
+
         }
 
         public List<Activity> getActivitiesList()
@@ -203,7 +211,42 @@ namespace WebserviceAppNutre
 
         public List<Vegetable> getVegetablesList()
         {
-            throw new NotImplementedException();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(VEGETABLE_FILEPATH);
+            XmlNodeList nodes;
+            List<Vegetable> lista = new List<Vegetable>();
+            nodes = doc.SelectNodes("//food");
+            List<string> extraInfo = new List<string>();
+            foreach (XmlNode s in nodes)
+            {
+                int id = int.Parse(s.SelectSingleNode("@id").InnerText);
+                string name = s.SelectSingleNode("vegetable").InnerText;
+                XmlNodeList nodesExtra = s.SelectNodes("/extraInfo");
+                foreach (XmlNode extra in nodesExtra)
+                {
+                    string extraInformacao = extra.SelectSingleNode("extraInfo").InnerText;
+                    extraInfo.Add(extraInformacao);
+                }
+                XmlNode quantity = s.SelectSingleNode("quantity");
+                double quantityValue;
+                if (quantity.SelectSingleNode("value").InnerText.Equals("1/2"))
+                {
+                    quantityValue = 0.5;
+                }
+                else
+                {
+                    quantityValue = double.Parse(quantity.SelectSingleNode("value").InnerText);
+                }
+
+                string unityQuantity = quantity.SelectSingleNode("unity").InnerText;
+                XmlNode calories = s.SelectSingleNode("calories");
+                int caloriesValue = int.Parse(calories.SelectSingleNode("value").InnerText);
+                string unityCal = calories.SelectSingleNode("unity").InnerText;
+
+
+                lista.Add(new Vegetable(id, name, extraInfo, quantityValue, unityQuantity, caloriesValue, unityCal));
+            }
+            return lista;
         }
 
         private int getValidUserId()
@@ -268,8 +311,8 @@ namespace WebserviceAppNutre
                 doc.Load(USERS_FILEPATH);
 
                 String passNode = doc.SelectSingleNode("//user[username = '" + username + "']//password").InnerText;
-                
-                if(!getPasswordCrypt(passNode).Equals(password))
+
+                if (!passNode.Equals(password))
                     throw new Exception();
             }
             catch (Exception)
@@ -285,7 +328,7 @@ namespace WebserviceAppNutre
             XmlDocument doc = new XmlDocument();
             doc.Load(USERS_FILEPATH);
 
-            XmlNode node = doc.SelectSingleNode("//user[username = '" + username + "'//@isAdmin");
+            XmlNode node = doc.SelectSingleNode("//user[username = '" + username + "']//@isAdmin");
             return node.InnerText.Equals("true");
         }
 
