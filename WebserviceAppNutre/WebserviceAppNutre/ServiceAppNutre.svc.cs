@@ -206,7 +206,7 @@ namespace WebserviceAppNutre
                 XmlDocument doc = new XmlDocument();
                 doc.Load(ACTIVITY_FILEPATH_XML);
 
-                XmlNode root = doc.CreateElement("/exercises");
+                XmlNode root = doc.SelectSingleNode("/exercises");
 
                 XmlElement exerciseNode = doc.CreateElement("exercise");
                 exerciseNode.SetAttribute("id", getValidActivityId().ToString());
@@ -224,14 +224,14 @@ namespace WebserviceAppNutre
                 metValuetNode.InnerText = activity.Met.ToString();
                 metNode.AppendChild(metValuetNode);
 
-                XmlElement caloriesNode = doc.CreateElement("calories");
+                XmlElement caloriesNode = doc.CreateElement("caloriesValue");
 
                 XmlElement caloriesValueNode = doc.CreateElement("value");
-                caloriesValueNode.InnerText = activity.Calorias.ToString();
+                caloriesValueNode.InnerText = activity.CaloriasValue.ToString();
                 caloriesNode.AppendChild(caloriesValueNode);
 
                 XmlElement caloriesUnitNode = doc.CreateElement("unity");
-                caloriesUnitNode.InnerText = "kcal";
+                caloriesUnitNode.InnerText = activity.CaloriasUnit;
                 caloriesNode.AppendChild(caloriesUnitNode);
 
                 exerciseNode.AppendChild(activityNode);
@@ -251,26 +251,211 @@ namespace WebserviceAppNutre
         public void addActivityXML(XmlDocument activitiesXml, string token)
         {
             
+            XmlDocument doc = new XmlDocument();
+
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.Schemas.Add(null, ACTIVITY_FILEPATH_SCHEMA);
+            settings.ValidationType = ValidationType.Schema;
+
+            XmlReader reader = XmlReader.Create(activitiesXml.InnerXml, settings);
+            doc.Load(reader);
+
+            doc.Load(ACTIVITY_FILEPATH_XML);
+
+            XmlNodeList activityList = activitiesXml.SelectNodes("//exercise");
+
+            XmlNode root = doc.SelectSingleNode("/exercises");
+
+            foreach (XmlNode actNode in activityList)
+            {
+                XmlElement exerciseNode = doc.CreateElement("exercise");
+                exerciseNode.SetAttribute("id", getValidActivityId().ToString());
+
+                XmlNode activityNode = actNode.SelectSingleNode("/activity");
+                exerciseNode.AppendChild(activityNode);
+
+                XmlNode metNode = actNode.SelectSingleNode("/met");
+                exerciseNode.AppendChild(metNode);
+
+                XmlNode caloriesNode = actNode.SelectSingleNode("/caloriesValue");
+                exerciseNode.AppendChild(caloriesNode);
+
+                root.AppendChild(exerciseNode);
+            }
+
+            doc.Save(ACTIVITY_FILEPATH_XML);
         }
 
-        public void addRestaurant(Restaurant restaurant, string token)
+        public void addRestaurant(Plate plate, string token)
         {
-            throw new NotImplementedException();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(PLATE_FILEPATH_XML);
+
+            XmlElement plateNode = doc.CreateElement("plate");
+            plateNode.SetAttribute("id", getValidPlateId().ToString());
+
+            XmlElement itemNode = doc.CreateElement("item");
+            itemNode.InnerText = plate.Name;
+
+            XmlElement quantityNode = doc.CreateElement("quantityValue");
+
+            XmlElement quantityValueNode = doc.CreateElement("value");
+            quantityValueNode.InnerText = plate.QuantityValue;
+            quantityNode.AppendChild(quantityValueNode);
+
+            XmlElement quantityDosageNode = doc.CreateElement("quantityDosage");
+            quantityDosageNode.InnerText = plate.QuantityDosage;
+            quantityNode.AppendChild(quantityDosageNode);
+
+            if (plate.QuantityExtraDosage != null)
+            {
+                XmlElement quantityExtraDosageNode = doc.CreateElement("quantityExtraDosage");
+                quantityExtraDosageNode.InnerText = plate.QuantityExtraDosage;
+                quantityNode.AppendChild(quantityExtraDosageNode);
+            }
+
+            XmlElement caloriesNode = doc.CreateElement("caloriesValue");
+
+            XmlElement caloriesValueNode = doc.CreateElement("value");
+            caloriesValueNode.InnerText = plate.CaloriesValue.ToString();
+            caloriesNode.AppendChild(caloriesValueNode);
+
+            XmlElement caloriesUnitNode = doc.CreateElement("unity");
+            caloriesUnitNode.InnerText = plate.CaloriasUnit;
+            caloriesNode.AppendChild(caloriesUnitNode);
+
+            plateNode.AppendChild(itemNode);
+            plateNode.AppendChild(quantityNode);
+            plateNode.AppendChild(caloriesNode);
+
+            XmlNode root = doc.SelectSingleNode("/foods");
+
+            XmlNode restaurantNode = doc.SelectSingleNode("/restaurant[name = '" + plate.RestaurantName + "']");
+
+            if (restaurantNode == null)
+            {
+                restaurantNode = doc.CreateElement(plate.RestaurantName);
+                restaurantNode.AppendChild(plateNode);
+                root.AppendChild(restaurantNode);
+            }
+            else
+            {
+                restaurantNode.AppendChild(plateNode);
+            }
+
+            doc.Save(PLATE_FILEPATH_XML);
+                
+
         }
 
-        public void addRestaurantXML(XmlDocument restaurantsXml, string token)
+        public void addRestaurantXML(XmlDocument platesXml, string token)
         {
-            throw new NotImplementedException();
+            XmlDocument doc = new XmlDocument();
+
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.Schemas.Add(null, PLATE_FILEPATH_SCHEMA);
+            settings.ValidationType = ValidationType.Schema;
+
+            XmlReader reader = XmlReader.Create(platesXml.InnerXml, settings);
+            doc.Load(reader);
+
+            doc.Load(PLATE_FILEPATH_XML);
+            
         }
 
         public void addVegetable(Vegetable vegetable, string token)
         {
-            throw new NotImplementedException();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(ACTIVITY_FILEPATH_XML);
+
+            XmlNode root = doc.SelectSingleNode("/foods");
+
+            XmlElement veggetableNode = doc.CreateElement("food");
+            veggetableNode.SetAttribute("id", getValidVegetableId().ToString());
+
+            XmlElement vegetableNameNode = doc.CreateElement("vegetable");
+            vegetableNameNode.InnerText = vegetable.Name;
+
+            veggetableNode.AppendChild(vegetableNameNode);
+
+            List<string> extraInfoList = vegetable.ExtraInfo;
+
+            if (extraInfoList != null)
+            {
+                foreach (string extraInfo in extraInfoList)
+                {
+                    XmlElement extraInfoNode = doc.CreateElement("extraInfo");
+                    extraInfoNode.InnerText = extraInfo;
+                    veggetableNode.AppendChild(extraInfoNode);
+                }
+            }
+
+            XmlElement quantityNode = doc.CreateElement("quantityValue");
+
+            XmlElement quantityValueNode = doc.CreateElement("value");
+            quantityValueNode.InnerText = vegetable.QuantityValue.ToString();
+            quantityNode.AppendChild(quantityValueNode);
+
+            XmlElement quantityUnitNode = doc.CreateElement("unity");
+            quantityUnitNode.InnerText = vegetable.UnityQuantity;
+            quantityNode.AppendChild(quantityUnitNode);
+
+            veggetableNode.AppendChild(quantityNode);
+
+            XmlElement caloriesNode = doc.CreateElement("caloriesValue");
+
+            XmlElement caloriesValueNode = doc.CreateElement("value");
+            caloriesValueNode.InnerText = vegetable.CaloriesValue.ToString();
+            caloriesNode.AppendChild(caloriesValueNode);
+
+            XmlElement caloriesUnitNode = doc.CreateElement("unity");
+            caloriesUnitNode.InnerText = vegetable.UnityCal;
+            caloriesNode.AppendChild(caloriesUnitNode);
+
+            veggetableNode.AppendChild(caloriesNode);
+
+            root.AppendChild(veggetableNode);
+
+            doc.Save(PLATE_FILEPATH_XML);
         }
 
         public void addVegetableXML(XmlDocument vegetablesXml, string token)
         {
+            XmlDocument doc = new XmlDocument();
 
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.Schemas.Add(null, VEGETABLE_FILEPATH_SCHEMA);
+            settings.ValidationType = ValidationType.Schema;
+
+            XmlReader reader = XmlReader.Create(vegetablesXml.InnerXml, settings);
+            doc.Load(reader);
+
+            doc.Load(VEGETABLE_FILEPATH_XML);
+
+            XmlNodeList veggiesList = vegetablesXml.SelectNodes("//food");
+
+            XmlNode root = doc.SelectSingleNode("/foods");
+
+            foreach (XmlNode veggieNode in veggiesList)
+            {
+                XmlElement foodNode = doc.CreateElement("food");
+                foodNode.SetAttribute("id", getValidVegetableId().ToString());
+
+                XmlNode vegetableNode = veggieNode.SelectSingleNode("/vegetable");
+                foodNode.AppendChild(vegetableNode);
+
+                XmlNode extraInfoNode = veggieNode.SelectSingleNode("/extraInfo");
+
+                if(extraInfoNode != null)
+                    foodNode.AppendChild(extraInfoNode);
+
+                XmlNode caloriesNode = veggieNode.SelectSingleNode("/caloriesValue");
+                foodNode.AppendChild(caloriesNode);
+
+                root.AppendChild(foodNode);
+            }
+
+            doc.Save(PLATE_FILEPATH_XML);
         }
 
         public List<Activity> getActivitiesList()
@@ -278,7 +463,7 @@ namespace WebserviceAppNutre
             throw new NotImplementedException();
         }
 
-        public List<Restaurant> GetRestaurantsList()
+        public List<Plate> GetRestaurantsList()
         {
             throw new NotImplementedException();
         }
@@ -301,7 +486,7 @@ namespace WebserviceAppNutre
                     string extraInformacao = extra.SelectSingleNode("extraInfo").InnerText;
                     extraInfo.Add(extraInformacao);
                 }
-                XmlNode quantity = s.SelectSingleNode("quantity");
+                XmlNode quantity = s.SelectSingleNode("quantityValue");
                 double quantityValue;
                 if (quantity.SelectSingleNode("value").InnerText.Equals("1/2"))
                 {
@@ -313,12 +498,12 @@ namespace WebserviceAppNutre
                 }
 
                 string unityQuantity = quantity.SelectSingleNode("unity").InnerText;
-                XmlNode calories = s.SelectSingleNode("calories");
+                XmlNode calories = s.SelectSingleNode("caloriesValue");
                 int caloriesValue = int.Parse(calories.SelectSingleNode("value").InnerText);
                 string unityCal = calories.SelectSingleNode("unity").InnerText;
 
 
-                lista.Add(new Vegetable(id, name, extraInfo, quantityValue, unityQuantity, caloriesValue, unityCal));
+                //lista.Add(new Vegetable(id, name, extraInfo, quantityValue, unityQuantity, caloriesValue, unityCal));
             }
             return lista;
         }

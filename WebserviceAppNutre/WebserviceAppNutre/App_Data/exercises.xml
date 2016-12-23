@@ -6,10 +6,10 @@
       <name>Metabolic Equivalent</name>
       <value>0.9</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>66</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="2">
     <activity>Descansar</activity>
@@ -17,10 +17,10 @@
       <name>Metabolic Equivalent</name>
       <value>1</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>74</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="3">
     <activity>Estar Sentado</activity>
@@ -28,10 +28,10 @@
       <name>Metabolic Equivalent</name>
       <value>1.4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>103</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="4">
     <activity>Trabalho de Escritório</activity>
@@ -39,10 +39,10 @@
       <name>Metabolic Equivalent</name>
       <value>1.5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>110</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="5">
     <activity>Conduzir</activity>
@@ -50,10 +50,10 @@
       <name>Metabolic Equivalent</name>
       <value>1.6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>118</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="6">
     <activity>Massagem</activity>
@@ -61,10 +61,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="7">
     <activity>Tocar um Instrumento Musical</activity>
@@ -72,10 +72,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="8">
     <activity>Spa</activity>
@@ -83,10 +83,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="9">
     <activity>Estudar</activity>
@@ -94,10 +94,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="10">
     <activity>Golfe (de Carrinho)</activity>
@@ -105,10 +105,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="11">
     <activity>Trabalho</activity>
@@ -116,10 +116,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="12">
     <activity>Tomando Banho</activity>
@@ -127,10 +127,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="13">
     <activity>Karaoke</activity>
@@ -138,10 +138,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="14">
     <activity>Leitura</activity>
@@ -149,10 +149,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="15">
     <activity>Caminhar (Lento) - 3/kph</activity>
@@ -160,10 +160,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="16">
     <activity>Cantar</activity>
@@ -171,10 +171,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="17">
     <activity>Assistir TV</activity>
@@ -182,10 +182,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="18">
     <activity>em Pé</activity>
@@ -193,10 +193,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="19">
     <activity>Amamentar</activity>
@@ -204,10 +204,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="20">
     <activity>Chuveiro</activity>
@@ -215,10 +215,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="21">
     <activity>Ensino</activity>
@@ -226,10 +226,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="22">
     <activity>Cozinhar</activity>
@@ -237,10 +237,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="23">
     <activity>Costura</activity>
@@ -248,10 +248,10 @@
       <name>Metabolic Equivalent</name>
       <value>2</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>147</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="24">
     <activity>Ir às Compras</activity>
@@ -259,10 +259,10 @@
       <name>Metabolic Equivalent</name>
       <value>2.3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>169</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="25">
     <activity>Trabalho Doméstico</activity>
@@ -270,10 +270,10 @@
       <name>Metabolic Equivalent</name>
       <value>2.5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>184</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="26">
     <activity>Alongar (Yoga)</activity>
@@ -281,10 +281,10 @@
       <name>Metabolic Equivalent</name>
       <value>2.5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>184</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="27">
     <activity>Lavar Loiça</activity>
@@ -292,10 +292,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="28">
     <activity>Yoga</activity>
@@ -303,10 +303,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="29">
     <activity>Compras de Supermercado</activity>
@@ -314,10 +314,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="30">
     <activity>Lavar Roupa</activity>
@@ -325,10 +325,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="31">
     <activity>Sauna</activity>
@@ -336,10 +336,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="32">
     <activity>Scooter</activity>
@@ -347,10 +347,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="33">
     <activity>Motociclistas</activity>
@@ -358,10 +358,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="34">
     <activity>Passar a Ferro</activity>
@@ -369,10 +369,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="35">
     <activity>Pescar</activity>
@@ -380,10 +380,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="36">
     <activity>Limpeza</activity>
@@ -391,10 +391,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="37">
     <activity>Reparação</activity>
@@ -402,10 +402,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="38">
     <activity>Surf</activity>
@@ -413,10 +413,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="39">
     <activity>Velejar</activity>
@@ -424,10 +424,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="40">
     <activity>Wii Fit</activity>
@@ -435,10 +435,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="41">
     <activity>Andar de Barco ou Canoagem</activity>
@@ -446,10 +446,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="42">
     <activity>Aspiração</activity>
@@ -457,10 +457,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="43">
     <activity>Lavagem de Carro</activity>
@@ -468,10 +468,10 @@
       <name>Metabolic Equivalent</name>
       <value>3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>220</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="44">
     <activity>Pilates</activity>
@@ -479,10 +479,10 @@
       <name>Metabolic Equivalent</name>
       <value>3.1</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>228</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="45">
     <activity>Caminhar (Moderado) - 5/kph</activity>
@@ -490,10 +490,10 @@
       <name>Metabolic Equivalent</name>
       <value>3.3</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>243</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="46">
     <activity>Ginástica (Leve, p.e. Exercícios em Casa)</activity>
@@ -501,10 +501,10 @@
       <name>Metabolic Equivalent</name>
       <value>3.5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>257</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="47">
     <activity>Caminhar (Rápido) - 5,5/kph</activity>
@@ -512,10 +512,10 @@
       <name>Metabolic Equivalent</name>
       <value>3.8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>279</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="48">
     <activity>Andar a Cavalo</activity>
@@ -523,10 +523,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="49">
     <activity>Jardinagem</activity>
@@ -534,10 +534,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="50">
     <activity>Ténis de Mesa</activity>
@@ -545,10 +545,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="51">
     <activity>Golfe (a Pé)</activity>
@@ -556,10 +556,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="52">
     <activity>Voleibol</activity>
@@ -567,10 +567,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="53">
     <activity>Nadar (Lento)</activity>
@@ -578,10 +578,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="54">
     <activity>Tiro com Arco</activity>
@@ -589,10 +589,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="55">
     <activity>Varrer</activity>
@@ -600,10 +600,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="56">
     <activity>Motor-Cross</activity>
@@ -611,10 +611,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="57">
     <activity>Bowling</activity>
@@ -622,10 +622,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="58">
     <activity>Dançar (Passo Lento)</activity>
@@ -633,10 +633,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="59">
     <activity>Correr na Água</activity>
@@ -644,10 +644,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="60">
     <activity>Bikram Yoga</activity>
@@ -655,10 +655,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="61">
     <activity>Ciclismo (Passeio) - &lt;16/kph</activity>
@@ -666,10 +666,10 @@
       <name>Metabolic Equivalent</name>
       <value>4</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>294</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="62">
     <activity>Trabalhos Pesados</activity>
@@ -677,10 +677,10 @@
       <name>Metabolic Equivalent</name>
       <value>5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>368</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="63">
     <activity>Caminhar (Rápido) - 6,5/kph</activity>
@@ -688,10 +688,10 @@
       <name>Metabolic Equivalent</name>
       <value>5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>368</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="64">
     <activity>Pintura</activity>
@@ -699,10 +699,10 @@
       <name>Metabolic Equivalent</name>
       <value>5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>368</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="65">
     <activity>Roçada do Gramado</activity>
@@ -710,10 +710,10 @@
       <name>Metabolic Equivalent</name>
       <value>5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>368</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="66">
     <activity>Caiaque</activity>
@@ -721,10 +721,10 @@
       <name>Metabolic Equivalent</name>
       <value>5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>368</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="67">
     <activity>Softball</activity>
@@ -732,10 +732,10 @@
       <name>Metabolic Equivalent</name>
       <value>5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>368</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="68">
     <activity>Skating - 16/kph</activity>
@@ -743,10 +743,10 @@
       <name>Metabolic Equivalent</name>
       <value>5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>368</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="69">
     <activity>Badminton</activity>
@@ -754,10 +754,10 @@
       <name>Metabolic Equivalent</name>
       <value>5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>368</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="70">
     <activity>Hula Hoop</activity>
@@ -765,10 +765,10 @@
       <name>Metabolic Equivalent</name>
       <value>5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>368</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="71">
     <activity>Dançar (Dança Popular)</activity>
@@ -776,10 +776,10 @@
       <name>Metabolic Equivalent</name>
       <value>5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>368</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="72">
     <activity>Cricket</activity>
@@ -787,10 +787,10 @@
       <name>Metabolic Equivalent</name>
       <value>5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>368</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="73">
     <activity>Caçar</activity>
@@ -798,10 +798,10 @@
       <name>Metabolic Equivalent</name>
       <value>5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>368</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="74">
     <activity>Baseball</activity>
@@ -809,10 +809,10 @@
       <name>Metabolic Equivalent</name>
       <value>5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>368</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="75">
     <activity>Exercícios de Manutenção (Health Club ou Ginásio) </activity>
@@ -820,10 +820,10 @@
       <name>Metabolic Equivalent</name>
       <value>5.5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>404</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="76">
     <activity>Treino em Circuito</activity>
@@ -831,10 +831,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="77">
     <activity>Basquetebol</activity>
@@ -842,10 +842,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="78">
     <activity>Arvorismo</activity>
@@ -853,10 +853,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="79">
     <activity>Esqui Aquático</activity>
@@ -864,10 +864,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="80">
     <activity>Jump</activity>
@@ -875,10 +875,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="81">
     <activity>Máquina de Exercício (Lento)</activity>
@@ -886,10 +886,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="82">
     <activity>Mergulho</activity>
@@ -897,10 +897,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="83">
     <activity>Floorball</activity>
@@ -908,10 +908,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="84">
     <activity>Gym (Ginásio)</activity>
@@ -919,10 +919,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="85">
     <activity>Dançar (Passo Rápido, Aeróbio)</activity>
@@ -930,10 +930,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="86">
     <activity>Ciclismo (Lento) - 18/kph</activity>
@@ -941,10 +941,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="87">
     <activity>Caminhada</activity>
@@ -952,10 +952,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="88">
     <activity>Pole dance</activity>
@@ -963,10 +963,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="89">
     <activity>Power Walking</activity>
@@ -974,10 +974,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="90">
     <activity>Musculação (Moderado)</activity>
@@ -985,10 +985,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="91">
     <activity>Netball</activity>
@@ -996,10 +996,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="92">
     <activity>Pá de Neve</activity>
@@ -1007,10 +1007,10 @@
       <name>Metabolic Equivalent</name>
       <value>6</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>441</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="93">
     <activity>Crossfit</activity>
@@ -1018,10 +1018,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="94">
     <activity>Cross Training</activity>
@@ -1029,10 +1029,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="95">
     <activity>CX</activity>
@@ -1040,10 +1040,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="96">
     <activity>Curves</activity>
@@ -1051,10 +1051,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="97">
     <activity>Pedalar</activity>
@@ -1062,10 +1062,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="98">
     <activity>RPM</activity>
@@ -1073,10 +1073,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="99">
     <activity>Snowboard</activity>
@@ -1084,10 +1084,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="100">
     <activity>Power Jump</activity>
@@ -1095,10 +1095,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="101">
     <activity>Kangoo</activity>
@@ -1106,10 +1106,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="102">
     <activity>P90X</activity>
@@ -1117,10 +1117,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="103">
     <activity>Insanity</activity>
@@ -1128,10 +1128,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="104">
     <activity>Kickboxing</activity>
@@ -1139,10 +1139,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="105">
     <activity>Judô</activity>
@@ -1150,10 +1150,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="106">
     <activity>Jiu-jitsu</activity>
@@ -1161,10 +1161,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="107">
     <activity>HIIT</activity>
@@ -1172,10 +1172,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="108">
     <activity>Fitness (Treino)</activity>
@@ -1183,10 +1183,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="109">
     <activity>Nadar (Moderado)</activity>
@@ -1194,10 +1194,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="110">
     <activity>GRIT</activity>
@@ -1205,10 +1205,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="111">
     <activity>Muay Thai</activity>
@@ -1216,10 +1216,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="112">
     <activity>Cardio</activity>
@@ -1227,10 +1227,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="113">
     <activity>T25</activity>
@@ -1238,10 +1238,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="114">
     <activity>Tae Bo</activity>
@@ -1249,10 +1249,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="115">
     <activity>Aeróbica de Água</activity>
@@ -1260,10 +1260,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="116">
     <activity>Body Attack</activity>
@@ -1271,10 +1271,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="117">
     <activity>Ballet</activity>
@@ -1282,10 +1282,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="118">
     <activity>VTT</activity>
@@ -1293,10 +1293,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="119">
     <activity>TRX</activity>
@@ -1304,10 +1304,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="120">
     <activity>XCO</activity>
@@ -1315,10 +1315,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="121">
     <activity>Taekwondo</activity>
@@ -1326,10 +1326,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="122">
     <activity>Artes Marciais</activity>
@@ -1337,10 +1337,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="123">
     <activity>Subir Escadas</activity>
@@ -1348,10 +1348,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="124">
     <activity>Zumba</activity>
@@ -1359,10 +1359,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="125">
     <activity>Caratê (Karaté)</activity>
@@ -1370,10 +1370,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="126">
     <activity>Aeróbica</activity>
@@ -1381,10 +1381,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="127">
     <activity>Body Balance</activity>
@@ -1392,10 +1392,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="128">
     <activity>Body Combat</activity>
@@ -1403,10 +1403,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="129">
     <activity>Body Pump</activity>
@@ -1414,10 +1414,10 @@
       <name>Metabolic Equivalent</name>
       <value>7</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>514</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="130">
     <activity>Lacrosse</activity>
@@ -1425,10 +1425,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="131">
     <activity>Kettlebell</activity>
@@ -1436,10 +1436,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="132">
     <activity>Abdominais</activity>
@@ -1447,10 +1447,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="133">
     <activity>Remo</activity>
@@ -1458,10 +1458,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="134">
     <activity>Máquina de Exercício (Moderado)</activity>
@@ -1469,10 +1469,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="135">
     <activity>Plataforma Vibratória</activity>
@@ -1480,10 +1480,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="136">
     <activity>Passadeira</activity>
@@ -1491,10 +1491,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="137">
     <activity>Squash ou Andebol</activity>
@@ -1502,10 +1502,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="138">
     <activity>Spinning</activity>
@@ -1513,10 +1513,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="139">
     <activity>Pádel</activity>
@@ -1524,10 +1524,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="140">
     <activity>Musculação</activity>
@@ -1535,10 +1535,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="141">
     <activity>Ténis</activity>
@@ -1546,10 +1546,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="142">
     <activity>Step</activity>
@@ -1557,10 +1557,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="143">
     <activity>Nordic Walking</activity>
@@ -1568,10 +1568,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="144">
     <activity>Agachamento</activity>
@@ -1579,10 +1579,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="145">
     <activity>Ciclismo (Moderado) - 21/kph</activity>
@@ -1590,10 +1590,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="146">
     <activity>Correr (Jogging) - 8/kph</activity>
@@ -1601,10 +1601,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="147">
     <activity>Elíptica</activity>
@@ -1612,10 +1612,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="148">
     <activity>Corrida</activity>
@@ -1623,10 +1623,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="149">
     <activity>Bicicleta de Montanha (Mountain Bike)</activity>
@@ -1634,10 +1634,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="150">
     <activity>Andebol (Handebol)</activity>
@@ -1645,10 +1645,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="151">
     <activity>Air Climber</activity>
@@ -1656,10 +1656,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="152">
     <activity>Aparelho de Musculação</activity>
@@ -1667,10 +1667,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="153">
     <activity>Bicicleta (Cycling)</activity>
@@ -1678,10 +1678,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="154">
     <activity>Arc Trainer</activity>
@@ -1689,10 +1689,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="155">
     <activity>Endurance</activity>
@@ -1700,10 +1700,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="156">
     <activity>Futebol Americano</activity>
@@ -1711,10 +1711,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="157">
     <activity>Hóquei no Gelo</activity>
@@ -1722,10 +1722,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="158">
     <activity>Hóquei</activity>
@@ -1733,10 +1733,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="159">
     <activity>Ginástica (Pesada, p.e. Flexões)</activity>
@@ -1744,10 +1744,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="160">
     <activity>Futebol</activity>
@@ -1755,10 +1755,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="161">
     <activity>Jumping Jacks</activity>
@@ -1766,10 +1766,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="162">
     <activity>Esqui (Downhill)</activity>
@@ -1777,10 +1777,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="163">
     <activity>Escalada</activity>
@@ -1788,10 +1788,10 @@
       <name>Metabolic Equivalent</name>
       <value>8</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>588</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="164">
     <activity>Ciclismo (Rápido) - 24/kph</activity>
@@ -1799,10 +1799,10 @@
       <name>Metabolic Equivalent</name>
       <value>10</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>735</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="165">
     <activity>Máquina de Exercício (Rápido)</activity>
@@ -1810,10 +1810,10 @@
       <name>Metabolic Equivalent</name>
       <value>10</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>735</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="166">
     <activity>Andar de Patins</activity>
@@ -1821,10 +1821,10 @@
       <name>Metabolic Equivalent</name>
       <value>10</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>735</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="167">
     <activity>Nadar (Rápido)</activity>
@@ -1832,10 +1832,10 @@
       <name>Metabolic Equivalent</name>
       <value>10</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>735</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="168">
     <activity>Racquetball</activity>
@@ -1843,10 +1843,10 @@
       <name>Metabolic Equivalent</name>
       <value>10</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>735</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="169">
     <activity>Correr - 10/kph</activity>
@@ -1854,10 +1854,10 @@
       <name>Metabolic Equivalent</name>
       <value>10</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>735</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="170">
     <activity>Saltar à Corda</activity>
@@ -1865,10 +1865,10 @@
       <name>Metabolic Equivalent</name>
       <value>10</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>735</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="171">
     <activity>Correr - 11/kph</activity>
@@ -1876,10 +1876,10 @@
       <name>Metabolic Equivalent</name>
       <value>11.5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>845</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="172">
     <activity>Esqui (Cross Country)</activity>
@@ -1887,10 +1887,10 @@
       <name>Metabolic Equivalent</name>
       <value>12</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>882</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="173">
     <activity>Ciclismo (Muito Rápido) - 28/kph</activity>
@@ -1898,10 +1898,10 @@
       <name>Metabolic Equivalent</name>
       <value>12</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>882</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="174">
     <activity>Boxe</activity>
@@ -1909,10 +1909,10 @@
       <name>Metabolic Equivalent</name>
       <value>12</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>882</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="175">
     <activity>Correr - 13/kph</activity>
@@ -1920,10 +1920,10 @@
       <name>Metabolic Equivalent</name>
       <value>13.5</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>992</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="176">
     <activity>Correr - 14,5/kph</activity>
@@ -1931,10 +1931,10 @@
       <name>Metabolic Equivalent</name>
       <value>15</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>1102</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
   <exercise id="177">
     <activity>Correr - 16/kph</activity>
@@ -1942,9 +1942,9 @@
       <name>Metabolic Equivalent</name>
       <value>16</value>
     </met>
-    <calories>
+    <caloriesValue>
       <value>1176</value>
       <unity>kcal</unity>
-    </calories>
+    </caloriesValue>
   </exercise>
 </exercises>

@@ -39,11 +39,11 @@ namespace WebserviceAppNutre
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addrestaurant?token={token}")]
-        void addRestaurant(Restaurant restaurant, string token); // admin only
+        void addRestaurant(Plate plate, string token); // admin only
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addrestaurantxml?token={token}")]
-        void addRestaurantXML(XmlDocument restaurantsXml, string token); // admin only
+        void addRestaurantXML(XmlDocument platesXml, string token); // admin only
         
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addvegetable?token={token}")]
@@ -59,7 +59,7 @@ namespace WebserviceAppNutre
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/getrestaurantlist")]
-        List<Restaurant> GetRestaurantsList();
+        List<Plate> GetRestaurantsList();
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/getvegetableslist")]
@@ -73,14 +73,16 @@ namespace WebserviceAppNutre
     public class Activity
     {
         private string nome;
-        private int calorias;
+        private int caloriasValue;
+        private string caloriasUnit;
         private decimal met;
 
-        public Activity(string nome, int calorias, decimal met)
+        public Activity(string nome, int caloriasValue, string caloriasUnit, decimal met)
         {
             this.nome = nome;
             this.met = met;
-            this.calorias = calorias;
+            this.caloriasUnit = caloriasUnit;
+            this.caloriasValue = caloriasValue;
         }
         
         [DataMember]
@@ -91,10 +93,17 @@ namespace WebserviceAppNutre
         }
 
         [DataMember]
-        public int Calorias
+        public int CaloriasValue
         {
-            get { return calorias; }
-            set { calorias = value; }
+            get { return caloriasValue; }
+            set { caloriasValue = value; }
+        }
+
+        [DataMember]
+        public string CaloriasUnit
+        {
+            get { return caloriasUnit; }
+            set { caloriasUnit = value; }
         }
 
         [DataMember]
@@ -106,19 +115,26 @@ namespace WebserviceAppNutre
     }
 
     [DataContract]
-    public class Restaurant
+    public class Plate
     {
         private string name;
-        private string item;
-        private string quantity;
-        private int calories;
+        private string restaurantName;
+        private string quantityValue;
+        private string quantityDosage;
+        private string quantityExtraDosage;
+        private int caloriesValue;
+        private string caloriasUnit;
 
-        public Restaurant(string name, string item, string quantity, int calories)
+        public Plate(string name, string restaurantName, string quantityValue, string quantityDosage, string quantityExtraDosage, 
+            int caloriesValue, string caloriasUnit)
         {
             this.name = name;
-            this.item = item;
-            this.quantity = quantity;
-            this.calories = calories;
+            this.restaurantName = restaurantName;
+            this.quantityValue = quantityValue;
+            this.quantityDosage = quantityDosage;
+            this.quantityExtraDosage = quantityExtraDosage;
+            this.caloriesValue = caloriesValue;
+            this.caloriasUnit = caloriasUnit;
         }
 
         [DataMember]
@@ -129,24 +145,45 @@ namespace WebserviceAppNutre
         }
 
         [DataMember]
-        public string Item
+        public string RestaurantName
         {
-            get { return item; }
-            set { item = value; }
+            get { return restaurantName; }
+            set { restaurantName = value; }
         }
 
         [DataMember]
-        public string Quantity
+        public string QuantityValue
         {
-            get { return quantity; }
-            set { quantity = value; }
+            get { return quantityValue; }
+            set { quantityValue = value; }
         }
 
         [DataMember]
-        public int Calories
+        public string QuantityDosage
         {
-            get { return calories; }
-            set { calories = value; }
+            get { return quantityDosage; }
+            set { quantityDosage = value; }
+        }
+
+        [DataMember]
+        public string QuantityExtraDosage
+        {
+            get { return quantityExtraDosage; }
+            set { quantityExtraDosage = value; }
+        }
+
+        [DataMember]
+        public int CaloriesValue
+        {
+            get { return caloriesValue; }
+            set { caloriesValue = value; }
+        }
+
+        [DataMember]
+        public string CaloriasUnit
+        {
+            get { return caloriasUnit; }
+            set { caloriasUnit = value; }
         }
     }
 
@@ -159,12 +196,10 @@ namespace WebserviceAppNutre
         private string unityQuantity;
         private int caloriesValue;
         private string unityCal;
-        private int id;
 
 
-        public Vegetable(int id,string name, List<string> extraInfo, double quantityValue, string unityQuantity, int caloriesValue,string unityCal)
+        public Vegetable(string name, List<string> extraInfo, double quantityValue, string unityQuantity, int caloriesValue,string unityCal)
         {
-            this.id = id;
             this.name = name;
             this.extraInfo = extraInfo;
             this.quantityValue = quantityValue;
@@ -172,13 +207,7 @@ namespace WebserviceAppNutre
             this.caloriesValue = caloriesValue;
             this.unityCal = unityCal;
         }
-
-        [DataMember]
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
+        
 
         [DataMember]
         public string Name
