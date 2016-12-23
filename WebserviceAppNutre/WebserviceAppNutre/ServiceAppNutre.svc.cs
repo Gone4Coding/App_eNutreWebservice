@@ -472,10 +472,11 @@ namespace WebserviceAppNutre
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(VEGETABLE_FILEPATH_XML);
-            XmlNodeList nodes;
+            XmlNodeList nodes = nodes = doc.SelectNodes("//food");
             List<Vegetable> lista = new List<Vegetable>();
-            nodes = doc.SelectNodes("//food");
+            
             List<string> extraInfo = new List<string>();
+
             foreach (XmlNode s in nodes)
             {
                 int id = int.Parse(s.SelectSingleNode("@id").InnerText);
