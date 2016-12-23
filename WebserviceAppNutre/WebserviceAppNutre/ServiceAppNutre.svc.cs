@@ -34,7 +34,7 @@ namespace WebserviceAppNutre
                 this.value = Guid.NewGuid().ToString();
                 this.username = username;
                 this.isAdmin = isAdmin;
-                saveToken();
+              //  saveToken();
             }
 
             public string Value
@@ -67,19 +67,20 @@ namespace WebserviceAppNutre
             }
         }
 
-        private void cleanUpTokens()
+        private void cleanUpTokens(string username)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(TOKEN_FILEPATH);
 
             XmlNode root = doc.SelectSingleNode("/tokens");
-            XmlNodeList tokens = doc.SelectNodes("//token[@isAdmin = true]");
+            XmlNodeList tokens = doc.SelectNodes("//token[username = '"+ username +"']");
 
             foreach (XmlNode token in tokens)
             {
                 root.RemoveChild(token);
                 doc.Save(TOKEN_FILEPATH);
             }
+       
         }
 
         public void SignUp(User user, string token)
@@ -117,7 +118,7 @@ namespace WebserviceAppNutre
 
         public string LogIn(string username, string password)
         {
-            cleanUpTokens();
+            cleanUpTokens(username);
 
             if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password) && isUserValid(username, password))
             {
@@ -126,26 +127,38 @@ namespace WebserviceAppNutre
                     Token token = new Token(username, true);
                     return token.Value;
                 }
-                else if (!tokenExistsForToken(username))
+                if (tokenExistsForToken(username)==false)
                 {
-                    Token token = new Token(username, false);
-                    return token.Value;
-                }
-
-                if (!isAdmin(username))
-                {
-                    string t = new Guid().ToString();
+                    string t = Guid.NewGuid().ToString();
 
                     XmlDocument doc = new XmlDocument();
                     doc.Load(TOKEN_FILEPATH);
 
                     XmlNode root = doc.DocumentElement;
                     //username e token
+                   
+                    XmlElement tokenElem = doc.CreateElement("token");
+                    XmlElement usernameTkXML = doc.CreateElement("username");
+                    usernameTkXML.InnerText = username;
+                    XmlElement value = doc.CreateElement("value");
+                    value.InnerText = t;
 
+                    tokenElem.AppendChild(usernameTkXML);
+                    tokenElem.AppendChild(value);
+                   
+                    root.AppendChild(tokenElem);
+
+                    doc.Save(TOKEN_FILEPATH);
 
                     return t;
                 }
+                else
+                {
+                    XmlDocument doc = new XmlDocument();
+                    doc.Load(TOKEN_FILEPATH);
 
+                    XmlNode node = doc.SelectSingleNode("//token[username = '" + username + "']/value");
+                }
                 
             }
             else
@@ -158,7 +171,7 @@ namespace WebserviceAppNutre
 
         public void LogOut(string username)
         {
-            cleanUpTokens();
+            cleanUpTokens(username);
 
             XmlDocument doc = new XmlDocument();
             doc.Load(TOKEN_FILEPATH);
@@ -175,7 +188,7 @@ namespace WebserviceAppNutre
 
         public void addActivity(Activity activity, string username)
         {
-            cleanUpTokens();
+            //cleanUpTokens(username);
 
             if (isAdmin(username))
             {
@@ -354,8 +367,14 @@ namespace WebserviceAppNutre
             doc.Load(TOKEN_FILEPATH);
 
             XmlNode node = doc.SelectSingleNode("//token[username = '" + username + "']");
+            if (node != null)
+            {
+                return true;
 
-            return node != null;
+            }
+           
+          return false;
+            
         }
     }
 }
