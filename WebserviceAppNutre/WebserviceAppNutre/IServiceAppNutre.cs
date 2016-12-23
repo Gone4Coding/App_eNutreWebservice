@@ -21,43 +21,34 @@ namespace WebserviceAppNutre
         [WebInvoke(Method = "POST", UriTemplate = "/signup?token={token}")]
         void SignUp(User user, string token); // admin only
 
-
-
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/login?username={username}&password={password}")]
         string LogIn(string username, string password);
 
-      
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/logout")]
         void LogOut(string token);
-
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addactivity?token={token}")]
         void addActivity(Activity activity, string token); // admin only
 
-       
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addactivityxml?token={token}")]
         void addActivityXML(XmlDocument activitiesXml, string token); // admin only
 
-       
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addrestaurant?token={token}")]
         void addRestaurant(Restaurant restaurant, string token); // admin only
-
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addrestaurantxml?token={token}")]
         void addRestaurantXML(XmlDocument restaurantsXml, string token); // admin only
-
         
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addvegetable?token={token}")]
         void addVegetable(Vegetable vegetable, string token); // admin only
 
-       
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addvegetablexml?token={token}")]
         void addVegetableXML(XmlDocument vegetablesXml, string token); // admin only

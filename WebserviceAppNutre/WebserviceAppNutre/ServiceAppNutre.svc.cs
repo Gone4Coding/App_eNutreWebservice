@@ -134,12 +134,14 @@ namespace WebserviceAppNutre
                     XmlDocument doc = new XmlDocument();
                     doc.Load(TOKEN_FILEPATH);
 
-                    XmlNode root = doc.DocumentElement;
+                    XmlNode root = doc.SelectSingleNode("/tokens");
                     //username e token
                    
                     XmlElement tokenElem = doc.CreateElement("token");
+
                     XmlElement usernameTkXML = doc.CreateElement("username");
                     usernameTkXML.InnerText = username;
+
                     XmlElement value = doc.CreateElement("value");
                     value.InnerText = t;
 
@@ -188,14 +190,48 @@ namespace WebserviceAppNutre
 
         public void addActivity(Activity activity, string username)
         {
-            //cleanUpTokens(username);
+            cleanUpTokens(username);
 
             if (isAdmin(username))
             {
                 XmlDocument doc = new XmlDocument();
                 doc.Load(ACTIVITY_FILEPATH);
 
-                // XmlNode root = doc.CreateElement("")
+                XmlNode root = doc.CreateElement("/exercises");
+
+                XmlElement exerciseNode = doc.CreateElement("exercise");
+                exerciseNode.SetAttribute("id", getValidActivityId().ToString());
+
+                XmlElement activityNode = doc.CreateElement("activity");
+                activityNode.InnerText = activity.Nome;
+
+                XmlElement metNode = doc.CreateElement("met");
+
+                XmlElement metNameNode = doc.CreateElement("name");
+                metNameNode.InnerText = "Metabolic Equivalent";
+                metNode.AppendChild(metNameNode);
+
+                XmlElement metValuetNode = doc.CreateElement("value");
+                metValuetNode.InnerText = activity.Met.ToString();
+                metNode.AppendChild(metValuetNode);
+
+                XmlElement caloriesNode = doc.CreateElement("calories");
+
+                XmlElement caloriesValueNode = doc.CreateElement("value");
+                caloriesValueNode.InnerText = activity.Calorias.ToString();
+                caloriesNode.AppendChild(caloriesValueNode);
+
+                XmlElement caloriesUnitNode = doc.CreateElement("unity");
+                caloriesUnitNode.InnerText = "kcal";
+                caloriesNode.AppendChild(caloriesUnitNode);
+
+                exerciseNode.AppendChild(activityNode);
+                exerciseNode.AppendChild(metNode);
+                exerciseNode.AppendChild(caloriesNode);
+
+                root.AppendChild(exerciseNode);
+
+                doc.Save(ACTIVITY_FILEPATH);
             }
             else
             {
