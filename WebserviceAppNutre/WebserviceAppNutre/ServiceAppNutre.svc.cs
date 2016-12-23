@@ -131,6 +131,22 @@ namespace WebserviceAppNutre
                     Token token = new Token(username, false);
                     return token.Value;
                 }
+
+                if (!isAdmin(username))
+                {
+                    string t = new Guid().ToString();
+
+                    XmlDocument doc = new XmlDocument();
+                    doc.Load(TOKEN_FILEPATH);
+
+                    XmlNode root = doc.DocumentElement;
+                    //username e token
+
+
+                    return t;
+                }
+
+                
             }
             else
             {
@@ -148,7 +164,7 @@ namespace WebserviceAppNutre
             doc.Load(TOKEN_FILEPATH);
 
             XmlNode root = doc.SelectSingleNode("/tokens");
-            XmlNode tokenNode = doc.SelectSingleNode("//token[username = '" + username + "'");
+            XmlNode tokenNode = doc.SelectSingleNode("//token[username = '" + username + "']");
 
             if (tokenNode != null)
             {
@@ -337,7 +353,7 @@ namespace WebserviceAppNutre
             XmlDocument doc = new XmlDocument();
             doc.Load(TOKEN_FILEPATH);
 
-            XmlNode node = doc.SelectSingleNode("//token[username = '" + username + "'");
+            XmlNode node = doc.SelectSingleNode("//token[username = '" + username + "']");
 
             return node != null;
         }
