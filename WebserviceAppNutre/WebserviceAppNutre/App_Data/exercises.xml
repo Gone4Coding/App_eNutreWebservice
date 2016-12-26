@@ -44,17 +44,6 @@
       <unity>kcal</unity>
     </caloriesValue>
   </exercise>
-  <exercise id="5">
-    <activity>Conduzir</activity>
-    <met>
-      <name>Metabolic Equivalent</name>
-      <value>1.6</value>
-    </met>
-    <caloriesValue>
-      <value>118</value>
-      <unity>kcal</unity>
-    </caloriesValue>
-  </exercise>
   <exercise id="6">
     <activity>Massagem</activity>
     <met>
@@ -1945,6 +1934,17 @@
     <caloriesValue>
       <value>1176</value>
       <unity>kcal</unity>
+    </caloriesValue>
+  </exercise>
+  <exercise id="178">
+    <activity>cagar</activity>
+    <met>
+      <name>Metabolic Equivalent</name>
+      <value>0.9</value>
+    </met>
+    <caloriesValue>
+      <value>123</value>
+      <unity>cal</unity>
     </caloriesValue>
   </exercise>
 </exercises>

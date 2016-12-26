@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="exerciciosSchema"
+<xs:schema id="restaurantsSchema"
     xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <!-- SIMPLE TYPES -->
@@ -43,8 +43,8 @@
   <xs:complexType name="quantityValueType">
 	  <xs:sequence>
 		  <xs:element name="value" type="valueQuantityValueType"/>
-		  <xs:element name="quantityDosage" type="quantityDosageType"/>
-		  <xs:element name="extraQuantityDosage" type="quantityDosageType" minOccurs="0"/>
+		  <xs:element name="dosage" type="quantityDosageType"/>
+		  <xs:element name="extraDosage" type="quantityDosageType" minOccurs="0"/>
 	  </xs:sequence>
   </xs:complexType>
   
@@ -58,13 +58,13 @@
   <xs:complexType name="plateType">
 	  <xs:sequence>
 		  <xs:element name="item" type="itemType" minOccurs="1" maxOccurs="unbounded"/>
-		  <xs:element name="quantityValue" type="quantityValueType" minOccurs="1" maxOccurs="unbounded"/>
-		  <xs:element name="caloriesValue" type="caloriesValueType" minOccurs="1" maxOccurs="unbounded"/>
+		  <xs:element name="quantity" type="quantityValueType" minOccurs="1" maxOccurs="unbounded"/>
+		  <xs:element name="calories" type="caloriesValueType" minOccurs="1" maxOccurs="unbounded"/>
 	  </xs:sequence>
     <xs:attribute name="id" type="idType" use="required"/>
   </xs:complexType>
   
-  <xs:complexType name="plateType">
+  <xs:complexType name="restaurantType">
 	  <xs:sequence>
 		  <xs:element name="plate" type="plateType" maxOccurs="unbounded"/>
 	  </xs:sequence>
@@ -73,7 +73,8 @@
 
   <xs:complexType name="foodsType">
     <xs:sequence>
-      <xs:element name="plate" type="plateType" maxOccurs="unbounded"/>
+      <xs:element name="restaurant" type="restaurantType" maxOccurs="unbounded"/>
+     
     </xs:sequence>
   </xs:complexType>
   

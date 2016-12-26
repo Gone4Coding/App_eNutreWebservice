@@ -43,7 +43,7 @@ namespace WebserviceAppNutre
                 this.value = Guid.NewGuid().ToString();
                 this.username = username;
                 this.isAdmin = isAdmin;
-              //  saveToken();
+                //  saveToken();
             }
 
             public string Value
@@ -82,14 +82,14 @@ namespace WebserviceAppNutre
             doc.Load(TOKEN_FILEPATH_XML);
 
             XmlNode root = doc.SelectSingleNode("/tokens");
-            XmlNodeList tokens = doc.SelectNodes("//token[username = '"+ username +"']");
+            XmlNodeList tokens = doc.SelectNodes("//token[username = '" + username + "']");
 
             foreach (XmlNode token in tokens)
             {
                 root.RemoveChild(token);
                 doc.Save(TOKEN_FILEPATH_XML);
             }
-       
+
         }
 
         public void SignUp(User user, string token)
@@ -136,7 +136,7 @@ namespace WebserviceAppNutre
                     Token token = new Token(username, true);
                     return token.Value;
                 }
-                if (tokenExistsForToken(username)==false)
+                if (tokenExistsForToken(username) == false)
                 {
                     string t = Guid.NewGuid().ToString();
 
@@ -145,7 +145,7 @@ namespace WebserviceAppNutre
 
                     XmlNode root = doc.SelectSingleNode("/tokens");
                     //username e token
-                   
+
                     XmlElement tokenElem = doc.CreateElement("token");
 
                     XmlElement usernameTkXML = doc.CreateElement("username");
@@ -156,7 +156,7 @@ namespace WebserviceAppNutre
 
                     tokenElem.AppendChild(usernameTkXML);
                     tokenElem.AppendChild(value);
-                   
+
                     root.AppendChild(tokenElem);
 
                     doc.Save(TOKEN_FILEPATH_XML);
@@ -170,7 +170,7 @@ namespace WebserviceAppNutre
 
                     XmlNode node = doc.SelectSingleNode("//token[username = '" + username + "']/value");
                 }
-                
+
             }
             else
             {
@@ -197,12 +197,9 @@ namespace WebserviceAppNutre
             }
         }
 
-        public void addActivity(Activity activity, string username)
+        public bool addActivity(Activity activity, string token)
         {
-            cleanUpTokens(username);
-
-            if (isAdmin(username))
-            {
+          
                 XmlDocument doc = new XmlDocument();
                 doc.Load(ACTIVITY_FILEPATH_XML);
 
@@ -241,16 +238,14 @@ namespace WebserviceAppNutre
                 root.AppendChild(exerciseNode);
 
                 doc.Save(ACTIVITY_FILEPATH_XML);
-            }
-            else
-            {
-                throw new ArgumentException("ERROR: User not valid");
-            }
+        
+
+            return true;
         }
 
         public void addActivityXML(XmlDocument activitiesXml, string token)
         {
-            
+
             XmlDocument doc = new XmlDocument();
 
             XmlReaderSettings settings = new XmlReaderSettings();
@@ -286,7 +281,7 @@ namespace WebserviceAppNutre
             doc.Save(ACTIVITY_FILEPATH_XML);
         }
 
-        public void addRestaurant(Plate plate, string token)
+        public bool addRestaurant(Plate plate, string token)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(PLATE_FILEPATH_XML);
@@ -297,24 +292,24 @@ namespace WebserviceAppNutre
             XmlElement itemNode = doc.CreateElement("item");
             itemNode.InnerText = plate.Name;
 
-            XmlElement quantityNode = doc.CreateElement("quantityValue");
+            XmlElement quantityNode = doc.CreateElement("quantity");
 
             XmlElement quantityValueNode = doc.CreateElement("value");
-            quantityValueNode.InnerText = plate.QuantityValue;
+            quantityValueNode.InnerText = plate.QuantityValue.ToString();
             quantityNode.AppendChild(quantityValueNode);
 
-            XmlElement quantityDosageNode = doc.CreateElement("quantityDosage");
+            XmlElement quantityDosageNode = doc.CreateElement("dosage");
             quantityDosageNode.InnerText = plate.QuantityDosage;
             quantityNode.AppendChild(quantityDosageNode);
 
             if (plate.QuantityExtraDosage != null)
             {
-                XmlElement quantityExtraDosageNode = doc.CreateElement("quantityExtraDosage");
+                XmlElement quantityExtraDosageNode = doc.CreateElement("extraDosage");
                 quantityExtraDosageNode.InnerText = plate.QuantityExtraDosage;
                 quantityNode.AppendChild(quantityExtraDosageNode);
             }
 
-            XmlElement caloriesNode = doc.CreateElement("caloriesValue");
+            XmlElement caloriesNode = doc.CreateElement("calories");
 
             XmlElement caloriesValueNode = doc.CreateElement("value");
             caloriesValueNode.InnerText = plate.CaloriesValue.ToString();
@@ -330,13 +325,14 @@ namespace WebserviceAppNutre
 
             XmlNode root = doc.SelectSingleNode("/foods");
 
-            XmlNode restaurantNode = doc.SelectSingleNode("/restaurant[name = '" + plate.RestaurantName + "']");
+            XmlNode restaurantNode = doc.SelectSingleNode("//restaurant[@name = '" + plate.RestaurantName + "']");
 
             if (restaurantNode == null)
             {
-                restaurantNode = doc.CreateElement(plate.RestaurantName);
-                restaurantNode.AppendChild(plateNode);
-                root.AppendChild(restaurantNode);
+                XmlElement restaurant = doc.CreateElement("restaurant");
+                restaurant.SetAttribute("name", plate.RestaurantName);
+                restaurant.AppendChild(plateNode);
+                root.AppendChild(restaurant);
             }
             else
             {
@@ -344,7 +340,8 @@ namespace WebserviceAppNutre
             }
 
             doc.Save(PLATE_FILEPATH_XML);
-                
+
+            return true;
 
         }
 
@@ -360,13 +357,13 @@ namespace WebserviceAppNutre
             doc.Load(reader);
 
             doc.Load(PLATE_FILEPATH_XML);
-            
+
         }
 
-        public void addVegetable(Vegetable vegetable, string token)
+        public bool addVegetable(Vegetable vegetable, string token)
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(ACTIVITY_FILEPATH_XML);
+            doc.Load(VEGETABLE_FILEPATH_XML);
 
             XmlNode root = doc.SelectSingleNode("/foods");
 
@@ -390,7 +387,7 @@ namespace WebserviceAppNutre
                 }
             }
 
-            XmlElement quantityNode = doc.CreateElement("quantityValue");
+            XmlElement quantityNode = doc.CreateElement("quantity");
 
             XmlElement quantityValueNode = doc.CreateElement("value");
             quantityValueNode.InnerText = vegetable.QuantityValue.ToString();
@@ -402,7 +399,7 @@ namespace WebserviceAppNutre
 
             veggetableNode.AppendChild(quantityNode);
 
-            XmlElement caloriesNode = doc.CreateElement("caloriesValue");
+            XmlElement caloriesNode = doc.CreateElement("calories");
 
             XmlElement caloriesValueNode = doc.CreateElement("value");
             caloriesValueNode.InnerText = vegetable.CaloriesValue.ToString();
@@ -416,7 +413,9 @@ namespace WebserviceAppNutre
 
             root.AppendChild(veggetableNode);
 
-            doc.Save(PLATE_FILEPATH_XML);
+            doc.Save(VEGETABLE_FILEPATH_XML);
+
+            return true;
         }
 
         public void addVegetableXML(XmlDocument vegetablesXml, string token)
@@ -446,7 +445,7 @@ namespace WebserviceAppNutre
 
                 XmlNode extraInfoNode = veggieNode.SelectSingleNode("/extraInfo");
 
-                if(extraInfoNode != null)
+                if (extraInfoNode != null)
                     foodNode.AppendChild(extraInfoNode);
 
                 XmlNode caloriesNode = veggieNode.SelectSingleNode("/caloriesValue");
@@ -460,21 +459,82 @@ namespace WebserviceAppNutre
 
         public List<Activity> getActivitiesList()
         {
-            throw new NotImplementedException();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(ACTIVITY_FILEPATH_XML);
+            XmlNodeList nodes = nodes = doc.SelectNodes("//exercise");
+            List<Activity> lista = new List<Activity>();
+
+            foreach (XmlNode s in nodes)
+            {
+                int id = int.Parse(s.SelectSingleNode("@id").InnerText);
+                string name = s.SelectSingleNode("activity").InnerText;
+              
+                XmlNode met = s.SelectSingleNode("met");
+                string metName = met.SelectSingleNode("name").InnerText;
+                string metValue = met.SelectSingleNode("value").InnerText;
+                XmlNode calories = s.SelectSingleNode("caloriesValue");
+                int caloriesValue = int.Parse(calories.SelectSingleNode("value").InnerText);
+                string unityCal = calories.SelectSingleNode("unity").InnerText;
+
+
+                lista.Add(new Activity(name,caloriesValue,unityCal,metName,metValue));
+            }
+            return lista;
         }
 
         public List<Plate> GetRestaurantsList()
         {
-            throw new NotImplementedException();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(PLATE_FILEPATH_XML);
+            XmlNodeList nodes = nodes = doc.SelectNodes("//restaurant");
+            List<Plate> lista = new List<Plate>();
+            int id = 0;
+            string name = "";
+            string quantityValue = "";
+            string dosage = "";
+            string extraDosage = "";
+            int caloriesValue = 0;
+            string caloriesUnity = "";
+
+            foreach (XmlNode s in nodes)
+            {
+                string restaurantName = s.SelectSingleNode("@name").InnerText;
+
+                XmlNodeList platesNodes = s.SelectNodes("plate");
+
+                foreach (XmlNode p in platesNodes)
+                {
+                    id = int.Parse(p.SelectSingleNode("@id").InnerText);
+                    name = p.SelectSingleNode("item").InnerText;
+                    XmlNode quantity = p.SelectSingleNode("quantity");
+                    quantityValue = quantity.SelectSingleNode("value").InnerText;
+                    dosage = quantity.SelectSingleNode("dosage").InnerText;
+                    if (quantity.SelectSingleNode("extraDosage") != null)
+                    {
+                        extraDosage = quantity.SelectSingleNode("extraDosage").InnerText;
+                    }
+                    else
+                    {
+                        extraDosage = "";
+                    }
+                    XmlNode calories = p.SelectSingleNode("calories");
+                    caloriesValue = int.Parse(calories.SelectSingleNode("value").InnerText);
+                    caloriesUnity = calories.SelectSingleNode("unity").InnerText;
+
+                }
+
+                lista.Add(new Plate(name, restaurantName, quantityValue, dosage, extraDosage, caloriesValue, caloriesUnity));
+            }
+            return lista;
         }
 
         public List<Vegetable> getVegetablesList()
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(VEGETABLE_FILEPATH_XML);
-            XmlNodeList nodes = nodes = doc.SelectNodes("//food");
+            XmlNodeList nodes = doc.SelectNodes("//food");
             List<Vegetable> lista = new List<Vegetable>();
-            
+
             List<string> extraInfo = new List<string>();
 
             foreach (XmlNode s in nodes)
@@ -487,26 +547,83 @@ namespace WebserviceAppNutre
                     string extraInformacao = extra.SelectSingleNode("extraInfo").InnerText;
                     extraInfo.Add(extraInformacao);
                 }
-                XmlNode quantity = s.SelectSingleNode("quantityValue");
-                double quantityValue;
-                if (quantity.SelectSingleNode("value").InnerText.Equals("1/2"))
-                {
-                    quantityValue = 0.5;
-                }
-                else
-                {
-                    quantityValue = double.Parse(quantity.SelectSingleNode("value").InnerText);
-                }
-
+                XmlNode quantity = s.SelectSingleNode("quantity");
+                string quantityValue = quantity.SelectSingleNode("value").InnerText;
                 string unityQuantity = quantity.SelectSingleNode("unity").InnerText;
-                XmlNode calories = s.SelectSingleNode("caloriesValue");
+                XmlNode calories = s.SelectSingleNode("calories");
                 int caloriesValue = int.Parse(calories.SelectSingleNode("value").InnerText);
                 string unityCal = calories.SelectSingleNode("unity").InnerText;
 
 
-                //lista.Add(new Vegetable(id, name, extraInfo, quantityValue, unityQuantity, caloriesValue, unityCal));
+                lista.Add(new Vegetable(id, name, extraInfo, quantityValue, unityQuantity, caloriesValue, unityCal));
             }
             return lista;
+        }
+
+        public bool removeActivity(int id, string token)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(ACTIVITY_FILEPATH_XML);
+            XmlNode root = doc.DocumentElement;
+            XmlNode nodeToRemove = doc.SelectSingleNode("//exercise[@id='" + id + "']");
+            root.RemoveChild(nodeToRemove);
+
+            doc.Save(ACTIVITY_FILEPATH_XML);
+
+            return true;
+        }
+
+        public bool removePlates(int id, string token)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(PLATE_FILEPATH_XML);
+            XmlNode root = doc.DocumentElement;
+            XmlNode nodeRestaurant = doc.SelectSingleNode("//restaurant[plate[@id='" + id + "']]");
+            XmlNode nodeToRemove = doc.SelectSingleNode("//plate[@id='" + id + "']");
+           // root.RemoveChild(nodeToRemove);
+            nodeRestaurant.RemoveChild(nodeToRemove);
+            doc.Save(PLATE_FILEPATH_XML);
+
+            return true;
+        }
+
+        public bool removeVegetables(int id, string token)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(VEGETABLE_FILEPATH_XML);
+            XmlNode root = doc.DocumentElement;
+           
+            XmlNode nodeToRemove = doc.SelectSingleNode("//food[@id='" + id + "']");
+             root.RemoveChild(nodeToRemove);
+           
+            doc.Save(VEGETABLE_FILEPATH_XML);
+
+            return true;
+        }
+
+        public Activity getCaloriesByActivity(string activityName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Vegetable getCaloriesByVeggie(string vegetableName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Vegetable getCaloriesByPlate(string plateName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Activity> getActivitiesListByCalories(int calories, string unity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Vegetable> getVegetablesListBycalories(int calories, string unity)
+        {
+            throw new NotImplementedException();
         }
 
         private int getValidUserId()
@@ -588,8 +705,18 @@ namespace WebserviceAppNutre
             XmlDocument doc = new XmlDocument();
             doc.Load(USERS_FILEPATH_XML);
 
-            XmlNode node = doc.SelectSingleNode("//user[username = '" + username + "']//@isAdmin");
-            return node.InnerText.Equals("true");
+            XmlNode node = doc.SelectSingleNode("//user[username = '" + username + "']");
+            string verifica = node.SelectSingleNode("@isAdmin").InnerText;
+
+            if (verifica.Equals("true"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         private bool tokenExistsForToken(string username)
@@ -603,9 +730,9 @@ namespace WebserviceAppNutre
                 return true;
 
             }
-           
-          return false;
-            
+
+            return false;
+
         }
     }
 }

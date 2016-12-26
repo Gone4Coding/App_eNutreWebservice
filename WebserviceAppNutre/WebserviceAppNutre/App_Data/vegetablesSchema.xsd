@@ -50,8 +50,8 @@
     <xs:sequence>
       <xs:element name="vegetable" type="vegetableType" maxOccurs="unbounded"/>
       <xs:element name="extraInfo" type="extraInfoType" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="quantityValue" type="quantityValueType" maxOccurs="unbounded"/>
-      <xs:element name="caloriesValue" type="caloriesValueType" maxOccurs="unbounded"/>
+      <xs:element name="quantity" type="quantityValueType" maxOccurs="unbounded"/>
+      <xs:element name="calories" type="caloriesValueType" maxOccurs="unbounded"/>
     </xs:sequence>
     <xs:attribute name="id" type="idType"/>
   </xs:complexType>

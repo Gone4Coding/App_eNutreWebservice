@@ -31,7 +31,7 @@ namespace WebserviceAppNutre
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addactivity?token={token}")]
-        void addActivity(Activity activity, string token); // admin only
+        bool addActivity(Activity activity, string token); // admin only
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addactivityxml?token={token}")]
@@ -39,7 +39,7 @@ namespace WebserviceAppNutre
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addrestaurant?token={token}")]
-        void addRestaurant(Plate plate, string token); // admin only
+        bool addRestaurant(Plate plate, string token); // admin only
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addrestaurantxml?token={token}")]
@@ -47,7 +47,7 @@ namespace WebserviceAppNutre
         
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addvegetable?token={token}")]
-        void addVegetable(Vegetable vegetable, string token); // admin only
+        bool addVegetable(Vegetable vegetable, string token); // admin only
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addvegetablexml?token={token}")]
@@ -65,6 +65,44 @@ namespace WebserviceAppNutre
         [WebInvoke(Method = "GET", UriTemplate = "/getvegetableslist")]
         List<Vegetable> getVegetablesList();
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/removeactivity?id={id}&token={token}")]
+        bool removeActivity(int id, string token);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/removeplates?id={id}&token={token}")]
+        bool removePlates(int id, string token);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/removevegetables?id={id}&token={token}")]
+        bool removeVegetables(int id, string token);
+
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/getcaloriesbyactivity?activityname={activityname}")]
+        Activity getCaloriesByActivity(string activityName);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/getcaloriesbyveggie?vegetablename={vegetablename}")]
+        Vegetable getCaloriesByVeggie(string vegetableName);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/getcaloriesbyplate?platename={platename}")]
+        Vegetable getCaloriesByPlate(string plateName);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/getactivitieslistbycalories?calories={calories}&unity={unity}")]
+        List<Activity> getActivitiesListByCalories(int calories, string unity);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/getvegetableslistbycalories?calories={calories}&unity={unity}")]
+        List<Vegetable> getVegetablesListBycalories(int calories,string unity);
+
+
+
+
+
+
 
     }
 
@@ -73,16 +111,18 @@ namespace WebserviceAppNutre
     public class Activity
     {
         private string nome;
+        private string metName;
         private int caloriasValue;
         private string caloriasUnit;
-        private decimal met;
+        private string met;
 
-        public Activity(string nome, int caloriasValue, string caloriasUnit, decimal met)
+        public Activity(string nome, int caloriasValue, string caloriasUnit,string metName, string met)
         {
             this.nome = nome;
             this.met = met;
             this.caloriasUnit = caloriasUnit;
             this.caloriasValue = caloriasValue;
+            this.metName = metName;
         }
         
         [DataMember]
@@ -90,6 +130,14 @@ namespace WebserviceAppNutre
         {
             get { return nome; }
             set { nome = value; }
+        }
+
+
+        [DataMember]
+        public string MetName
+        {
+            get { return metName; }
+            set { metName = value; }
         }
 
         [DataMember]
@@ -107,7 +155,7 @@ namespace WebserviceAppNutre
         }
 
         [DataMember]
-        public decimal Met
+        public string Met
         {
             get { return met; }
             set { met = value; }
@@ -190,16 +238,18 @@ namespace WebserviceAppNutre
     [DataContract]
     public class Vegetable
     {
+        private int id;
         private string name;
         private List<string> extraInfo;
-        private double quantityValue;
+        private string quantityValue;
         private string unityQuantity;
         private int caloriesValue;
         private string unityCal;
 
 
-        public Vegetable(string name, List<string> extraInfo, double quantityValue, string unityQuantity, int caloriesValue,string unityCal)
+        public Vegetable(int id,string name, List<string> extraInfo, string quantityValue, string unityQuantity, int caloriesValue,string unityCal)
         {
+            this.id = id;
             this.name = name;
             this.extraInfo = extraInfo;
             this.quantityValue = quantityValue;
@@ -207,7 +257,13 @@ namespace WebserviceAppNutre
             this.caloriesValue = caloriesValue;
             this.unityCal = unityCal;
         }
-        
+
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         [DataMember]
         public string Name
@@ -224,7 +280,7 @@ namespace WebserviceAppNutre
         }
 
         [DataMember]
-        public double QuantityValue
+        public string QuantityValue
         {
             get{ return quantityValue; }
             set{ quantityValue = value; }
