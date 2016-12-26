@@ -328,7 +328,7 @@
     <plate>burger-ranch</plate>
     <item>Tosta Queijo</item>
     <quantityValue>1 dose</quantityValue>
-    <calories>215</caloriesValue>
+    <caloriesValue>215</caloriesValue>
   </food>
   <food>
     <plate>burger-ranch</plate>
