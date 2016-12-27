@@ -71,24 +71,24 @@ namespace WebserviceAppNutre
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/removeplates?id={id}&token={token}")]
-        bool removePlates(int id, string token);
+        bool removePlate(int id, string token);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/removevegetables?id={id}&token={token}")]
-        bool removeVegetables(int id, string token);
+        bool removeVegetable(int id, string token);
 
 
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "/getcaloriesbyactivity?activityname={activityname}")]
-        Activity getCaloriesByActivity(string activityName);
+        [WebInvoke(Method = "GET", UriTemplate = "/getcaloriesbyactivity?id={id}")]
+        string [] getCaloriesByActivity(int id);
 
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "/getcaloriesbyveggie?vegetablename={vegetablename}")]
-        Vegetable getCaloriesByVeggie(string vegetableName);
+        [WebInvoke(Method = "GET", UriTemplate = "/getcaloriesbyveggie?id={id}")]
+        string[] getCaloriesByVeggie(int id);
 
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "/getcaloriesbyplate?platename={platename}")]
-        Vegetable getCaloriesByPlate(string plateName);
+        [WebInvoke(Method = "GET", UriTemplate = "/getcaloriesbyplate?id={id}")]
+        string[] getCaloriesByPlate(int id);
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/getactivitieslistbycalories?calories={calories}&unity={unity}")]
