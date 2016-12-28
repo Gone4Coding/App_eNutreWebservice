@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="WebserviceAppNutre.Service1" CodeBehind="ServiceAppNutre.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WebserviceAppNutre.ServiceAppNutre" CodeBehind="ServiceAppNutre.svc.cs" %>

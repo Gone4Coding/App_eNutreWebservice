@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="vegetablesSchema"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- SIMPLE TYPES -->
+
+  <xs:simpleType name="vegetableType">
+		<xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+   <xs:simpleType name="extraInfoType">
+		<xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+   <xs:simpleType name="valueType">
+		<xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+  <xs:simpleType name="unitiesType">
+		<xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+  <xs:simpleType name="caloriesValueUnitiesType">
+		<xs:restriction base="xs:string">
+		  <xs:pattern value="cal|kcal"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="idType">
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  
+  <!-- COMPLEX TYPES -->
+  
+  <xs:complexType name="quantityValueType">
+	  <xs:sequence>
+		  <xs:element name="value" type="valueType"/>
+		  <xs:element name="unity" type="unitiesType"/>
+	  </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="caloriesValueType">
+	  <xs:sequence>
+		  <xs:element name="value" type="valueType"/>
+		  <xs:element name="unity" type="caloriesValueUnitiesType"/>
+	  </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="foodType">
+    <xs:sequence>
+      <xs:element name="vegetable" type="vegetableType" maxOccurs="unbounded"/>
+      <xs:element name="extraInfo" type="extraInfoType" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="quantity" type="quantityValueType" maxOccurs="unbounded"/>
+      <xs:element name="calories" type="caloriesValueType" maxOccurs="unbounded"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="idType"/>
+  </xs:complexType>
+
+  <xs:complexType name="foodsType">
+    <xs:sequence>
+      <xs:element name="food" type="foodType" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ROOT -->
+
+  <xs:element name="foods" type="foodsType"/>
+  
+</xs:schema>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="restaurantsSchema"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- SIMPLE TYPES -->
+  
+  <xs:simpleType name="plateNameType"> 
+		<xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+  <xs:simpleType name="itemType">
+		<xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+  <xs:simpleType name="valueType">
+		<xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+    
+  <xs:simpleType name="valueQuantityValueType">
+		<xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+  <xs:simpleType name="quantityDosageType">
+		<xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+  <xs:simpleType name="unitiesType">
+		<xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  
+  <xs:simpleType name="caloriesValueUnitiesType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="cal|kcal"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="idType">
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+  
+  <!-- COMPLEX TYPES -->
+  
+  <xs:complexType name="quantityValueType">
+	  <xs:sequence>
+		  <xs:element name="value" type="valueQuantityValueType"/>
+		  <xs:element name="dosage" type="quantityDosageType"/>
+		  <xs:element name="extraDosage" type="quantityDosageType" minOccurs="0"/>
+	  </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="caloriesValueType">
+	  <xs:sequence>
+		  <xs:element name="value" type="valueType"/>
+		  <xs:element name="unity" type="caloriesValueUnitiesType"/>
+	  </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="plateType">
+	  <xs:sequence>
+		  <xs:element name="item" type="itemType" minOccurs="1" maxOccurs="unbounded"/>
+		  <xs:element name="quantity" type="quantityValueType" minOccurs="1" maxOccurs="unbounded"/>
+		  <xs:element name="calories" type="caloriesValueType" minOccurs="1" maxOccurs="unbounded"/>
+	  </xs:sequence>
+    <xs:attribute name="id" type="idType" use="required"/>
+  </xs:complexType>
+  
+  <xs:complexType name="restaurantType">
+	  <xs:sequence>
+		  <xs:element name="plate" type="plateType" maxOccurs="unbounded"/>
+	  </xs:sequence>
+	  <xs:attribute name="name" type="plateNameType"/>
+  </xs:complexType>
+
+  <xs:complexType name="foodsType">
+    <xs:sequence>
+      <xs:element name="restaurant" type="restaurantType" maxOccurs="unbounded"/>
+     
+    </xs:sequence>
+  </xs:complexType>
+  
+  <!-- ROOT -->
+
+  <xs:element name="foods" type="foodsType"/>
+  
+</xs:schema>
