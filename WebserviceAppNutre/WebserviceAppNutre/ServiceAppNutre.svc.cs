@@ -532,18 +532,20 @@ namespace WebserviceAppNutre
             XmlNodeList nodes = doc.SelectNodes("//food");
             List<Vegetable> lista = new List<Vegetable>();
 
-            List<string> extraInfo = new List<string>();
-
             foreach (XmlNode s in nodes)
             {
+                List<string> extraInfo = new List<string>();
+
                 int id = int.Parse(s.SelectSingleNode("@id").InnerText);
                 string name = s.SelectSingleNode("vegetable").InnerText;
-                XmlNodeList nodesExtra = s.SelectNodes("/extraInfo");
+
+                XmlNodeList nodesExtra = s.SelectNodes("extraInfo");
                 foreach (XmlNode extra in nodesExtra)
                 {
                     string extraInformacao = extra.SelectSingleNode("extraInfo").InnerText;
                     extraInfo.Add(extraInformacao);
                 }
+
                 XmlNode quantity = s.SelectSingleNode("quantity");
                 string quantityValue = quantity.SelectSingleNode("value").InnerText;
                 string unityQuantity = quantity.SelectSingleNode("unity").InnerText;
