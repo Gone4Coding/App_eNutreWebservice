@@ -110,7 +110,7 @@ namespace WebserviceAppNutre
     [DataContract]
     public class Activity
     {
-        private string id;
+        private int id;
         private string nome;
         private string metName;
         private int caloriasValue;
