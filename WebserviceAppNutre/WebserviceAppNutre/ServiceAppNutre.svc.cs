@@ -502,7 +502,7 @@ namespace WebserviceAppNutre
 
             foreach (XmlNode node in nodes)
             {
-                string restaurantName = node.SelectSingleNode("/parent::restaurant/@name").InnerText;
+                string restaurantName = node.SelectSingleNode("//parent::restaurant/@name").InnerText;
                 id = int.Parse(node.SelectSingleNode("@id").InnerText);
                 name = node.SelectSingleNode("item").InnerText;
                 XmlNode quantity = node.SelectSingleNode("quantity");
