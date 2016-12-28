@@ -490,7 +490,7 @@ namespace WebserviceAppNutre
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(PLATE_FILEPATH_XML);
-            XmlNodeList nodes = nodes = doc.SelectNodes("//restaurant");
+            XmlNodeList nodes = doc.SelectNodes("//plate");
             List<Plate> lista = new List<Plate>();
             int id = 0;
             string name = "";
@@ -500,32 +500,25 @@ namespace WebserviceAppNutre
             int caloriesValue = 0;
             string caloriesUnity = "";
 
-            foreach (XmlNode s in nodes)
+            foreach (XmlNode node in nodes)
             {
-                string restaurantName = s.SelectSingleNode("@name").InnerText;
-
-                XmlNodeList platesNodes = s.SelectNodes("plate");
-
-                foreach (XmlNode p in platesNodes)
+                string restaurantName = node.SelectSingleNode("/parent::restaurant/@name").InnerText;
+                id = int.Parse(node.SelectSingleNode("@id").InnerText);
+                name = node.SelectSingleNode("item").InnerText;
+                XmlNode quantity = node.SelectSingleNode("quantity");
+                quantityValue = quantity.SelectSingleNode("value").InnerText;
+                dosage = quantity.SelectSingleNode("dosage").InnerText;
+                if (quantity.SelectSingleNode("extraDosage") != null)
                 {
-                    id = int.Parse(p.SelectSingleNode("@id").InnerText);
-                    name = p.SelectSingleNode("item").InnerText;
-                    XmlNode quantity = p.SelectSingleNode("quantity");
-                    quantityValue = quantity.SelectSingleNode("value").InnerText;
-                    dosage = quantity.SelectSingleNode("dosage").InnerText;
-                    if (quantity.SelectSingleNode("extraDosage") != null)
-                    {
-                        extraDosage = quantity.SelectSingleNode("extraDosage").InnerText;
-                    }
-                    else
-                    {
-                        extraDosage = "";
-                    }
-                    XmlNode calories = p.SelectSingleNode("calories");
-                    caloriesValue = int.Parse(calories.SelectSingleNode("value").InnerText);
-                    caloriesUnity = calories.SelectSingleNode("unity").InnerText;
-
+                    extraDosage = quantity.SelectSingleNode("extraDosage").InnerText;
                 }
+                else
+                {
+                    extraDosage = "";
+                }
+                XmlNode calories = node.SelectSingleNode("calories");
+                caloriesValue = int.Parse(calories.SelectSingleNode("value").InnerText);
+                caloriesUnity = calories.SelectSingleNode("unity").InnerText;
 
                 lista.Add(new Plate(name, restaurantName, quantityValue, dosage, extraDosage, caloriesValue, caloriesUnity));
             }
@@ -607,7 +600,7 @@ namespace WebserviceAppNutre
 
         public string[] getCaloriesByActivity(int id)
         {
-            string[] calorieString = {"",""};
+            string[] calorieString = { "", "" };
             XmlDocument doc = new XmlDocument();
             doc.Load(ACTIVITY_FILEPATH_XML);
             XmlNode node = doc.SelectSingleNode("//exercise[@id='" + id + "']");
@@ -621,10 +614,10 @@ namespace WebserviceAppNutre
 
         public string[] getCaloriesByVeggie(int id)
         {
-            string[] calorieString = {"",""};
+            string[] calorieString = { "", "" };
             XmlDocument doc = new XmlDocument();
             doc.Load(VEGETABLE_FILEPATH_XML);
-            XmlNode node = doc.SelectSingleNode("//food[@id='"+id+"']");
+            XmlNode node = doc.SelectSingleNode("//food[@id='" + id + "']");
             XmlNode vegetable = node.SelectSingleNode("calories");
 
             calorieString[0] = vegetable.SelectSingleNode("value").InnerText;
@@ -652,16 +645,16 @@ namespace WebserviceAppNutre
             XmlDocument doc = new XmlDocument();
             doc.Load(ACTIVITY_FILEPATH_XML);
             double limiteMax = 0;
-            
+
             if (calories < 100 && unity.Equals("cal"))
             {
                 limiteMax = calories + 20;
-                
+
             }
             else if (calories >= 100 && unity.Equals("cal") || unity.Equals("kcal"))
             {
-                limiteMax = calories + calories*0.2;
-                
+                limiteMax = calories + calories * 0.2;
+
             }
 
             XmlNodeList nodes = nodes = doc.SelectNodes("//exercise");
@@ -696,7 +689,7 @@ namespace WebserviceAppNutre
 
             double limiteMax = 0;
             double limiteMin = 0;
-            if (calories < 100 && unity.Equals("cal") && calories>=10)
+            if (calories < 100 && unity.Equals("cal") && calories >= 10)
             {
                 if (calories < 20)
                 {
@@ -714,7 +707,7 @@ namespace WebserviceAppNutre
                 limiteMax = calories + calories / 10;
                 limiteMin = calories - calories / 10;
             }
-            else if(calories < 10 && unity.Equals("cal"))
+            else if (calories < 10 && unity.Equals("cal"))
             {
                 limiteMax = calories + 2;
                 limiteMin = calories - 2;
