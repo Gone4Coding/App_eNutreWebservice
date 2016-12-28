@@ -759,6 +759,157 @@ namespace WebserviceAppNutre
             return lista;
         }
 
+        public Activity GetActivityById(int _id)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(ACTIVITY_FILEPATH_XML);
+            XmlNode node = doc.SelectSingleNode("//exercise[@id = " + _id + "]");
+            int id = _id;
+            string name = node.SelectSingleNode("activity").InnerText;
+            string metName = "Metabolic Equivalent";
+            int caloriasValue = int.Parse(node.SelectSingleNode("caloriesValue/value").InnerText);
+            string caloriasUnit = node.SelectSingleNode("caloriesValue/unity").InnerText;
+            string met = node.SelectSingleNode("met/value").InnerText;
+
+            Activity act = new Activity(name, caloriasValue, caloriasUnit, metName, met);
+            act.Id = id;
+
+            return act;
+        }
+
+        public Plate GetPlateById(int _id)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(PLATE_FILEPATH_XML);
+            XmlNode node = doc.SelectSingleNode("//plate[@id = " + _id + "]");
+            int id = _id;
+            string name = node.SelectSingleNode("item").InnerText;
+            string restaurantName = node.SelectSingleNode("parent::restaurant/@name").InnerText;
+            string quantityValue = node.SelectSingleNode("quantity/value").InnerText;
+            string quantityDosage = node.SelectSingleNode("quantity/dosage").InnerText;
+            string quantityExtraDosage = "";
+            XmlNode selectSingleNode = node.SelectSingleNode("quantity/extraDosage");
+            if (selectSingleNode != null)
+            {
+                quantityExtraDosage = selectSingleNode.InnerText;
+            }
+            int caloriesValue = int.Parse(node.SelectSingleNode("calories/value").InnerText);
+            string caloriasUnit = node.SelectSingleNode("calories/unity").InnerText;
+
+            Plate plate = new Plate(name, restaurantName, quantityValue, quantityDosage, quantityExtraDosage, caloriesValue, caloriasUnit);
+            plate.Id = id;
+
+            return plate;
+        }
+
+        public Vegetable GetVegetableById(int _id)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(VEGETABLE_FILEPATH_XML);
+            XmlNode node = doc.SelectSingleNode("//food[@id = " + _id + "]");
+
+            List<string> extraInfo = new List<string>();
+            int id = _id;
+            string name = node.SelectSingleNode("vegetable").InnerText;
+
+            XmlNode nodesExtra = node.SelectSingleNode("extraInfo");
+            if (nodesExtra != null)
+                extraInfo.Add(nodesExtra.InnerText);
+            /*foreach (XmlNode extra in nodesExtra)
+            {
+                string extraInformacao = extra.SelectSingleNode("extraInfo").InnerText;
+                extraInfo.Add(extraInformacao);
+            }*/
+            
+            string quantityValue = node.SelectSingleNode("quantity/value").InnerText;
+            string unityQuantity = node.SelectSingleNode("quantity/unity").InnerText;
+            int caloriesValue = int.Parse(node.SelectSingleNode("calories/value").InnerText);
+            string unityCal = node.SelectSingleNode("calories/unity").InnerText;
+
+            Vegetable veggie = new Vegetable(name, extraInfo, quantityValue, unityQuantity, caloriesValue, unityCal);
+            veggie.Id = id;
+
+            return veggie;
+        }
+
+        public bool UpdateActivity(Activity activity, int _id)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(ACTIVITY_FILEPATH_XML);
+            XmlNode node = doc.SelectSingleNode("//exercise[@id = " + _id + "]");
+            node.SelectSingleNode("activity").InnerText = activity.Nome;
+            node.SelectSingleNode("caloriesValue/value").InnerText = activity.CaloriasValue.ToString();
+            node.SelectSingleNode("caloriesValue/unity").InnerText = activity.CaloriasUnit;
+            node.SelectSingleNode("met/value").InnerText = activity.Met;
+
+            doc.Save(ACTIVITY_FILEPATH_XML);
+            return true;
+        }
+
+        public bool UpdatePlate(Plate plate, int _id)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(PLATE_FILEPATH_XML);
+            XmlNode node = doc.SelectSingleNode("//plate[@id = " + _id + "]");
+            node.SelectSingleNode("item").InnerText = plate.Name;
+            node.SelectSingleNode("parent::restaurant/@name").InnerText = plate.RestaurantName;
+            node.SelectSingleNode("quantity/value").InnerText = plate.QuantityValue;
+            node.SelectSingleNode("quantity/dosage").InnerText = plate.QuantityDosage;
+            if (plate.QuantityExtraDosage != null)
+                node.SelectSingleNode("quantity/extraDosage").InnerText = plate.QuantityExtraDosage;
+            node.SelectSingleNode("calories/value").InnerText = plate.CaloriesValue.ToString();
+            node.SelectSingleNode("calories/unity").InnerText = plate.CaloriasUnit;
+
+            doc.Save(PLATE_FILEPATH_XML);
+
+            return true;
+        }
+
+        public bool UpdateVegetable(Vegetable vegetable, int _id)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load(VEGETABLE_FILEPATH_XML);
+            XmlNode node = doc.SelectSingleNode("//food[@id = " + _id + "]");
+            
+            node.SelectSingleNode("vegetable").InnerText = vegetable.Name;
+            if (vegetable.ExtraInfo != null)
+            {
+                string extra = "";
+                foreach (string extraInfo in vegetable.ExtraInfo)
+                {
+                    if (extraInfo.IndexOf(extraInfo) == 0)
+                    {
+                        extra = extraInfo;
+                    }
+                    else
+                    {
+                        extra += ", " + extraInfo;
+                    }
+                }
+
+                XmlNode nodeExtraInfo = node.SelectSingleNode("extraInfo");
+                if (nodeExtraInfo != null)
+                {
+                    nodeExtraInfo.InnerText = extra;
+                }
+                else
+                {
+                    XmlNode nodeQuatity = node.SelectSingleNode("quantity");
+                    XmlElement extraInfoElement = doc.CreateElement("extraInfo");
+                    extraInfoElement.InnerText = extra;
+                    node.InsertBefore(extraInfoElement, nodeQuatity);
+                }
+            }
+            node.SelectSingleNode("quantity/value").InnerText = vegetable.QuantityValue;
+            node.SelectSingleNode("quantity/unity").InnerText = vegetable.UnityQuantity;
+            node.SelectSingleNode("calories/value").InnerText = vegetable.CaloriesValue.ToString();
+            node.SelectSingleNode("calories/unity").InnerText = vegetable.UnityCal;
+
+            doc.Save(VEGETABLE_FILEPATH_XML);
+
+            return true;
+        }
+
         private int getValidUserId()
         {
             XmlDocument doc = new XmlDocument();

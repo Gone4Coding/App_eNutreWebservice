@@ -1,0 +1,11 @@
+<food id="1">
+    <vegetable>Abóbora</vegetable>
+    <quantity>
+      <value>1</value>
+      <unity>chávena</unity>
+    </quantity>
+    <calories>
+      <value>30</value>
+      <unity>cal</unity>
+    </calories>
+  </food>

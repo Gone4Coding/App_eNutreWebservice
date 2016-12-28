@@ -98,11 +98,29 @@ namespace WebserviceAppNutre
         [WebInvoke(Method = "GET", UriTemplate = "/getvegetableslistbycalories?calories={calories}&unity={unity}")]
         List<Vegetable> getVegetablesListBycalories(int calories,string unity);
 
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/getactivitybyid?_id={_id}")]
+        Activity GetActivityById(int _id);
 
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/getplatebyid?_id={_id}")]
+        Plate GetPlateById(int _id);
 
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/getvegetablebyid?_id={_id}")]
+        Vegetable GetVegetableById(int _id);
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/getactivitybyid?_id={_id}")]
+        bool UpdateActivity(Activity activity, int _id);
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/getplatebyid?_id={_id}")]
+        bool UpdatePlate(Plate plate, int _id);
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "/getvegetablebyid?_id={_id}")]
+        bool UpdateVegetable(Vegetable vegetable, int _id);
 
     }
 
@@ -266,7 +284,6 @@ namespace WebserviceAppNutre
 
         public Vegetable(string name, List<string> extraInfo, string quantityValue, string unityQuantity, int caloriesValue,string unityCal)
         {
-            this.id = id;
             this.name = name;
             this.extraInfo = extraInfo;
             this.quantityValue = quantityValue;
