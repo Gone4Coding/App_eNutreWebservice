@@ -539,12 +539,14 @@ namespace WebserviceAppNutre
                 int id = int.Parse(s.SelectSingleNode("@id").InnerText);
                 string name = s.SelectSingleNode("vegetable").InnerText;
 
-                XmlNodeList nodesExtra = s.SelectNodes("extraInfo");
-                foreach (XmlNode extra in nodesExtra)
+                XmlNode nodesExtra = s.SelectSingleNode("extraInfo");
+                if(nodesExtra != null)
+                    extraInfo.Add(nodesExtra.InnerText);
+                /*foreach (XmlNode extra in nodesExtra)
                 {
                     string extraInformacao = extra.SelectSingleNode("extraInfo").InnerText;
                     extraInfo.Add(extraInformacao);
-                }
+                }*/
 
                 XmlNode quantity = s.SelectSingleNode("quantity");
                 string quantityValue = quantity.SelectSingleNode("value").InnerText;
