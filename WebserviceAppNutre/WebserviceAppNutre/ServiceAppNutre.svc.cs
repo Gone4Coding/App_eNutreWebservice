@@ -174,10 +174,10 @@ namespace WebserviceAppNutre
             }
             else
             {
-                throw new ArgumentException("ERROR: invalid username/password combination.");
+                return null;
             }
 
-            return "NULL";
+            return null;
         }
 
         public void LogOut(string username)
