@@ -32,7 +32,7 @@ namespace WebserviceAppNutre
 
         private static readonly string TOKEN_FILEPATH_XML = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "tokens.xml");
 
-        private Dictionary<string, Token> tokens;
+        private Dictionary<string, Token> tokens = new Dictionary<string, Token>();
         private class Token
         {
             private string value;
