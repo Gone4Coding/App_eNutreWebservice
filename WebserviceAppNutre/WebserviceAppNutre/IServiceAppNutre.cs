@@ -111,16 +111,16 @@ namespace WebserviceAppNutre
         Vegetable GetVegetableById(int _id);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "/getactivitybyid?_id={_id}")]
-        bool UpdateActivity(Activity activity, int _id);
+        [WebInvoke(Method = "POST", UriTemplate = "/getactivitybyid?_id={_id}&token={token}")]
+        bool UpdateActivity(Activity activity, int _id, string token);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "/getplatebyid?_id={_id}")]
-        bool UpdatePlate(Plate plate, int _id);
+        [WebInvoke(Method = "POST", UriTemplate = "/getplatebyid?_id={_id}&token={token}")]
+        bool UpdatePlate(Plate plate, int _id, string token);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "/getvegetablebyid?_id={_id}")]
-        bool UpdateVegetable(Vegetable vegetable, int _id);
+        [WebInvoke(Method = "POST", UriTemplate = "/getvegetablebyid?_id={_id}&token={token}")]
+        bool UpdateVegetable(Vegetable vegetable, int _id, string token);
 
     }
 
