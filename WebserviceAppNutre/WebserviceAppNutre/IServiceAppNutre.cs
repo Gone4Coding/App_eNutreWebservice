@@ -110,6 +110,7 @@ namespace WebserviceAppNutre
     [DataContract]
     public class Activity
     {
+        private string id;
         private string nome;
         private string metName;
         private int caloriasValue;
@@ -124,7 +125,15 @@ namespace WebserviceAppNutre
             this.caloriasValue = caloriasValue;
             this.metName = metName;
         }
-        
+
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+
         [DataMember]
         public string Nome
         {
@@ -165,6 +174,7 @@ namespace WebserviceAppNutre
     [DataContract]
     public class Plate
     {
+        private int id;
         private string name;
         private string restaurantName;
         private string quantityValue;
@@ -183,6 +193,13 @@ namespace WebserviceAppNutre
             this.quantityExtraDosage = quantityExtraDosage;
             this.caloriesValue = caloriesValue;
             this.caloriasUnit = caloriasUnit;
+        }
+
+        [DataMember]
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
         }
 
         [DataMember]
@@ -247,7 +264,7 @@ namespace WebserviceAppNutre
         private string unityCal;
 
 
-        public Vegetable(int id,string name, List<string> extraInfo, string quantityValue, string unityQuantity, int caloriesValue,string unityCal)
+        public Vegetable(string name, List<string> extraInfo, string quantityValue, string unityQuantity, int caloriesValue,string unityCal)
         {
             this.id = id;
             this.name = name;

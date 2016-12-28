@@ -199,7 +199,6 @@ namespace WebserviceAppNutre
 
         public bool addActivity(Activity activity, string token)
         {
-
             XmlDocument doc = new XmlDocument();
             doc.Load(ACTIVITY_FILEPATH_XML);
 
@@ -218,7 +217,7 @@ namespace WebserviceAppNutre
             metNode.AppendChild(metNameNode);
 
             XmlElement metValuetNode = doc.CreateElement("value");
-            metValuetNode.InnerText = activity.Met.ToString();
+            metValuetNode.InnerText = activity.Met;
             metNode.AppendChild(metValuetNode);
 
             XmlElement caloriesNode = doc.CreateElement("caloriesValue");
@@ -238,7 +237,6 @@ namespace WebserviceAppNutre
             root.AppendChild(exerciseNode);
 
             doc.Save(ACTIVITY_FILEPATH_XML);
-
 
             return true;
         }
@@ -480,8 +478,10 @@ namespace WebserviceAppNutre
                 int caloriesValue = int.Parse(calories.SelectSingleNode("value").InnerText);
                 string unityCal = calories.SelectSingleNode("unity").InnerText;
 
+                Activity act = new Activity(name, caloriesValue, unityCal, metName, metValue);
+                act.Id = id;
 
-                lista.Add(new Activity(name, caloriesValue, unityCal, metName, metValue));
+                lista.Add(act);
             }
             return lista;
         }
@@ -520,7 +520,11 @@ namespace WebserviceAppNutre
                 caloriesValue = int.Parse(calories.SelectSingleNode("value").InnerText);
                 caloriesUnity = calories.SelectSingleNode("unity").InnerText;
 
-                lista.Add(new Plate(name, restaurantName, quantityValue, dosage, extraDosage, caloriesValue, caloriesUnity));
+                Plate plate = new Plate(name, restaurantName, quantityValue, dosage, extraDosage, caloriesValue,
+                    caloriesUnity);
+                plate.Id = id;
+
+                lista.Add(plate);
             }
             return lista;
         }
@@ -531,6 +535,7 @@ namespace WebserviceAppNutre
             doc.Load(VEGETABLE_FILEPATH_XML);
             XmlNodeList nodes = doc.SelectNodes("//food");
             List<Vegetable> lista = new List<Vegetable>();
+            
 
             foreach (XmlNode s in nodes)
             {
@@ -554,9 +559,10 @@ namespace WebserviceAppNutre
                 XmlNode calories = s.SelectSingleNode("calories");
                 int caloriesValue = int.Parse(calories.SelectSingleNode("value").InnerText);
                 string unityCal = calories.SelectSingleNode("unity").InnerText;
+                Vegetable veggie = new Vegetable(name, extraInfo, quantityValue, unityQuantity, caloriesValue, unityCal);
+                veggie.Id = id;
 
-
-                lista.Add(new Vegetable(id, name, extraInfo, quantityValue, unityQuantity, caloriesValue, unityCal));
+                lista.Add(veggie);
             }
             return lista;
         }
@@ -739,10 +745,15 @@ namespace WebserviceAppNutre
                 int caloriesValue = int.Parse(caloriesNode.SelectSingleNode("value").InnerText);
                 string unityCal = caloriesNode.SelectSingleNode("unity").InnerText;
 
+                
                 if ((caloriesValue >= calories && caloriesValue <= limiteMax) ||
                     (caloriesValue <= calories && caloriesValue >= limiteMin))
                 {
-                    lista.Add(new Vegetable(id, name, extraInfo, quantityValue, unityQuantity, caloriesValue, unityCal));
+                    Vegetable veggie = new Vegetable(name, extraInfo, quantityValue, unityQuantity, caloriesValue,
+                        unityCal);
+                    veggie.Id = id;
+
+                    lista.Add(veggie);
                 }
             }
             return lista;
