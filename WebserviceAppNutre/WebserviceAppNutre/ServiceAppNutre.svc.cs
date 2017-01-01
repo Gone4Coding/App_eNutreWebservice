@@ -93,7 +93,7 @@ namespace WebserviceAppNutre
 
         }
 
-        public void SignUp(User user, string token)
+        public bool SignUp(User user, string token)
         {
             string username = user.Username;
             string password = user.Password;
@@ -124,6 +124,8 @@ namespace WebserviceAppNutre
             root.AppendChild(userNode);
 
             doc.Save(USERS_FILEPATH_XML);
+
+            return true;
         }
 
         public string LogIn(string username, string password)
@@ -183,7 +185,7 @@ namespace WebserviceAppNutre
             return null;
         }
 
-        public void LogOut(string username)
+        public bool LogOut(string username)
         {
             cleanUpTokens(username);
 
@@ -198,10 +200,13 @@ namespace WebserviceAppNutre
                 root.RemoveChild(tokenNode);
                 doc.Save(TOKEN_FILEPATH_XML);
             }
+
+            return true;
         }
 
         public bool addActivity(Activity activity, string token)
         {
+
             XmlDocument doc = new XmlDocument();
             doc.Load(ACTIVITY_FILEPATH_XML);
 
@@ -244,8 +249,10 @@ namespace WebserviceAppNutre
             return true;
         }
 
-        public void addActivityXML(XmlDocument activitiesXml, string token)
+        public bool addActivityXML(XmlDocument activitiesXml, string token)
         {
+            if (checkAuthentication(token))
+                return false;
 
             XmlDocument doc = new XmlDocument();
 
@@ -280,10 +287,15 @@ namespace WebserviceAppNutre
             }
 
             doc.Save(ACTIVITY_FILEPATH_XML);
+
+            return true;
         }
 
         public bool addRestaurant(Plate plate, string token)
         {
+            if (!checkAuthentication(token))
+                return false;
+
             XmlDocument doc = new XmlDocument();
             doc.Load(PLATE_FILEPATH_XML);
 
@@ -346,8 +358,11 @@ namespace WebserviceAppNutre
 
         }
 
-        public void addRestaurantXML(XmlDocument platesXml, string token)
+        public bool addRestaurantXML(XmlDocument platesXml, string token)
         {
+            if (!checkAuthentication(token))
+                return false;
+
             XmlDocument doc = new XmlDocument();
 
             XmlReaderSettings settings = new XmlReaderSettings();
@@ -359,10 +374,13 @@ namespace WebserviceAppNutre
 
             doc.Load(PLATE_FILEPATH_XML);
 
+            return true;
         }
 
         public bool addVegetable(Vegetable vegetable, string token)
         {
+            if (!checkAuthentication(token))
+                return false;
             XmlDocument doc = new XmlDocument();
             doc.Load(VEGETABLE_FILEPATH_XML);
 
@@ -419,8 +437,11 @@ namespace WebserviceAppNutre
             return true;
         }
 
-        public void addVegetableXML(XmlDocument vegetablesXml, string token)
+        public bool addVegetableXML(XmlDocument vegetablesXml, string token)
         {
+            if (!checkAuthentication(token))
+                return false;
+
             XmlDocument doc = new XmlDocument();
 
             XmlReaderSettings settings = new XmlReaderSettings();
@@ -460,6 +481,8 @@ namespace WebserviceAppNutre
             }
 
             doc.Save(VEGETABLE_FILEPATH_XML);
+
+            return true;
         }
 
         public List<Activity> getActivitiesList()
@@ -572,6 +595,9 @@ namespace WebserviceAppNutre
 
         public bool removeActivity(int id, string token)
         {
+            if (!checkAuthentication(token))
+                return false;
+
             XmlDocument doc = new XmlDocument();
             doc.Load(ACTIVITY_FILEPATH_XML);
             XmlNode root = doc.DocumentElement;
@@ -585,6 +611,9 @@ namespace WebserviceAppNutre
 
         public bool removePlate(int id, string token)
         {
+            if (!checkAuthentication(token))
+                return false;
+
             XmlDocument doc = new XmlDocument();
             doc.Load(PLATE_FILEPATH_XML);
             XmlNode root = doc.DocumentElement;
@@ -599,6 +628,9 @@ namespace WebserviceAppNutre
 
         public bool removeVegetable(int id, string token)
         {
+            if (!checkAuthentication(token))
+                return false;
+
             XmlDocument doc = new XmlDocument();
             doc.Load(VEGETABLE_FILEPATH_XML);
             XmlNode root = doc.DocumentElement;
@@ -923,6 +955,83 @@ namespace WebserviceAppNutre
                 return true;
             }
             return false;
+        }
+
+        public bool AddActivityToUser(int _idActivity, string token)
+        {
+            if (!checkAuthentication(token))
+                return false;
+            XmlDocument doc = new XmlDocument();
+            doc.Load(TOKEN_FILEPATH_XML);
+
+            XmlNode nodeUser = doc.SelectSingleNode("//token[value = " + token + "]//username");
+            string username = nodeUser.InnerText;
+
+            doc.Load(USERS_FILEPATH_XML);
+
+            XmlElement userChoiceElement = doc.CreateElement("choices");
+            XmlElement choiceAcrtivity = doc.CreateElement("activityId");
+            choiceAcrtivity.InnerText = _idActivity.ToString();
+            userChoiceElement.AppendChild(choiceAcrtivity);
+
+            XmlNode user = doc.SelectSingleNode("//user[username = " + username + "]");
+            user.AppendChild(userChoiceElement);
+
+            doc.Save(USERS_FILEPATH_XML);
+
+            return true;
+        }
+
+        public bool AddPlateToUser(int _idPlate, string token)
+        {
+            if (!checkAuthentication(token))
+                return false;
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load(TOKEN_FILEPATH_XML);
+
+            XmlNode nodeUser = doc.SelectSingleNode("//token[value = " + token + "]//username");
+            string username = nodeUser.InnerText;
+
+            doc.Load(USERS_FILEPATH_XML);
+
+            XmlElement userChoiceElement = doc.CreateElement("choices");
+            XmlElement choiceAcrtivity = doc.CreateElement("plateId");
+            choiceAcrtivity.InnerText = _idPlate.ToString();
+            userChoiceElement.AppendChild(choiceAcrtivity);
+
+            XmlNode user = doc.SelectSingleNode("//user[username = " + username + "]");
+            user.AppendChild(userChoiceElement);
+
+            doc.Save(USERS_FILEPATH_XML);
+
+            return true;
+        }
+
+        public bool AddVegetableToUser(int _idVegetable, string token)
+        {
+            if (!checkAuthentication(token))
+                return false;
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load(TOKEN_FILEPATH_XML);
+
+            XmlNode nodeUser = doc.SelectSingleNode("//token[value = " + token + "]//username");
+            string username = nodeUser.InnerText;
+
+            doc.Load(USERS_FILEPATH_XML);
+
+            XmlElement userChoiceElement = doc.CreateElement("choices");
+            XmlElement choiceAcrtivity = doc.CreateElement("vegetableId");
+            choiceAcrtivity.InnerText = _idVegetable.ToString();
+            userChoiceElement.AppendChild(choiceAcrtivity);
+
+            XmlNode user = doc.SelectSingleNode("//user[username = " + username + "]");
+            user.AppendChild(userChoiceElement);
+
+            doc.Save(USERS_FILEPATH_XML);
+
+            return true;
         }
 
         private int getValidUserId()

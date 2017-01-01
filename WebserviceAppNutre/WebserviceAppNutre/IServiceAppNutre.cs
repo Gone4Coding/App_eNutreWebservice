@@ -19,7 +19,7 @@ namespace WebserviceAppNutre
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/signup?token={token}")]
-        void SignUp(User user, string token); // admin only
+        bool SignUp(User user, string token); // admin only
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/login?username={username}&password={password}")]
@@ -27,7 +27,7 @@ namespace WebserviceAppNutre
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/logout")]
-        void LogOut(string token);
+        bool LogOut(string token);
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addactivity?token={token}")]
@@ -35,7 +35,7 @@ namespace WebserviceAppNutre
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addactivityxml?token={token}")]
-        void addActivityXML(XmlDocument activitiesXml, string token); // admin only
+        bool addActivityXML(XmlDocument activitiesXml, string token); // admin only
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addrestaurant?token={token}")]
@@ -43,7 +43,7 @@ namespace WebserviceAppNutre
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addrestaurantxml?token={token}")]
-        void addRestaurantXML(XmlDocument platesXml, string token); // admin only
+        bool addRestaurantXML(XmlDocument platesXml, string token); // admin only
         
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addvegetable?token={token}")]
@@ -51,7 +51,7 @@ namespace WebserviceAppNutre
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addvegetablexml?token={token}")]
-        void addVegetableXML(XmlDocument vegetablesXml, string token); // admin only
+        bool addVegetableXML(XmlDocument vegetablesXml, string token); // admin only
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/getactivitieslist")]

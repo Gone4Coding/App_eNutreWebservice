@@ -29,7 +29,7 @@
       <xs:restriction base="xs:integer"/>
     </xs:simpleType>
 
-    <xs:simpleType name="restaurantIdType">
+    <xs:simpleType name="plateIdType">
       <xs:restriction base="xs:integer"/>
     </xs:simpleType>
 
@@ -42,7 +42,7 @@
     <xs:complexType name="choichesType">
       <xs:sequence>
         <xs:element name="activityId" type="activityIdType" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="restaurantId" type="restaurantIdType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="plateId" type="plateIdType" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="vegetableId" type="vegetableIdType" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
