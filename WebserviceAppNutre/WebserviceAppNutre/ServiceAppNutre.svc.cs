@@ -69,13 +69,6 @@ namespace WebserviceAppNutre
         {
             if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password) && isUserValid(username, password))
             {
-                if (isAdmin(username))
-                {
-                   // Token token = new Token(username, true);
-                   // tokens.Add(token.Value, token);
-                   // return token.Value;
-                }
-
                 if (!tokenExistsForToken(username))
                 {
                     string t = Guid.NewGuid().ToString();
@@ -87,14 +80,16 @@ namespace WebserviceAppNutre
                     //username e token
 
                     XmlElement tokenElem = doc.CreateElement("token");
+                    string admin = (isAdmin(username)) ? "true" : "false";
+                    tokenElem.SetAttribute("id", admin);
 
-                    XmlElement usernameTkXML = doc.CreateElement("username");
-                    usernameTkXML.InnerText = username;
+                    XmlElement usernameTkXml = doc.CreateElement("username");
+                    usernameTkXml.InnerText = username;
 
                     XmlElement value = doc.CreateElement("value");
                     value.InnerText = t;
 
-                    tokenElem.AppendChild(usernameTkXML);
+                    tokenElem.AppendChild(usernameTkXml);
                     tokenElem.AppendChild(value);
 
                     root.AppendChild(tokenElem);
@@ -105,19 +100,15 @@ namespace WebserviceAppNutre
                 }
                 else
                 {
-                    XmlDocument doc = new XmlDocument();
-                    doc.Load(TOKEN_FILEPATH_XML);
-
-                    XmlNode node = doc.SelectSingleNode("//token[username = '" + username + "']/value");
+                    throw new ArgumentException("ERRO: Utilizador já se encontra autenticado");
                 }
 
             }
             else
             {
-                return null;
+                throw new ArgumentException("ERRO: Combinação Nome de Utilizador/Password incorreta");
             }
-
-            return null;
+            
         }
 
         public void LogOut(string username)
@@ -190,8 +181,7 @@ namespace WebserviceAppNutre
 
         public bool addActivityXML(XmlDocument activitiesXml, string token)
         {
-            if (checkAuthentication(token))
-                return false;
+            checkAuthentication(token);
 
             XmlDocument doc = new XmlDocument();
 
@@ -232,8 +222,7 @@ namespace WebserviceAppNutre
 
         public bool addRestaurant(Plate plate, string token)
         {
-            if (!checkAuthentication(token))
-                return false;
+            checkAuthentication(token);
 
             XmlDocument doc = new XmlDocument();
             doc.Load(PLATE_FILEPATH_XML);
@@ -299,8 +288,7 @@ namespace WebserviceAppNutre
 
         public bool addRestaurantXML(XmlDocument platesXml, string token)
         {
-            if (!checkAuthentication(token))
-                return false;
+            checkAuthentication(token);
 
             XmlDocument doc = new XmlDocument();
 
@@ -318,8 +306,8 @@ namespace WebserviceAppNutre
 
         public bool addVegetable(Vegetable vegetable, string token)
         {
-            if (!checkAuthentication(token))
-                return false;
+            checkAuthentication(token);
+
             XmlDocument doc = new XmlDocument();
             doc.Load(VEGETABLE_FILEPATH_XML);
 
@@ -378,8 +366,7 @@ namespace WebserviceAppNutre
 
         public bool addVegetableXML(XmlDocument vegetablesXml, string token)
         {
-            if (!checkAuthentication(token))
-                return false;
+            checkAuthentication(token);
 
             XmlDocument doc = new XmlDocument();
 
@@ -1069,11 +1056,17 @@ namespace WebserviceAppNutre
         {
             try
             {
-                //Token tokenObject = tokens[token];
+                XmlDocument doc = new XmlDocument();
+                doc.Load(TOKEN_FILEPATH_XML);
+
+                string tokenNode = doc.SelectSingleNode("//token[value = " + token + "]//@id").InnerText;
+
+                if (!tokenNode.Equals("true"))
+                    throw new ArgumentException("ERRO: Utilizador inválido para este tipo de operação");
             }
             catch (KeyNotFoundException)
             {
-                return false;
+                throw new ArgumentException("ERRO: Utilizador inválido para este tipo de operação");
             }
 
             return true;

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <tokens>
-  <token>
+  <token isAdmin="false">
     <username>pedro</username>
     <value>4e467346-df43-4710-bd74-e12dd97fc740</value>
   </token>
