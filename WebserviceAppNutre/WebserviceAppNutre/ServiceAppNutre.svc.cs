@@ -29,20 +29,17 @@ namespace WebserviceAppNutre
         private static readonly string ACTIVITY_FILEPATH_XML = Path.Combine(HostingEnvironment.ApplicationPhysicalPath,
             "App_Data", "exercises.xml");
 
-        private static readonly string ACTIVITY_FILEPATH_SCHEMA =
-            Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "activitiesSchema.xml");
+        private static readonly string ACTIVITY_FILEPATH_SCHEMA = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "activitiesSchema.xsd");
 
-        private static readonly string PLATE_FILEPATH_XML = Path.Combine(HostingEnvironment.ApplicationPhysicalPath,
-            "App_Data", "restaurants.xml");
+        private static readonly string PLATE_FILEPATH_XML = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "restaurants.xml");
 
-        private static readonly string PLATE_FILEPATH_SCHEMA = Path.Combine(HostingEnvironment.ApplicationPhysicalPath,
-            "App_Data", "restaurantsSchema.xml");
+        private static readonly string PLATE_FILEPATH_SCHEMA = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "restaurantsSchema.xsd");
 
         private static readonly string VEGETABLE_FILEPATH_XML = Path.Combine(
             HostingEnvironment.ApplicationPhysicalPath, "App_Data", "vegetables.xml");
 
         private static readonly string VEGETABLE_FILEPATH_SCHEMA =
-            Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "vegetablesSchema.xml");
+            Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "vegetablesSchema.xsd");
 
         private static readonly string TOKEN_FILEPATH_XML = Path.Combine(HostingEnvironment.ApplicationPhysicalPath,
             "App_Data", "tokens.xml");
@@ -212,13 +209,19 @@ namespace WebserviceAppNutre
             {
                 XmlDocument doc = new XmlDocument();
                 XmlDocument activitiesXml = new XmlDocument();
-                activitiesXml.LoadXml(File.ReadAllText(_activitiesXml));
+                activitiesXml.LoadXml(_activitiesXml);
 
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.Schemas.Add(null, ACTIVITY_FILEPATH_SCHEMA);
                 settings.ValidationType = ValidationType.Schema;
 
-                XmlReader reader = XmlReader.Create(activitiesXml.InnerXml, settings);
+                MemoryStream xmlStream = new MemoryStream();
+                activitiesXml.Save(xmlStream);
+
+                xmlStream.Flush();
+                xmlStream.Position = 0;
+
+                XmlReader reader = XmlReader.Create(xmlStream, settings);
                 doc.Load(reader);
 
                 doc.Load(ACTIVITY_FILEPATH_XML);
@@ -364,7 +367,6 @@ namespace WebserviceAppNutre
             }
 
         }
-
        
         public void addRestaurantXML(string _platesXml, string token)
         {
@@ -380,10 +382,16 @@ namespace WebserviceAppNutre
                 settings.Schemas.Add(null, PLATE_FILEPATH_SCHEMA);
                 settings.ValidationType = ValidationType.Schema;
 
-                XmlReader reader = XmlReader.Create(platesXml.InnerXml, settings);
+                MemoryStream xmlStream = new MemoryStream();
+                platesXml.Save(xmlStream);
+
+                xmlStream.Flush();
+                xmlStream.Position = 0;
+
+                XmlReader reader = XmlReader.Create(xmlStream, settings);
                 doc.Load(reader);
 
-                doc.Load(platesXml.InnerXml);
+                doc.LoadXml(_platesXml);
 
                 doc.Save(PLATE_FILEPATH_XML);
             }
@@ -513,7 +521,13 @@ namespace WebserviceAppNutre
                 settings.Schemas.Add(null, VEGETABLE_FILEPATH_SCHEMA);
                 settings.ValidationType = ValidationType.Schema;
 
-                XmlReader reader = XmlReader.Create(vegetablesXml.InnerXml, settings);
+                MemoryStream xmlStream = new MemoryStream();
+                vegetablesXml.Save(xmlStream);
+
+                xmlStream.Flush();
+                xmlStream.Position = 0;
+
+                XmlReader reader = XmlReader.Create(xmlStream, settings);
                 doc.Load(reader);
 
                 doc.Load(VEGETABLE_FILEPATH_XML);
