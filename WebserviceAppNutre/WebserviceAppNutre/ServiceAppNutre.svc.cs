@@ -15,7 +15,7 @@ namespace WebserviceAppNutre
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
+
     public class ServiceAppNutre : IServiceAppNutre
     {
         private static readonly string USERS_FILEPATH_XML = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "users.xml");
@@ -31,69 +31,8 @@ namespace WebserviceAppNutre
         private static readonly string VEGETABLE_FILEPATH_SCHEMA = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "vegetablesSchema.xml");
 
         private static readonly string TOKEN_FILEPATH_XML = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, "App_Data", "tokens.xml");
-
-        private Dictionary<string, Token> tokens = new Dictionary<string, Token>();
-        private class Token
-        {
-            private string value;
-            private string username;
-            private bool isAdmin;
-
-            public Token(string username, bool isAdmin)
-            {
-                this.value = Guid.NewGuid().ToString();
-                this.username = username;
-                this.isAdmin = isAdmin;
-                //  saveToken();
-            }
-
-            public string Value
-            {
-                get { return value; }
-            }
-
-            public string Username
-            {
-                get { return username; }
-            }
-
-            private void saveToken()
-            {
-                XmlDocument doc = new XmlDocument();
-                doc.Load(TOKEN_FILEPATH_XML);
-
-                XmlNode tokensNode = doc.SelectSingleNode("//tokens");
-
-                XmlElement tokenNode = doc.CreateElement("token");
-                tokenNode.SetAttribute("isAdmin", isAdmin.ToString());
-
-                XmlElement usernameNode = doc.CreateElement("username");
-                usernameNode.InnerText = username;
-
-                XmlElement valueNode = doc.CreateElement("value");
-                valueNode.InnerText = value;
-
-                doc.Save(TOKEN_FILEPATH_XML);
-            }
-        }
-
-        private void cleanUpTokens(string username)
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(TOKEN_FILEPATH_XML);
-
-            XmlNode root = doc.SelectSingleNode("/tokens");
-            XmlNodeList tokens = doc.SelectNodes("//token[username = '" + username + "']");
-
-            foreach (XmlNode token in tokens)
-            {
-                root.RemoveChild(token);
-                doc.Save(TOKEN_FILEPATH_XML);
-            }
-
-        }
-
-        public bool SignUp(User user, string token)
+        
+        public void SignUp(User user, string token)
         {
             string username = user.Username;
             string password = user.Password;
@@ -124,14 +63,10 @@ namespace WebserviceAppNutre
             root.AppendChild(userNode);
 
             doc.Save(USERS_FILEPATH_XML);
-
-            return true;
         }
 
         public string LogIn(string username, string password)
         {
-            cleanUpTokens(username);
-
             if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password) && isUserValid(username, password))
             {
                 if (isAdmin(username))
@@ -141,7 +76,7 @@ namespace WebserviceAppNutre
                     return token.Value;
                 }
 
-                if (tokenExistsForToken(username) == false)
+                if (!tokenExistsForToken(username))
                 {
                     string t = Guid.NewGuid().ToString();
 
@@ -185,23 +120,27 @@ namespace WebserviceAppNutre
             return null;
         }
 
-        public bool LogOut(string username)
+        public void LogOut(string username)
         {
-            cleanUpTokens(username);
-
-            XmlDocument doc = new XmlDocument();
-            doc.Load(TOKEN_FILEPATH_XML);
-
-            XmlNode root = doc.SelectSingleNode("/tokens");
-            XmlNode tokenNode = doc.SelectSingleNode("//token[username = '" + username + "']");
-
-            if (tokenNode != null)
+            try
             {
-                root.RemoveChild(tokenNode);
-                doc.Save(TOKEN_FILEPATH_XML);
+                XmlDocument doc = new XmlDocument();
+                doc.Load(TOKEN_FILEPATH_XML);
+
+                XmlNode root = doc.SelectSingleNode("/tokens");
+                XmlNode tokenNode = doc.SelectSingleNode("//token[username = '" + username + "']");
+
+                if (tokenNode != null)
+                {
+                    root.RemoveChild(tokenNode);
+                    doc.Save(TOKEN_FILEPATH_XML);
+                }
+            }
+            catch (NullReferenceException)
+            {
+                throw new ArgumentNullException("ERRO: Utilizador já fez Logout");
             }
 
-            return true;
         }
 
         public bool addActivity(Activity activity, string token)
@@ -1120,11 +1059,7 @@ namespace WebserviceAppNutre
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
-
+            return false;
         }
 
         private bool checkAuthentication(string token)
@@ -1150,11 +1085,8 @@ namespace WebserviceAppNutre
             if (node != null)
             {
                 return true;
-
             }
-
             return false;
-
         }
     }
 }

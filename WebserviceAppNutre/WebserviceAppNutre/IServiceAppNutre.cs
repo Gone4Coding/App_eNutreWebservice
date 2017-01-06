@@ -19,7 +19,7 @@ namespace WebserviceAppNutre
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/signup?token={token}")]
-        bool SignUp(User user, string token); // admin only
+        void SignUp(User user, string token); // admin only
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/login?username={username}&password={password}")]
@@ -27,7 +27,7 @@ namespace WebserviceAppNutre
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/logout")]
-        bool LogOut(string token);
+        void LogOut(string token);
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addactivity?token={token}")]
