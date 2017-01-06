@@ -368,7 +368,7 @@ namespace WebserviceAppNutre
        
         public void addRestaurantXML(MemoryStream _platesXml, string token)
         {
-            checkAuthentication(token, true);
+            //checkAuthentication(token, true);
 
             try
             {
