@@ -26,7 +26,7 @@ namespace WebserviceAppNutre
         string LogIn(string username, string password);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "/logout")]
+        [WebInvoke(Method = "POST", UriTemplate = "/logout?token={token}")]
         void LogOut(string token);
        
         [OperationContract]
