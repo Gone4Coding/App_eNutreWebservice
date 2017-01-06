@@ -43,7 +43,7 @@ namespace WebserviceAppNutre
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addrestaurantxml?token={token}")]
-        void addRestaurantXML(string platesXml, string token); // admin only
+        void addRestaurantXML(MemoryStream _platesXml, string token); // admin only
         
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addvegetable?token={token}")]

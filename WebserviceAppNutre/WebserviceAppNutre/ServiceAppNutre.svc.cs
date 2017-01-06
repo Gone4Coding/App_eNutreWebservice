@@ -365,15 +365,20 @@ namespace WebserviceAppNutre
 
         }
 
-        public void addRestaurantXML(string _platesXml, string token)
+       
+        public void addRestaurantXML(MemoryStream _platesXml, string token)
         {
             checkAuthentication(token, true);
 
             try
             {
+                StreamReader r = new StreamReader(_platesXml);
+
+                string file = File.ReadAllText(r.ReadToEnd());
+
                 XmlDocument doc = new XmlDocument();
                 XmlDocument platesXml = new XmlDocument();
-                platesXml.LoadXml(File.ReadAllText(_platesXml));
+                platesXml.LoadXml(file);
 
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.Schemas.Add(null, PLATE_FILEPATH_SCHEMA);
