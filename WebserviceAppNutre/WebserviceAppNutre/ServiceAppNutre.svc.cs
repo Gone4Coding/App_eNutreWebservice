@@ -71,9 +71,9 @@ namespace WebserviceAppNutre
             {
                 if (isAdmin(username))
                 {
-                    Token token = new Token(username, true);
-                    tokens.Add(token.Value, token);
-                    return token.Value;
+                   // Token token = new Token(username, true);
+                   // tokens.Add(token.Value, token);
+                   // return token.Value;
                 }
 
                 if (!tokenExistsForToken(username))
@@ -700,18 +700,21 @@ namespace WebserviceAppNutre
             XmlNodeList nodes = doc.SelectNodes("//food");
             List<Vegetable> lista = new List<Vegetable>();
 
-            List<string> extraInfo = new List<string>();
+           
 
             foreach (XmlNode s in nodes)
             {
+                List<string> extraInfo = new List<string>();
                 int id = int.Parse(s.SelectSingleNode("@id").InnerText);
                 string name = s.SelectSingleNode("vegetable").InnerText;
-                XmlNodeList nodesExtra = s.SelectNodes("/extraInfo");
-                foreach (XmlNode extra in nodesExtra)
+                XmlNode nodesExtra = s.SelectSingleNode("extraInfo");
+                if (nodesExtra != null)
+                    extraInfo.Add(nodesExtra.InnerText);
+                /*foreach (XmlNode extra in nodesExtra)
                 {
                     string extraInformacao = extra.SelectSingleNode("extraInfo").InnerText;
                     extraInfo.Add(extraInformacao);
-                }
+                }*/
                 XmlNode quantity = s.SelectSingleNode("quantity");
                 string quantityValue = quantity.SelectSingleNode("value").InnerText;
                 string unityQuantity = quantity.SelectSingleNode("unity").InnerText;
@@ -1066,7 +1069,7 @@ namespace WebserviceAppNutre
         {
             try
             {
-                Token tokenObject = tokens[token];
+                //Token tokenObject = tokens[token];
             }
             catch (KeyNotFoundException)
             {
