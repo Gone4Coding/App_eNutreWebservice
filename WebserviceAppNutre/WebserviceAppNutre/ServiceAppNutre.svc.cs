@@ -212,7 +212,7 @@ namespace WebserviceAppNutre
             {
                 XmlDocument doc = new XmlDocument();
                 XmlDocument activitiesXml = new XmlDocument();
-                activitiesXml.LoadXml(_activitiesXml);
+                activitiesXml.LoadXml(File.ReadAllText(_activitiesXml));
 
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.Schemas.Add(null, ACTIVITY_FILEPATH_SCHEMA);
@@ -373,7 +373,7 @@ namespace WebserviceAppNutre
             {
                 XmlDocument doc = new XmlDocument();
                 XmlDocument platesXml = new XmlDocument();
-                platesXml.LoadXml(_platesXml);
+                platesXml.LoadXml(File.ReadAllText(_platesXml));
 
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.Schemas.Add(null, PLATE_FILEPATH_SCHEMA);
@@ -506,7 +506,7 @@ namespace WebserviceAppNutre
             {
                 XmlDocument doc = new XmlDocument();
                 XmlDocument vegetablesXml = new XmlDocument();
-                vegetablesXml.LoadXml(_vegetablesXml);
+                vegetablesXml.LoadXml(File.ReadAllText(_vegetablesXml));
 
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.Schemas.Add(null, VEGETABLE_FILEPATH_SCHEMA);
