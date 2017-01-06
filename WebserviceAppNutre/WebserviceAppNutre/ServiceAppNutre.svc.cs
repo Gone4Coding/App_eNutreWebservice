@@ -641,7 +641,7 @@ namespace WebserviceAppNutre
 
             }
 
-            XmlNodeList nodes = nodes = doc.SelectNodes("//exercise");
+            XmlNodeList nodes = doc.SelectNodes("//exercise");
             List<Activity> lista = new List<Activity>();
 
             foreach (XmlNode s in nodes)
