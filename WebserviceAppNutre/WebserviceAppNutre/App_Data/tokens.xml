@@ -4,4 +4,8 @@
     <username>pedro</username>
     <value>4e467346-df43-4710-bd74-e12dd97fc740</value>
   </token>
+  <token isAdmin="true">
+    <username>admin</username>
+    <value>dde84772-fcf7-41f6-bf46-e2425dfc162a</value>
+  </token>
 </tokens>

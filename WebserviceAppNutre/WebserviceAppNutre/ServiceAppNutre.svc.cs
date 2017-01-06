@@ -87,7 +87,9 @@ namespace WebserviceAppNutre
         {
             if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password) && isUserValid(username, password))
             {
-                if (!tokenExistsForUser(username))
+                string token = getTokenForUser(username);
+                 
+                if (token == null)
                 {
                     string t = Guid.NewGuid().ToString();
 
@@ -98,7 +100,7 @@ namespace WebserviceAppNutre
 
                     XmlElement tokenElem = doc.CreateElement("token");
                     string admin = (isAdmin(username)) ? "true" : "false";
-                    tokenElem.SetAttribute("id", admin);
+                    tokenElem.SetAttribute("isAdmin", admin);
 
                     XmlElement usernameTkXml = doc.CreateElement("username");
                     usernameTkXml.InnerText = username;
@@ -115,8 +117,7 @@ namespace WebserviceAppNutre
 
                     return t;
                 }
-                throw new ArgumentException("ERRO: Utilizador já se encontra autenticado");
-
+                return token;
             }
             throw new ArgumentException("ERRO: Combinação Nome de Utilizador/Password incorreta");
         }
@@ -1229,17 +1230,22 @@ namespace WebserviceAppNutre
             return true;
         }
 
-        private bool tokenExistsForUser(string username)
+        private string getTokenForUser(string username)
         {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(TOKEN_FILEPATH_XML);
+            string token = "";
 
-            XmlNode node = doc.SelectSingleNode("//token[username = '" + username + "']");
-            if (node != null)
+            try
             {
-                return true;
+                XmlDocument doc = new XmlDocument();
+                doc.Load(TOKEN_FILEPATH_XML);
+
+                token = doc.SelectSingleNode("//token[username = '" + username + "']//value").InnerText;
             }
-            return false;
+            catch (NullReferenceException)
+            {
+                return null;
+            }
+            return token;
         }
 
     }
