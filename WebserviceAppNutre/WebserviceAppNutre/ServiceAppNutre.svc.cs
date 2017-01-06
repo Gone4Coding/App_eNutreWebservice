@@ -204,13 +204,15 @@ namespace WebserviceAppNutre
             }
         }
 
-        public void addActivityXML(XmlDocument activitiesXml, string token)
+        public void addActivityXML(string _activitiesXml, string token)
         {
             checkAuthentication(token, true);
 
             try
             {
                 XmlDocument doc = new XmlDocument();
+                XmlDocument activitiesXml = new XmlDocument();
+                activitiesXml.LoadXml(_activitiesXml);
 
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.Schemas.Add(null, ACTIVITY_FILEPATH_SCHEMA);
@@ -363,13 +365,15 @@ namespace WebserviceAppNutre
 
         }
 
-        public void addRestaurantXML(XmlDocument platesXml, string token)
+        public void addRestaurantXML(string _platesXml, string token)
         {
             checkAuthentication(token, true);
 
             try
             {
                 XmlDocument doc = new XmlDocument();
+                XmlDocument platesXml = new XmlDocument();
+                platesXml.LoadXml(_platesXml);
 
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.Schemas.Add(null, PLATE_FILEPATH_SCHEMA);
@@ -494,13 +498,15 @@ namespace WebserviceAppNutre
             }
         }
 
-        public void addVegetableXML(XmlDocument vegetablesXml, string token)
+        public void addVegetableXML(string _vegetablesXml, string token)
         {
             checkAuthentication(token, true);
 
             try
             {
                 XmlDocument doc = new XmlDocument();
+                XmlDocument vegetablesXml = new XmlDocument();
+                vegetablesXml.LoadXml(_vegetablesXml);
 
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.Schemas.Add(null, VEGETABLE_FILEPATH_SCHEMA);
