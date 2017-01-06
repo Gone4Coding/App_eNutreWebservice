@@ -18,8 +18,8 @@ namespace WebserviceAppNutre
     {
        
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "/signup?token={token}")]
-        void SignUp(User user, string token); // admin only
+        [WebInvoke(Method = "POST", UriTemplate = "/signup")]
+        void SignUp(User user);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/login?username={username}&password={password}")]
@@ -31,27 +31,27 @@ namespace WebserviceAppNutre
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addactivity?token={token}")]
-        bool addActivity(Activity activity, string token); // admin only
+        void addActivity(Activity activity, string token); // admin only
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addactivityxml?token={token}")]
-        bool addActivityXML(XmlDocument activitiesXml, string token); // admin only
+        void addActivityXML(XmlDocument activitiesXml, string token); // admin only
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addrestaurant?token={token}")]
-        bool addRestaurant(Plate plate, string token); // admin only
+        void addRestaurant(Plate plate, string token); // admin only
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addrestaurantxml?token={token}")]
-        bool addRestaurantXML(XmlDocument platesXml, string token); // admin only
+        void addRestaurantXML(XmlDocument platesXml, string token); // admin only
         
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addvegetable?token={token}")]
-        bool addVegetable(Vegetable vegetable, string token); // admin only
+        void addVegetable(Vegetable vegetable, string token); // admin only
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addvegetablexml?token={token}")]
-        bool addVegetableXML(XmlDocument vegetablesXml, string token); // admin only
+        void addVegetableXML(XmlDocument vegetablesXml, string token); // admin only
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/getactivitieslist")]

@@ -1,11 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <users>
   <user isAdmin="true" id="1">
     <username>admin</username>
-    <password>admin</password>
+    <password>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</password>
+    <!-- admin -->
   </user>
   <user isAdmin="false" id="2">
-	  <username>pedro</username>
-    <password>pedro</password>
+    <username>pedro</username>
+    <password>ee5cd7d5d96c8874117891b2c92a036f96918e66c102bc698ae77542c186f981</password>
+    <!-- pedro -->
   </user>
-</users> 
+  <user isAdmin="False" id="3">
+    <username>hugo</username>
+    <password>0478721f1106c2a631a90181bac7efc77767a3903eb9220687bff8a14e940fa7</password>
+    <!--hugo-->
+  </user>
+  <user isAdmin="False" id="4">
+    <username>joao</username>
+    <password>ed2befb11499489e2570cb053f774b8ed93e89eddab3f78867a2a5f32c58845e</password>
+    <!--joao-->
+  </user>
+</users>
