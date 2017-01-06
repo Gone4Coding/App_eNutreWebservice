@@ -35,7 +35,7 @@ namespace WebserviceAppNutre
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addactivityxml?token={token}")]
-        void addActivityXML(string activitiesXml, string token); // admin only
+        void addActivityXML(string _activitiesXml, string token); // admin only
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addrestaurant?token={token}")]
@@ -43,7 +43,7 @@ namespace WebserviceAppNutre
        
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addrestaurantxml?token={token}")]
-        void addRestaurantXML(MemoryStream _platesXml, string token); // admin only
+        void addRestaurantXML(string _platesXml, string token); // admin only
         
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addvegetable?token={token}")]
@@ -51,7 +51,7 @@ namespace WebserviceAppNutre
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "/addvegetablexml?token={token}")]
-        void addVegetableXML(string vegetablesXml, string token); // admin only
+        void addVegetableXML(string _vegetablesXml, string token); // admin only
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "/getactivitieslist")]
