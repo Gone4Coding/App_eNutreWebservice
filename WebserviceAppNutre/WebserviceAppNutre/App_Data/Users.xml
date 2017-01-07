@@ -20,4 +20,9 @@
     <password>ed2befb11499489e2570cb053f774b8ed93e89eddab3f78867a2a5f32c58845e</password>
     <!--joao-->
   </user>
+  <user isAdmin="True" id="5">
+    <username>pepas</username>
+    <password>648780bc1760fad755c09e35390ce5a9fed6ec923646c8e933cdabeb1c5d3518</password>
+    <!--pepas-->
+  </user>
 </users>
