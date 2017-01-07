@@ -382,13 +382,13 @@ namespace WebserviceAppNutre
                 settings.Schemas.Add(null, PLATE_FILEPATH_SCHEMA);
                 settings.ValidationType = ValidationType.Schema;
 
-                MemoryStream xmlStream = new MemoryStream();
-                platesXml.Save(xmlStream);
+                MemoryStream stream = new MemoryStream();
+                platesXml.Save(stream);
 
-                xmlStream.Flush();
-                xmlStream.Position = 0;
+                stream.Flush();
+                stream.Position = 0;
 
-                XmlReader reader = XmlReader.Create(xmlStream, settings);
+                XmlReader reader = XmlReader.Create(stream, settings);
                 doc.Load(reader);
 
                 doc.LoadXml(_platesXml);
