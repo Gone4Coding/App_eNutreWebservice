@@ -372,8 +372,8 @@ namespace WebserviceAppNutre
         {
             checkAuthentication(token, true);
 
-            try
-            {
+            /*try
+            {*/
                 XmlDocument doc = new XmlDocument();
                 XmlDocument platesXml = new XmlDocument();
                 platesXml.LoadXml(_platesXml);
@@ -394,7 +394,7 @@ namespace WebserviceAppNutre
                 doc.LoadXml(_platesXml);
 
                 doc.Save(PLATE_FILEPATH_XML);
-            }
+            /*}
             catch (XmlSchemaException ex)
             {
                 throw new ArgumentException(ex.Message);
@@ -426,7 +426,7 @@ namespace WebserviceAppNutre
             catch (NullReferenceException ex)
             {
                 throw new ArgumentException(ex.Message);
-            }
+            }*/
         }
 
         public void addVegetable(Vegetable vegetable, string token)
