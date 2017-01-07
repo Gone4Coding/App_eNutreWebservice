@@ -13,5 +13,1465 @@
         <unity>kcal</unity>
       </calories>
     </plate>
+    <plate id="2">
+      <item>Hambúrguer bem Passado</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>200g</extraDosage>
+      </quantity>
+      <calories>
+        <value>304</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="3">
+      <item>Limonada sem Açúcar</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>10</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="4">
+      <item>H3 Arroz</item>
+      <quantity>
+        <value>1/2</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>195</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="5">
+      <item>Batatas Fritas (1/2 dose)</item>
+      <quantity>
+        <value>1/2</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>274</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="6">
+      <item>H3 Esparregado</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>116</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="7">
+      <item>Hambúrguer Médio</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>200g</extraDosage>
+      </quantity>
+      <calories>
+        <value>354</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="8">
+      <item>Batatas Fritas</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>75g</extraDosage>
+      </quantity>
+      <calories>
+        <value>411</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="9">
+      <item>H3 Arroz (1/2 dose)</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>390</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="10">
+      <item>Limonada de Morango sem Açúcar</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>14</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="11">
+      <item>H3 Grelado</item>
+      <quantity>
+        <value>1</value>
+        <dosage>hambúrguer</dosage>
+        <extraDosage>200g</extraDosage>
+      </quantity>
+      <calories>
+        <value>304</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="12">
+      <item>H3 Mediterrãneo</item>
+      <quantity>
+        <value>1</value>
+        <dosage>hambúrguer</dosage>
+        <extraDosage>180g</extraDosage>
+      </quantity>
+      <calories>
+        <value>441</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="13">
+      <item>H3 Cheese</item>
+      <quantity>
+        <value>1</value>
+        <dosage>hambúrguer</dosage>
+        <extraDosage>180g</extraDosage>
+      </quantity>
+      <calories>
+        <value>464</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="14">
+      <item>H3 Champignon</item>
+      <quantity>
+        <value>1</value>
+        <dosage>hambúrguer</dosage>
+        <extraDosage>200g</extraDosage>
+      </quantity>
+      <calories>
+        <value>421</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="15">
+      <item>Tuga</item>
+      <quantity>
+        <value>1</value>
+        <dosage>hambúrguer</dosage>
+        <extraDosage>180g</extraDosage>
+      </quantity>
+      <calories>
+        <value>424</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="16">
+      <item>H3 Benedict</item>
+      <quantity>
+        <value>1</value>
+        <dosage>hambúrguer</dosage>
+        <extraDosage>100g</extraDosage>
+      </quantity>
+      <calories>
+        <value>553</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="17">
+      <item>H3 Tuga</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>180g</extraDosage>
+      </quantity>
+      <calories>
+        <value>424</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="18">
+      <item>H3 Legumes</item>
+      <quantity>
+        <value>1</value>
+        <dosage>hambúrguer</dosage>
+      </quantity>
+      <calories>
+        <value>460</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="19">
+      <item>Super Bread</item>
+      <quantity>
+        <value>1</value>
+        <dosage>hambúrguer</dosage>
+        <extraDosage>380g</extraDosage>
+      </quantity>
+      <calories>
+        <value>836</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="20">
+      <item>H3 Carbonara</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>546</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+  </restaurant>
+  <restaurant name="mcdonalds">
+    <plate id="21">
+      <item>Batatas Fritas (Média)</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>100g</extraDosage>
+      </quantity>
+      <calories>
+        <value>340</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="22">
+      <item>Batatas Fritas (Média)</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>100g</extraDosage>
+      </quantity>
+      <calories>
+        <value>340</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="23">
+      <item>Big Mac</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>510</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="24">
+      <item>Batatas Fritas (Pequena)</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>240</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="25">
+      <item>Double Cheeseburguer</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>448</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="26">
+      <item>Cheeseburger</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>120g</extraDosage>
+      </quantity>
+      <calories>
+        <value>305</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="27">
+      <item>Chicken McNuggets (4)</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>179</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="28">
+      <item>Batatas Fritas (Grande)</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>448</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="29">
+      <item>McFlurry Snickers</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>187g</extraDosage>
+      </quantity>
+      <calories>
+        <value>375</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="30">
+      <item>Big Tasty</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>345g</extraDosage>
+      </quantity>
+      <calories>
+        <value>842</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="31">
+      <item>CBO</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>247g</extraDosage>
+      </quantity>
+      <calories>
+        <value>665</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="32">
+      <item>Coca-Cola (Média)</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>400ml</extraDosage>
+      </quantity>
+      <calories>
+        <value>176</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="33">
+      <item>Sopa de Grão com Espinafres</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>150ml</extraDosage>
+      </quantity>
+      <calories>
+        <value>75</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="34">
+      <item>Sundae de Caramelo</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>184g</extraDosage>
+      </quantity>
+      <calories>
+        <value>325</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="35">
+      <item>Ketchup para Batatas</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>12g</extraDosage>
+      </quantity>
+      <calories>
+        <value>12</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="36">
+      <item>Wrap Ranch</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>119g</extraDosage>
+      </quantity>
+      <calories>
+        <value>315</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="37">
+      <item>McChicken</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>184g</extraDosage>
+      </quantity>
+      <calories>
+        <value>410</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="38">
+      <item>McFlurry Oreo</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>218g</extraDosage>
+      </quantity>
+      <calories>
+        <value>345</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="39">
+      <item>Molho para Batatas</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>25ml</extraDosage>
+      </quantity>
+      <calories>
+        <value>46</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="40">
+      <item>Coca-Cola Zero (Pequena)</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>250ml</extraDosage>
+      </quantity>
+      <calories>
+        <value>1</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+  </restaurant>
+  <restaurant name="burger-king">
+    <plate id="41">
+      <item>Whopper</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>273g</extraDosage>
+      </quantity>
+      <calories>
+        <value>633</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="42">
+      <item>Whopper</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>273g</extraDosage>
+      </quantity>
+      <calories>
+        <value>633</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="43">
+      <item>Double Cheese Bacon XXL</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>182g</extraDosage>
+      </quantity>
+      <calories>
+        <value>509</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="44">
+      <item>Big King</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>163g</extraDosage>
+      </quantity>
+      <calories>
+        <value>411</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="45">
+      <item>Crispy Chicken</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>177g</extraDosage>
+      </quantity>
+      <calories>
+        <value>503</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="46">
+      <item>BK Fusions Oreo Ice Cream</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>170g</extraDosage>
+      </quantity>
+      <calories>
+        <value>326</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="47">
+      <item>Steakhouse</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>950</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="48">
+      <item>Ketchup Sachet</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>10g</extraDosage>
+      </quantity>
+      <calories>
+        <value>10</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="49">
+      <item>Long Chicken</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>222g</extraDosage>
+      </quantity>
+      <calories>
+        <value>624</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="50">
+      <item>Veggie Bean Burger</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>255g</extraDosage>
+      </quantity>
+      <calories>
+        <value>604</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="51">
+      <item>Hot Brownie with Ice Cream</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>120g</extraDosage>
+      </quantity>
+      <calories>
+        <value>422</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+  </restaurant>
+  <restaurant name="burger-ranch">
+    <plate id="52">
+      <item>Batatas Fritas (Pequena)</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>90g</extraDosage>
+      </quantity>
+      <calories>
+        <value>150</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="53">
+      <item>Batatas Fritas (Pequena)</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>90g</extraDosage>
+      </quantity>
+      <calories>
+        <value>150</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="54">
+      <item>Tosta Mista</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>285</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="55">
+      <item>Hamburguer Ranch</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>557</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="56">
+      <item>Tosta Queijo</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>215</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="57">
+      <item>Hamburguer Clássico</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>320</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="58">
+      <item>Cachorro</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>525</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="59">
+      <item>Hamburguer Peixe</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>389</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="60">
+      <item>Hamburguer Vegetariano</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>413</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+  </restaurant>
+  <restaurant name="kfc">
+    <plate id="61">
+      <item>Pedaço de Frango</item>
+      <quantity>
+        <value>1</value>
+        <dosage>pedaço</dosage>
+        <extraDosage>93g</extraDosage>
+      </quantity>
+      <calories>
+        <value>197</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="62">
+      <item>Pedaço de Frango</item>
+      <quantity>
+        <value>1</value>
+        <dosage>pedaço</dosage>
+        <extraDosage>93g</extraDosage>
+      </quantity>
+      <calories>
+        <value>197</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="63">
+      <item>Hot Wings</item>
+      <quantity>
+        <value>2</value>
+        <dosage>hot</dosage>
+      </quantity>
+      <calories>
+        <value>188</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="64">
+      <item>Brazer</item>
+      <quantity>
+        <value>1</value>
+        <dosage>sanduíche</dosage>
+        <extraDosage>273g</extraDosage>
+      </quantity>
+      <calories>
+        <value>526</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="65">
+      <item>Tower</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>258g</extraDosage>
+      </quantity>
+      <calories>
+        <value>639</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="66">
+      <item>Twister</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>209g</extraDosage>
+      </quantity>
+      <calories>
+        <value>510</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+  </restaurant>
+  <restaurant name="noori">
+    <plate id="67">
+      <item>Box Salmão</item>
+      <quantity>
+        <value>1</value>
+        <dosage>box</dosage>
+      </quantity>
+      <calories>
+        <value>167</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="68">
+      <item>Box Salmão</item>
+      <quantity>
+        <value>1</value>
+        <dosage>box</dosage>
+      </quantity>
+      <calories>
+        <value>167</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+  </restaurant>
+  <restaurant name="pans-amp-company">
+    <plate id="69">
+      <item>Pasta de Atum</item>
+      <quantity>
+        <value>1</value>
+        <dosage>sandes</dosage>
+        <extraDosage>260g</extraDosage>
+      </quantity>
+      <calories>
+        <value>779</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="70">
+      <item>Pasta de Atum</item>
+      <quantity>
+        <value>1</value>
+        <dosage>sandes</dosage>
+        <extraDosage>260g</extraDosage>
+      </quantity>
+      <calories>
+        <value>779</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="71">
+      <item>Sandes Supremo de Frango</item>
+      <quantity>
+        <value>1</value>
+        <dosage>sandes</dosage>
+        <extraDosage>247g</extraDosage>
+      </quantity>
+      <calories>
+        <value>640</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="72">
+      <item>Sandes Multicereais Queijo Fresco</item>
+      <quantity>
+        <value>1</value>
+        <dosage>sandes</dosage>
+        <extraDosage>275g</extraDosage>
+      </quantity>
+      <calories>
+        <value>375</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="73">
+      <item>Frango</item>
+      <quantity>
+        <value>1</value>
+        <dosage>baguette</dosage>
+        <extraDosage>223g</extraDosage>
+      </quantity>
+      <calories>
+        <value>469</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+  </restaurant>
+  <restaurant name="pizza-hut">
+    <plate id="74">
+      <item>Cheeseham</item>
+      <quantity>
+        <value>1</value>
+        <dosage>fatia</dosage>
+        <extraDosage>130g</extraDosage>
+      </quantity>
+      <calories>
+        <value>342</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="75">
+      <item>Cheeseham</item>
+      <quantity>
+        <value>1</value>
+        <dosage>fatia</dosage>
+        <extraDosage>130g</extraDosage>
+      </quantity>
+      <calories>
+        <value>342</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="76">
+      <item>Pão de Alho Supremo</item>
+      <quantity>
+        <value>2</value>
+        <dosage>fatias</dosage>
+        <extraDosage>103g</extraDosage>
+      </quantity>
+      <calories>
+        <value>310</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="77">
+      <item>Calzone Gamberi</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>444g</extraDosage>
+      </quantity>
+      <calories>
+        <value>497</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+  </restaurant>
+  <restaurant name="starbucks">
+    <plate id="78">
+      <item>Salada de Frutas</item>
+      <quantity>
+        <value>1</value>
+        <dosage>100g</dosage>
+      </quantity>
+      <calories>
+        <value>53</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="79">
+      <item>Salada de Frutas</item>
+      <quantity>
+        <value>1</value>
+        <dosage>100g</dosage>
+      </quantity>
+      <calories>
+        <value>53</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="80">
+      <item>Frappuccino de Caramelo (Tall)</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>354ml</extraDosage>
+      </quantity>
+      <calories>
+        <value>250</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="81">
+      <item>Café Latte (Tall)</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>250ml</extraDosage>
+      </quantity>
+      <calories>
+        <value>100</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="82">
+      <item>Caramel Macchiato (Grande)</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>473ml</extraDosage>
+      </quantity>
+      <calories>
+        <value>239</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="83">
+      <item>Chocolate Mocha Flavour</item>
+      <quantity>
+        <value>1</value>
+        <dosage>100ml</dosage>
+      </quantity>
+      <calories>
+        <value>63</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="84">
+      <item>Muffin de Mirtilos</item>
+      <quantity>
+        <value>1</value>
+        <dosage>muffin</dosage>
+        <extraDosage>135g</extraDosage>
+      </quantity>
+      <calories>
+        <value>470</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="85">
+      <item>Cinnamon Roll</item>
+      <quantity>
+        <value>1</value>
+        <dosage>rolo</dosage>
+        <extraDosage>118g</extraDosage>
+      </quantity>
+      <calories>
+        <value>420</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="86">
+      <item>Chocolate Chunk Cookie</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>84g</extraDosage>
+      </quantity>
+      <calories>
+        <value>380</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="87">
+      <item>Seattle Latte</item>
+      <quantity>
+        <value>1</value>
+        <dosage>100ml</dosage>
+      </quantity>
+      <calories>
+        <value>70</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+  </restaurant>
+  <restaurant name="subway">
+    <plate id="88">
+      <item>15 cm Frango Teriyaki</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>279g</extraDosage>
+      </quantity>
+      <calories>
+        <value>384</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="89">
+      <item>15 cm Frango Teriyaki</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>279g</extraDosage>
+      </quantity>
+      <calories>
+        <value>384</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="90">
+      <item>15 cm Atum</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>414</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="91">
+      <item>Cookie com Gotas de Chocolate</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>33g</extraDosage>
+      </quantity>
+      <calories>
+        <value>210</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="92">
+      <item>15 cm Subway Melt</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>254g</extraDosage>
+      </quantity>
+      <calories>
+        <value>380</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="93">
+      <item>15 cm Frango</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>241g</extraDosage>
+      </quantity>
+      <calories>
+        <value>315</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="94">
+      <item>15 cm Peito de Peru</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+      </quantity>
+      <calories>
+        <value>307</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="95">
+      <item>15 cm BMT Italiano</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>242g</extraDosage>
+      </quantity>
+      <calories>
+        <value>450</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+  </restaurant>
+  <restaurant name="telepizza">
+    <plate id="96">
+      <item>Pizza Carbonara</item>
+      <quantity>
+        <value>1</value>
+        <dosage>fatia</dosage>
+        <extraDosage>76g</extraDosage>
+      </quantity>
+      <calories>
+        <value>235</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="97">
+      <item>Pizza Carbonara</item>
+      <quantity>
+        <value>1</value>
+        <dosage>fatia</dosage>
+        <extraDosage>76g</extraDosage>
+      </quantity>
+      <calories>
+        <value>235</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="98">
+      <item>Pastel de Nata</item>
+      <quantity>
+        <value>1</value>
+        <dosage>100g</dosage>
+      </quantity>
+      <calories>
+        <value>302</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="99">
+      <item>Pizza Funny Bacon</item>
+      <quantity>
+        <value>1</value>
+        <dosage>fatia</dosage>
+        <extraDosage>75g</extraDosage>
+      </quantity>
+      <calories>
+        <value>207</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="100">
+      <item>Pizza Especial da Casa</item>
+      <quantity>
+        <value>1</value>
+        <dosage>fatia</dosage>
+        <extraDosage>76g</extraDosage>
+      </quantity>
+      <calories>
+        <value>235</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="101">
+      <item>Pasta Carbonara</item>
+      <quantity>
+        <value>1</value>
+        <dosage>100g</dosage>
+      </quantity>
+      <calories>
+        <value>205</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="102">
+      <item>Pizza Barbecue</item>
+      <quantity>
+        <value>1</value>
+        <dosage>fatia</dosage>
+        <extraDosage>84g</extraDosage>
+      </quantity>
+      <calories>
+        <value>240</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="103">
+      <item>Pizza Atlãntica</item>
+      <quantity>
+        <value>1</value>
+        <dosage>fatia</dosage>
+        <extraDosage>71g</extraDosage>
+      </quantity>
+      <calories>
+        <value>196</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="104">
+      <item>Pão de Alho Queijo</item>
+      <quantity>
+        <value>2</value>
+        <dosage>unidades</dosage>
+      </quantity>
+      <calories>
+        <value>367</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="105">
+      <item>Pizza Cool Cheese</item>
+      <quantity>
+        <value>1</value>
+        <dosage>fatia</dosage>
+        <extraDosage>76g</extraDosage>
+      </quantity>
+      <calories>
+        <value>204</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="106">
+      <item>Pão de Alho com Queijo e Pepperoni</item>
+      <quantity>
+        <value>2</value>
+        <dosage>unidades</dosage>
+      </quantity>
+      <calories>
+        <value>402</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="107">
+      <item>Pizza Burguer</item>
+      <quantity>
+        <value>1</value>
+        <dosage>fatia</dosage>
+        <extraDosage>80g</extraDosage>
+      </quantity>
+      <calories>
+        <value>192</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="108">
+      <item>Pão de Alho com Queijo e Azeitonas</item>
+      <quantity>
+        <value>2</value>
+        <dosage>unidades</dosage>
+      </quantity>
+      <calories>
+        <value>353</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="109">
+      <item>Profiteroles</item>
+      <quantity>
+        <value>1</value>
+        <dosage>100g</dosage>
+      </quantity>
+      <calories>
+        <value>381</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="110">
+      <item>Pizza Lasanha de Carne</item>
+      <quantity>
+        <value>1</value>
+        <dosage>fatia</dosage>
+        <extraDosage>80g</extraDosage>
+      </quantity>
+      <calories>
+        <value>226</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="111">
+      <item>Enrolado Barbecue</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>247g</extraDosage>
+      </quantity>
+      <calories>
+        <value>538</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="112">
+      <item>Pizza Bacana</item>
+      <quantity>
+        <value>1</value>
+        <dosage>100g</dosage>
+      </quantity>
+      <calories>
+        <value>270</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="113">
+      <item>Top Burguer Vaca</item>
+      <quantity>
+        <value>1</value>
+        <dosage>100g</dosage>
+      </quantity>
+      <calories>
+        <value>236</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="114">
+      <item>Pizza Formaggio</item>
+      <quantity>
+        <value>1</value>
+        <dosage>fatia</dosage>
+        <extraDosage>76g</extraDosage>
+      </quantity>
+      <calories>
+        <value>237</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="115">
+      <item>Enrolado Carbonara</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>182g</extraDosage>
+      </quantity>
+      <calories>
+        <value>490</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+  </restaurant>
+  <restaurant name="vitaminas">
+    <plate id="116">
+      <item>Molho de Iogurte</item>
+      <quantity>
+        <value>1/2</value>
+        <dosage>concha</dosage>
+      </quantity>
+      <calories>
+        <value>217</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="117">
+      <item>Molho de Iogurte</item>
+      <quantity>
+        <value>1/2</value>
+        <dosage>concha</dosage>
+      </quantity>
+      <calories>
+        <value>217</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+  </restaurant>
+  <restaurant name="wok-to-walk">
+    <plate id="118">
+      <item>Legumes Mistos</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>200g</extraDosage>
+      </quantity>
+      <calories>
+        <value>190</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="119">
+      <item>Legumes Mistos</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>200g</extraDosage>
+      </quantity>
+      <calories>
+        <value>190</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="120">
+      <item>Peito de Frango</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>90g</extraDosage>
+      </quantity>
+      <calories>
+        <value>136</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="121">
+      <item>Noodles Integrais</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>180g</extraDosage>
+      </quantity>
+      <calories>
+        <value>486</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="122">
+      <item>Ananás</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>55g</extraDosage>
+      </quantity>
+      <calories>
+        <value>26</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="123">
+      <item>Molho de Soja Light</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>75g</extraDosage>
+      </quantity>
+      <calories>
+        <value>40</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
+    <plate id="124">
+      <item>Molho Saigon</item>
+      <quantity>
+        <value>1</value>
+        <dosage>dose</dosage>
+        <extraDosage>75g</extraDosage>
+      </quantity>
+      <calories>
+        <value>91</value>
+        <unity>kcal</unity>
+      </calories>
+    </plate>
   </restaurant>
 </foods>
